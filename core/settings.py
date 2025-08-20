@@ -245,7 +245,7 @@ JAZZMIN_SETTINGS = {
     "icons": {
         "auth.group": "fa fa-users",
         "auth.user": "fa fa-user", 
-        "about.about": "fa fa-info",
+        "products.indexs": "fa fa-list",
     },
     # Icons that are used when one is not manually specified
     "default_icon_parents": "fas fa-chevron-circle-right",
