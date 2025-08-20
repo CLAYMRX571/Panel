@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Quyosh Paneli</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link href="{% static 'assets/image/itm.jpg' %}" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="{% static 'assets/lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a href="{% url 'index' %}" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
+            <h2 class="m-0 text-primary">Quyosh Panel</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <ul class="nav">
+                    <li><a>Menu</a>
+                        <ul class="dropdown">
+                            <li><a href="{% url 'lan_switch' 'uz' %}">Uzbek</a></li>
+                            <li><a href="{% url 'lan_switch' 'ru' %}">Ruscha</a></li>
+                            <li><a href="{% url 'lan_switch' 'en' %}">English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="owl-carousel header-carousel position-relative">
+            <div class="owl-carousel-item position-relative" data-dot="<img src='{% static 'assets/image/panellar.jpg' %}'>">
+                <img class="img-fluid" src="{% static 'assets/image/panellar.jpg' %}" alt="" style="width:100%; height:800px; object-fit:cover;">
+                <div class="owl-carousel-inner">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-10 col-lg-8">
+                                <h1 class="display-2 text-white animated slideInDown">Panellar</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-3">Quyosh paneli - quyosh nurlarini elektr energiyasiga aylantiradigan qurilma</p>
+                                <a href="{% url 'index' %}" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft">Batafsil</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative" data-dot="<img src='{% static 'assets/image/panel.jpg' %}'>">
+                <img class="img-fluid" src="{% static 'assets/image/panel.jpg' %}" alt="" style="width:100%; height:800px; object-fit:cover;">
+                <div class="owl-carousel-inner">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-10 col-lg-8">
+                                <h1 class="display-2 text-white animated slideInDown">Panel</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-3">Quyosh paneli - quyosh nurlarini elektr energiyasiga aylantiradigan qurilma</p>
+                                <a href="{% url 'index' %}" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft">Batafsil</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative" data-dot="<img src='{% static 'assets/image/quyoshpanel.jpg' %}'>">
+                <img class="img-fluid" src="{% static 'assets/image/quyoshpanel.jpg' %}" alt="" style="width:100%; height:800px; object-fit:cover;">
+                <div class="owl-carousel-inner">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-10 col-lg-8">
+                                <h1 class="display-2 text-white animated slideInDown">Quyosh panel</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-3">Quyosh paneli - quyosh nurlarini elektr energiyasiga aylantiradigan qurilma</p>
+                                <a href="{% url 'index' %}" class="btn btn-primary rounded-pill py-3 px-5 animated slideInLeft">Batafsil</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-users text-white"></i>
+                        </div>
+                        {% for item in indexes %}
+                        <h1 class="mb-0" data-toggle="counter-up">{{ item.custom_count }}</h1>
+                        {% endfor %}
+                    </div>
+                    <h5 class="mb-3">Mijozlar</h5>
+                    <span>Hurmatli mijozlar quyosh panelni sotib olganlar</span>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-check text-white"></i>
+                        </div>
+                        {% for item in indexes %}
+                        <h1 class="mb-0" data-toggle="counter-up">{{ item.project_count }}</h1>
+                        {% endfor %}
+                    </div>
+                    <h5 class="mb-3">Proyektlar</h5>
+                    <span>Proyektlarimizni soni quyosh panelga doir</span>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-award text-white"></i>
+                        </div>
+                        {% for item in indexes %}
+                        <h1 class="mb-0" data-toggle="counter-up">{{ item.win_count }}</h1>
+                        {% endfor %}
+                    </div>
+                    <h5 class="mb-3">G'oliblar</h5>
+                    <span>Turli xil kasblardan musobaqadan qatnashgan g'oliblar </span>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-users-cog text-white"></i>
+                        </div>
+                        {% for item in indexes %}
+                        <h1 class="mb-0" data-toggle="counter-up">{{ item.works_count }}</h1>
+                        {% endfor %}
+                    </div>
+                    <h5 class="mb-3">Ischilar</h5>
+                    <span>Ishchilarni soni</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+        <div class="container feature px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="p-lg-5 ps-lg-0">
+                        {% for item in indexes %}
+                        <h1 class="mb-4">{{ item.name }}</h1>
+                        <p class="mb-4 pb-2">{{ item.desc }}</p>
+                        {% endfor %}
+                        <div class="row g-4">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-lg-square bg-primary rounded-circle">
+                                        <i class="fa fa-check text-white"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-0">Sifat</p>
+                                        <h5 class="mb-0">Xizmatlar</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-lg-square bg-primary rounded-circle">
+                                        <i class="fa fa-user-check text-white"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-0">Mutaxassis</p>
+                                        <h5 class="mb-0">Ishchilar</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-lg-square bg-primary rounded-circle">
+                                        <i class="fa fa-drafting-compass text-white"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-0">Tekin</p>
+                                        <h5 class="mb-0">Konsultatsiya</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-lg-square bg-primary rounded-circle">
+                                        <i class="fa fa-headphones text-white"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-0">Mijoz</p>
+                                        <h5 class="mb-0">Qo'llab-quvvatlash</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="{% static 'assets/image/paneli.png' %}" style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-users text-white"></i>
+                        </div>
+                        {% for item in indexes %}
+                        <h1 class="mb-0" data-toggle="counter-up">{{ item.custom_count }}</h1>
+                        {% endfor %}
+                    </div>
+                    <h5 class="mb-3">Mijozlar</h5>
+                    <span>Hurmatli mijozlar quyosh panelni sotib olganlar</span>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-check text-white"></i>
+                        </div>
+                        {% for item in indexes %}
+                        <h1 class="mb-0" data-toggle="counter-up">{{ item.project_count }}</h1>
+                        {% endfor %}
+                    </div>
+                    <h5 class="mb-3">Proyektlar</h5>
+                    <span>Proyektlarimizni soni quyosh panelga doir</span>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-award text-white"></i>
+                        </div>
+                        {% for item in indexes %}
+                        <h1 class="mb-0" data-toggle="counter-up">{{ item.win_count }}</h1>
+                        {% endfor %}
+                    </div>
+                    <h5 class="mb-3">G'oliblar</h5>
+                    <span>Turli xil kasblardan musobaqadan qatnashgan g'oliblar </span>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-users-cog text-white"></i>
+                        </div>
+                        {% for item in indexes %}
+                        <h1 class="mb-0" data-toggle="counter-up">{{ item.works_count }}</h1>
+                        {% endfor %}
+                    </div>
+                    <h5 class="mb-3">Ischilar</h5>
+                    <span>Ishchilarni soni</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+        <div class="container about px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 ps-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="{% static 'assets/image/paneli.png' %}" style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    {% for about in indexes %}
+                    <div class="p-lg-5 pe-lg-0">
+                        <h1 class="mb-4">{{ about.about_name }}</h1>
+                        <p>{{ about.about_desc }}</p>
+                        <a href="{% url 'index' %}" class="btn btn-primary rounded-pill py-3 px-5 mt-3">Batafsil</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-users text-white"></i>
+                        </div>
+                        {% for item in indexes %}
+                        <h1 class="mb-0" data-toggle="counter-up">{{ item.custom_count }}</h1>
+                        {% endfor %}
+                    </div>
+                    <h5 class="mb-3">Mijozlar</h5>
+                    <span>Hurmatli mijozlar quyosh panelni sotib olganlar</span>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-check text-white"></i>
+                        </div>
+                        {% for item in indexes %}
+                        <h1 class="mb-0" data-toggle="counter-up">{{ item.project_count }}</h1>
+                        {% endfor %}
+                    </div>
+                    <h5 class="mb-3">Proyektlar</h5>
+                    <span>Proyektlarimizni soni quyosh panelga doir</span>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-award text-white"></i>
+                        </div>
+                        {% for item in indexes %}
+                        <h1 class="mb-0" data-toggle="counter-up">{{ item.win_count }}</h1>
+                        {% endfor %}
+                    </div>
+                    <h5 class="mb-3">G'oliblar</h5>
+                    <span>Turli xil kasblardan musobaqadan qatnashgan g'oliblar </span>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-users-cog text-white"></i>
+                        </div>
+                        {% for item in indexes %}
+                        <h1 class="mb-0" data-toggle="counter-up">{{ item.works_count }}</h1>
+                        {% endfor %}
+                    </div>
+                    <h5 class="mb-3">Ischilar</h5>
+                    <span>Ishchilarni soni</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="mb-4">Bizda turli xil quyosh paneli turlari</h1>
+            </div>
+            <div class="row g-4">
+                {% for service in indexes %}
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded overflow-hidden">
+                        <img class="img-fluid" src="{{ service.service_image.url }}" alt=""  style="width:100%; height:250px; object-fit:cover; display:block;">
+                        <div class="position-relative p-4 pt-0">
+                            <h4 class="mb-3">{{ service.service_name }}</h4>
+                            <p>{{ service.service_desc }}</p>
+                            <a class="small fw-medium" href="{% url 'index' %}">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-users text-white"></i>
+                        </div>
+                        {% for item in indexes %}
+                        <h1 class="mb-0" data-toggle="counter-up">{{ item.custom_count }}</h1>
+                        {% endfor %}
+                    </div>
+                    <h5 class="mb-3">Mijozlar</h5>
+                    <span>Hurmatli mijozlar quyosh panelni sotib olganlar</span>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-check text-white"></i>
+                        </div>
+                        {% for item in indexes %}
+                        <h1 class="mb-0" data-toggle="counter-up">{{ item.project_count }}</h1>
+                        {% endfor %}
+                    </div>
+                    <h5 class="mb-3">Proyektlar</h5>
+                    <span>Proyektlarimizni soni quyosh panelga doir</span>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-award text-white"></i>
+                        </div>
+                        {% for item in indexes %}
+                        <h1 class="mb-0" data-toggle="counter-up">{{ item.win_count }}</h1>
+                        {% endfor %}
+                    </div>
+                    <h5 class="mb-3">G'oliblar</h5>
+                    <span>Turli xil kasblardan musobaqadan qatnashgan g'oliblar </span>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-users-cog text-white"></i>
+                        </div>
+                        {% for item in indexes %}
+                        <h1 class="mb-0" data-toggle="counter-up">{{ item.works_count }}</h1>
+                        {% endfor %}
+                    </div>
+                    <h5 class="mb-3">Ischilar</h5>
+                    <span>Ishchilarni soni</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="mb-4">Quyosh panellarni proyektlari haqida</h1>
+            </div>
+            <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-12 text-center">
+                    <ul class="list-inline mb-5" id="portfolio-flters">
+                        {% for project in indexes %}
+                        <li class="mx-2 active" data-filter="">{{ project.project_name }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.5s">
+                {% for project in indexes %}
+                <div class="col-lg-4 col-md-6 portfolio-item first">
+                    <div class="portfolio-img rounded overflow-hidden" style="height: 250px;">
+                        <img class="img-fluid w-100 h-100" src="{{ project.project_image.url }}" alt="" style="object-fit: cover;">
+                        <div class="portfolio-btn">
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ project.project_image.url }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ project.project_link }}" target="_blank"><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                    <div class="pt-3">
+                        <p class="text-primary mb-0">{{ project.project_name }}</p>
+                        <hr class="text-primary w-25 my-2">
+                        <h5 class="lh-base">{{ project.project_desc }}</h5>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-users text-white"></i>
+                        </div>
+                        {% for item in indexes %}
+                        <h1 class="mb-0" data-toggle="counter-up">{{ item.custom_count }}</h1>
+                        {% endfor %}
+                    </div>
+                    <h5 class="mb-3">Mijozlar</h5>
+                    <span>Hurmatli mijozlar quyosh panelni sotib olganlar</span>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-check text-white"></i>
+                        </div>
+                        {% for item in indexes %}
+                        <h1 class="mb-0" data-toggle="counter-up">{{ item.project_count }}</h1>
+                        {% endfor %}
+                    </div>
+                    <h5 class="mb-3">Proyektlar</h5>
+                    <span>Proyektlarimizni soni quyosh panelga doir</span>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-award text-white"></i>
+                        </div>
+                        {% for item in indexes %}
+                        <h1 class="mb-0" data-toggle="counter-up">{{ item.win_count }}</h1>
+                        {% endfor %}
+                    </div>
+                    <h5 class="mb-3">G'oliblar</h5>
+                    <span>Turli xil kasblardan musobaqadan qatnashgan g'oliblar </span>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="btn-lg-square bg-primary rounded-circle me-3">
+                            <i class="fa fa-users-cog text-white"></i>
+                        </div>
+                        {% for item in indexes %}
+                        <h1 class="mb-0" data-toggle="counter-up">{{ item.works_count }}</h1>
+                        {% endfor %}
+                    </div>
+                    <h5 class="mb-3">Ischilar</h5>
+                    <span>Ishchilarni soni</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="mb-4">Bizning Jamoa</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    {% for team in indexes %}
+                    <div class="team-item rounded overflow-hidden">
+                        <div class="d-flex">
+                            <img class="img-fluid w-75" src="{{ team.team_image.url }}" alt="">
+                            <div class="team-social w-25">
+                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href="{{ team.telegram }}" target="_blank"><i class="fab fa-telegram"></i></a>
+                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href="{{ team.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a class="btn btn-lg-square btn-outline-primary rounded-circle mt-3" href="{{ team.insta }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h5>{{ team.team_name }}</h5>
+                            <span>{{ team.team_jobs }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-dark text-body footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Address</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Toshkent</p>
+                    <p class="mb-2"><i class="fa fa-clock me-3"></i>8:30 - 17:00</p>
+                    <p class="mb-2"><i class="fa fa-calendar me-3"></i>Dush - Juma</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-light btn-social" href="https://t.me/s/ITMRasmiy?ysclid=mehaxopavg567256307" target="_blank"><i class="fab fa-telegram"></i></a>
+                        <a class="btn btn-square btn-outline-light btn-social" href="https://www.itm-llc.uz/uz/home/" target="_blank"><i class="fab fa-google"></i></a>
+                        <a class="btn btn-square btn-outline-light btn-social" href="https://youtu.be/JlDJVOnEM8o?si=nwRAKFgcJvc5YqNY" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Rasmlar</h5>
+                    <div class="row g-2">
+                        <div class="col-4">
+                            <img class="img-fluid rounded" src="{% static 'assets/image/itm.jpg' %}" style="width:100px; height:100px; object-fit:cover;">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded" src="{% static 'assets/image/panel.jpg' %}" style="width:100px; height:100px; object-fit:cover;">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded" src="{% static 'assets/image/paneli.png' %}" style="width:100px; height:100px; object-fit:cover;">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded" src="{% static 'assets/image/panellar.jpg' %}" style="width:100px; height:100px; object-fit:cover;">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded" src="{% static 'assets/image/quyoshpanel.jpg' %}" style="width:100px; height:100px; object-fit:cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="https://www.itm-llc.uz/uz/home/" target="_blank">2025 ITM-LLC</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'assets/lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'assets/lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'assets/lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'assets/lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'assets/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/lib/isotope/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/lib/lightbox/js/lightbox.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+</html>
