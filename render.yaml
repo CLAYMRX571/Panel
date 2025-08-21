@@ -1,4 +1,12 @@
-buildCommand: |
-  curl https://sh.rustup.rs -sSf | sh -s -- -y
-  source $HOME/.cargo/env
-  pip install -r requirements.txt
+services:
+  - type: web
+    name: django-app
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: Solar.settings
+      - key: PYTHONUNBUFFERED
+        value: "1"
