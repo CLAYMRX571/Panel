@@ -13,4 +13,4 @@ COPY . .
 RUN pip install --upgrade pip setuptools wheel
 RUN pip install -r requirements.txt
 
-CMD ["gunicorn", "Solar.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "Panel.wsgi:application", "--bind", "0.0.0.0:8000"]
