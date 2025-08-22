@@ -12,11 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
-from environs import Env
 from django.utils.translation import gettext_lazy as _
-
-env = Env()
-env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env.str("SECRET_KEY")
+SECRET_KEY = 'django-insecure-+z2o$_&shk(n_#-4p)0(pd3w-x--vmcd9gl)wb2tf8z^_-k2-f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool("DEBUG")
+DEBUG = True
 
-ALLOWED_HOSTS = ['panels-61as.onrender.com']
+ALLOWED_HOSTS = ['52.66.239.49', '*']
 
 
 # Application definition
