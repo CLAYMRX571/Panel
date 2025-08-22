@@ -3,7 +3,10 @@ from django.views.generic import View
 
 class HomesView(View):
     def get(self, request):
-        return render(request, "index.html") 
+        context = {
+            "indexes": []
+        }
+        return render(request, "index.html", context)
 
 def lan_switch(request, lan):
     return redirect(f'/{lan}/')
