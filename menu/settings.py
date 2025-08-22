@@ -31,7 +31,7 @@ SECRET_KEY = env.str("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG")
 
-ALLOWED_HOSTS = ['panel-production-e3c4.up.railway.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['smart-qrr8.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
