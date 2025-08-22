@@ -1,7 +1,7 @@
 from django.urls import path
-from . import views
+from .views import HomesView, Lang
 
 urlpatterns = [
-    path("", views.HomesView, name="index"),
-    path("lan/<str:lan>/", views.Lang, name="lan_switch"),
+    path("", HomesView.as_view(), name="index"),
+    path("lan/<str:lan>/", Lang.as_view(), name="lan_switch"),
 ]

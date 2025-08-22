@@ -7,5 +7,5 @@ class HomesView(View):
         return render(request, "index.html") 
 
 class Lang(View):
-    def lan_switch(request, lan):
+    def get(self, request, lan):
         return redirect(f'/{lan}/')
