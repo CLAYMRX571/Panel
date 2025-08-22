@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path("", views.HomesView, name="index"),
-    path("lan/<str:lan>/", views.lan_switch, name="lan_switch"),
+    path("lan/<str:lan>/", views.Lang, name="lan_switch"),
 ]
