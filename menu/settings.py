@@ -31,7 +31,7 @@ SECRET_KEY = env.str("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG")
 
-ALLOWED_HOSTS = ['smart-qrr8.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['panels-61as.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
