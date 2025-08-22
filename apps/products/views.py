@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect
-from django.views.generic import ListView
+from django.views.generic import View
 from .models import Indexs
 
-class HomesView(ListView):
-    model = Indexs
-    context_object_name = 'indexes'
-    template_name = 'index.html'
+class HomesView(View):
+    def get(self, request):
+        return render(request, "index.html") 
 
 def lan_switch(request, lan):
     return redirect(f'/{lan}/')
