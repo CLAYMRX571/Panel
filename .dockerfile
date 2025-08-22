@@ -1,23 +1,24 @@
-# Python image dan foydalanamiz
+# Python bazaviy image
 FROM python:3.11-slim
 
-# Virtual environment yaratish va ishga tushirish
-RUN python -m venv /opt/venv \
-    && /opt/venv/bin/pip install --upgrade pip setuptools wheel
+# System update va kerakli paketlar
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
-# Environment yo‘llarini sozlash
-ENV PATH="/opt/venv/bin:$PATH"
-
-# Requirements o‘rnatish
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Loyihani ko‘chirish
-COPY . /app
+# Ishchi papka
 WORKDIR /app
 
-# Django uchun default port
+# requirements.txt yuklash va o‘rnatish
+COPY requirements.txt .
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel \
+    && pip install --no-cache-dir -r requirements.txt
+
+# Loyihani yuklash
+COPY . .
+
+# Django uchun port
 EXPOSE 8000
 
-# Start komandasi
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Railway avtomatik PORT beradi
+CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:$PORT"]
