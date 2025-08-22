@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import HomesView, lan_switch
+from . import views
 
 urlpatterns = [
-    path('', HomesView.as_view(), name='index'),
-    path('lan/<str:lan>/', lan_switch, name='lan_switch'),
+    path('', views.HomesView, name='index'),
+    path('lan/<str:lan>/', views.lan_switch, name='lan_switch'),
 ]
