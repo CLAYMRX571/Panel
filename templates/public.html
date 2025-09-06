@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IRENA">
+    <title>IRENA</title>
+    <link rel="icon" href="{% static 'assets/img/itms.ico' %}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+<body>
+
+<header class="bg-dark text-white p-3">
+    <div class="container d-flex align-items-center">
+        <img src="{% static 'assets/img/irena.png' %}" alt="IRENA Logo" class="me-3" height="50">
+        <nav class="ms-auto" role="navigation">
+        <ul class="nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown">Energy Transition</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-solar-panel"></i>Outlook</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-wind"></i>Partnerships</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-water"></i>Policy</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-fire"></i>Technology</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Socio economic impact</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Country engagement</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Project Facilitation</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Planning</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Innovation</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Finance & investment</a></li>
+                </ul>
+            </li>
+            <div class="nav-item dropdown">
+                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Languages </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a href="{% url 'lan_switch_products' 'uz' %}" class="dropdown-item">Uzbek</a></li>
+                    <li><a href="{% url 'lan_switch_products' 'en' %}" class="dropdown-item">English</a></li>
+                    <li><a href="{% url 'lan_switch_products' 'kz' %}" class="dropdown-item">Qozoqcha</a></li>
+                    <li><a href="{% url 'lan_switch_products' 'tj' %}" class="dropdown-item">Tojikcha</a></li>
+                    <li><a href="{% url 'lan_switch_products' 'tr' %}" class="dropdown-item">Turkcha</a></li>
+                </ul>
+            </div>
+            <li class="nav-item"><a class="nav-link text-white" href="#">News</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Publications</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Education</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Data</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Events</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">About</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">About IRENA</a></li>
+                    <li><a class="dropdown-item" href="#">Membership</a></li>
+                    <li><a class="dropdown-item" href="#">Director General</a></li>
+                    <li><a class="dropdown-item" href="#">Procurement</a></li>
+                    <li><a class="dropdown-item" href="#">Vision and Mission</a></li>
+                    <li><a class="dropdown-item" href="#">Official Documents</a></li>
+                    <li><a class="dropdown-item" href="#">Senior Management</a></li>
+                    <li><a class="dropdown-item" href="#">Working at IRENA</a></li>
+                </ul>
+            </li>
+        </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="page-header">
+        <div class="container">
+            <h1>Publications</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Publications</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Search Bar -->
+    <section class="search-bar">
+        <div class="container">
+            <form class="d-flex align-items-center">
+                <div class="input-group w-100">
+                    <span class="input-group-text">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Search for Publications..." />
+                    <button class="btn" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Hero Publications -->
+    <section class="container">
+        <div class="row g-4">
+            <!-- Latest Publication -->
+            <div class="col-md-6">
+                <div class="card bg-light border-0 rounded-4 shadow-sm">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://via.placeholder.com/300x400?text=Mauritania+DRE" class="img-fluid rounded-start" alt="Decentralised renewable energy for artisanal fisheries in Mauritania" />
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body p-4">
+                                <small class="text-uppercase text-muted">Latest Publication</small>
+                                <h5 class="mt-2">Decentralised renewable energy for artisanal fisheries in Mauritania</h5>
+                                <p class="text-muted">This report assesses the opportunities and barriers for deploying decentralised renewable energy (DRE) solutions to power Mauritania's artisanal fishing value chain to improve energy access in the sector.</p>
+                                <a href="#" class="view-btn">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Focus on Report -->
+            <div class="col-md-6">
+                <div class="card bg-dark text-white rounded-4 shadow-sm">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://via.placeholder.com/300x400?text=Renewable+Costs+2024" class="img-fluid rounded-start" alt="Renewable Power Generation Costs in 2024" />
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body p-4">
+                                <small class="text-uppercase text-muted">Focus On</small>
+                                <h5 class="mt-2">Renewable Power Generation Costs in 2024</h5>
+                                <p class="text-muted">The latest cost analysis from IRENA shows that renewables continued to represent the most cost-competitive source of new electricity generation in 2024.</p>
+                                <a href="#" class="view-btn">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Further -->
+    <section class="explore-section">
+        <div class="container">
+            <h3>Explore further</h3>
+            <div class="tabs">
+                <a href="#" class="nav-link active">Latest</a>
+                <a href="#" class="nav-link">Energy transition</a>
+                <a href="#" class="nav-link">Policy</a>
+                <a href="#" class="nav-link">Technology</a>
+                <a href="#" class="nav-link">Socio-economic impact</a>
+                <a href="#" class="nav-link">Costs</a>
+                <a href="#" class="nav-link">Finance & investment</a>
+            </div>
+
+            <div class="row g-4">
+                <!-- Publication 1 -->
+                <div class="col-md-6 publication-card">
+                    <img src="https://via.placeholder.com/300x400?text=Mauritania+DRE" class="publication-img" alt="Mauritania DRE" />
+                    <div class="publication-content">
+                        <h5>Decentralised renewable energy for artisanal fisheries in Mauritania</h5>
+                        <p>This report assesses the opportunities and barriers for deploying decentralised renewable energy (DRE) solutions to...</p>
+                        <a href="#" class="view-btn">View</a>
+                        <div class="publication-meta">
+                            <span>September 2025</span>
+                            <span>Energy transition</span>
+                            <span>English</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 2 -->
+                <div class="col-md-6 publication-card">
+                    <img src="https://via.placeholder.com/300x400?text=Mali+Healthcare" class="publication-img" alt="Mali Healthcare" />
+                    <div class="publication-content">
+                        <h5>Electrification with renewables: Enhancing healthcare delivery in Mali</h5>
+                        <p>This report assesses the opportunities for integrating decentralised renewable energy (DRE) solutions to power key...</p>
+                        <a href="#" class="view-btn">View</a>
+                        <div class="publication-meta">
+                            <span>August 2025</span>
+                            <span>Energy transition</span>
+                            <span>English</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 3 -->
+                <div class="col-md-6 publication-card">
+                    <img src="https://via.placeholder.com/300x400?text=Iraq+Transition" class="publication-img" alt="Iraq Transition" />
+                    <div class="publication-content">
+                        <h5>Energy transition assessment: Iraq</h5>
+                        <p>This assessment evaluates Iraq’s current energy landscape, highlighting the barriers to renewable energy adoption...</p>
+                        <a href="#" class="view-btn">View</a>
+                        <div class="publication-meta">
+                            <span>July 2025</span>
+                            <span>Energy transition</span>
+                            <span>English</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 4 -->
+                <div class="col-md-6 publication-card">
+                    <img src="https://via.placeholder.com/300x400?text=Renewable+Costs+2024" class="publication-img" alt="Renewable Costs 2024" />
+                    <div class="publication-content">
+                        <h5>Renewable Power Generation Costs in 2024</h5>
+                        <p>The latest cost analysis from IRENA shows that renewables continued to represent the most cost-competitive source of ne...</p>
+                        <a href="#" class="view-btn">View</a>
+                        <div class="publication-meta">
+                            <span>July 2025</span>
+                            <span>Costs, Energy transition, Power Generation Costs</span>
+                            <span>English</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 5 -->
+                <div class="col-md-6 publication-card">
+                    <img src="https://via.placeholder.com/300x400?text=Sub-Saharan+Africa" class="publication-img" alt="Sub-Saharan Africa" />
+                    <div class="publication-content">
+                        <h5>Sub-Saharan Africa: Policies and finance for renewable energy deployment</h5>
+                        <p>This report explores trends in renewable energy investment, finance and policy in Sub-Saharan Africa, with a view to...</p>
+                        <a href="#" class="view-btn">View</a>
+                        <div class="publication-meta">
+                            <span>July 2024</span>
+                            <span>Energy transition, Finance & investment, Policy</span>
+                            <span>English</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 6 -->
+                <div class="col-md-6 publication-card">
+                    <img src="https://via.placeholder.com/300x400?text=100%25+Renewable" class="publication-img" alt="100% Renewable" />
+                    <div class="publication-content">
+                        <h5>100% renewable energy scenarios: Supporting ambitious policy targets</h5>
+                        <p>This study from the IRENA Coalition for Action compares three 100% renewable energy scenarios and two net-zero...</p>
+                        <a href="#" class="view-btn">View</a>
+                        <div class="publication-meta">
+                            <span>March 2024</span>
+                            <span>Energy transition, Policy</span>
+                            <span>English</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 7 -->
+                <div class="col-md-6 publication-card">
+                    <img src="https://via.placeholder.com/300x400?text=Green+Hydrogen" class="publication-img" alt="Green Hydrogen" />
+                    <div class="publication-content">
+                        <h5>Green hydrogen for sustainable industrial development: A policy toolkit</h5>
+                        <p>This report by the United Nations Industrial Development Organization (UNIDO), IRENA and the German Institut...</p>
+                        <a href="#" class="view-btn">View</a>
+                        <div class="publication-meta">
+                            <span>February 2024</span>
+                            <span>Energy transition, Policy, Green hydrogen</span>
+                            <span>English</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 8 -->
+                <div class="col-md-6 publication-card">
+                    <img src="https://via.placeholder.com/300x400?text=North+Africa" class="publication-img" alt="North Africa" />
+                    <div class="publication-content">
+                        <h5>North Africa: Policies and finance for renewable energy</h5>
+                        <p>The brief by IRENA, highlights North Africa’s large renewable energy potential and explores its current policy...</p>
+                        <a href="#" class="view-btn">View</a>
+                        <div class="publication-meta">
+                            <span>December 2023</span>
+                            <span>Energy transition, Finance & investment, Policy</span>
+                            <span>English</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-column">
+            <h3 class="footer-title">IRENA essentials</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <ul class="footer-links">
+                        <li><a href="#">About IRENA</a></li>
+                        <li><a href="#">Employment</a></li>
+                        <li><a href="#">Procurement</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="footer-links">
+                        <li><a href="#">Membership</a></li>
+                        <li><a href="#">Collaborative Frameworks</a></li>
+                        <li><a href="#">Partnerships</a></li>
+                        <li><a href="#">Country engagement</a></li>
+                    </ul>
+                </div>
+                    <div class="col-md-4">
+                        <ul class="footer-links">
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Publications</a></li>
+                            <li><a href="#">Education</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter e-mail address" />
+                    <button type="submit" class="newsletter-btn">GO</button>
+                </form>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-xing"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fas fa-rss"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <hr style="margin: 2rem 0;" />
+        <div class="row">
+            <div class="col-md-6">
+                <p class="copyright">
+                    © 2011–2025 IRENA – International Renewable Energy Agency. All Rights Reserved.<br>
+                    <a href="#" class="terms-link">Terms and conditions</a>
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p class="disclaimer">
+                    * The designations employed and the presentation of materials herein do not imply the expression of any opinion whatsoever on the part of the International Renewable Energy Agency concerning the legal status of any country, territory, city or area of its authorities, or concerning the delimitation of its frontiers or boundaries.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'assets/js/script.js' %}"></script>
+</body>
+</html>
