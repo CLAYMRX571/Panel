@@ -18,56 +18,290 @@
     <div class="container d-flex align-items-center">
         <img src="{% static 'assets/img/irena.png' %}" alt="IRENA Logo" class="me-3" height="50">
         <nav class="ms-auto" role="navigation">
-        <ul class="nav">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown">Energy Transition</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-solar-panel"></i>Outlook</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-wind"></i>Partnerships</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-water"></i>Policy</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-fire"></i>Technology</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Socio economic impact</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Country engagement</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Project Facilitation</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Planning</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Innovation</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Finance & investment</a></li>
-                </ul>
-            </li>
-            <div class="nav-item dropdown">
-                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Languages </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a href="{% url 'lan_switch_products' 'uz' %}" class="dropdown-item">Uzbek</a></li>
-                    <li><a href="{% url 'lan_switch_products' 'en' %}" class="dropdown-item">English</a></li>
-                    <li><a href="{% url 'lan_switch_products' 'kz' %}" class="dropdown-item">Qozoqcha</a></li>
-                    <li><a href="{% url 'lan_switch_products' 'tj' %}" class="dropdown-item">Tojikcha</a></li>
-                    <li><a href="{% url 'lan_switch_products' 'tr' %}" class="dropdown-item">Turkcha</a></li>
-                </ul>
-            </div>
-            <li class="nav-item"><a class="nav-link text-white" href="#">News</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#">Publications</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#">Education</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#">Data</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#">Events</a></li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">About</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">About IRENA</a></li>
-                    <li><a class="dropdown-item" href="#">Membership</a></li>
-                    <li><a class="dropdown-item" href="#">Director General</a></li>
-                    <li><a class="dropdown-item" href="#">Procurement</a></li>
-                    <li><a class="dropdown-item" href="#">Vision and Mission</a></li>
-                    <li><a class="dropdown-item" href="#">Official Documents</a></li>
-                    <li><a class="dropdown-item" href="#">Senior Management</a></li>
-                    <li><a class="dropdown-item" href="#">Working at IRENA</a></li>
-                </ul>
-            </li>
-        </ul>
+            <ul class="nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown">Energy Transition</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-solar-panel"></i>Outlook</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-wind"></i>Partnerships</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-water"></i>Policy</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-fire"></i>Technology</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Socio economic impact</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Country engagement</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Project Facilitation</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Planning</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Innovation</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Finance & investment</a></li>
+                    </ul>
+                </li>
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Languages </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a href="{% url 'lan_switch_products' 'uz' %}" class="dropdown-item">Uzbek</a></li>
+                        <li><a href="{% url 'lan_switch_products' 'en' %}" class="dropdown-item">English</a></li>
+                        <li><a href="{% url 'lan_switch_products' 'kz' %}" class="dropdown-item">Qozoqcha</a></li>
+                        <li><a href="{% url 'lan_switch_products' 'tj' %}" class="dropdown-item">Tojikcha</a></li>
+                        <li><a href="{% url 'lan_switch_products' 'tr' %}" class="dropdown-item">Turkcha</a></li>
+                    </ul>
+                </div>
+                <li class="nav-item"><a class="nav-link text-white" href="#">News</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#">Publications</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#">Education</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#">Data</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#">Events</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">About IRENA</a></li>
+                        <li><a class="dropdown-item" href="#">Membership</a></li>
+                        <li><a class="dropdown-item" href="#">Director General</a></li>
+                        <li><a class="dropdown-item" href="#">Procurement</a></li>
+                        <li><a class="dropdown-item" href="#">Vision and Mission</a></li>
+                        <li><a class="dropdown-item" href="#">Official Documents</a></li>
+                        <li><a class="dropdown-item" href="#">Senior Management</a></li>
+                        <li><a class="dropdown-item" href="#">Working at IRENA</a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
     </div>
 </header>
 
+<div class="header">
+    <div class="container">
+        <h1>Statistics Data</h1>
+        <div class="d-flex justify-content-center align-items-center gap-3">
+            <a href="#" class="btn-back"><i class="fas fa-chevron-left"></i> Back</a>
+            <a href="#"><i class="fas fa-share-alt"></i></a>
+            <a href="#"><i class="fas fa-plus-square"></i></a>
+        </div>
+    </div>
+</div>
 
+
+<div class="sidebar">
+    <h4>Data</h4>
+    <ul>
+        <li class="active"><a href="#">Overview</a></li>
+        <li><a href="#">View data by topic <i class="fas fa-chevron-down"></i></a></li>
+        <li><a href="#">Downloads <i class="fas fa-chevron-down"></i></a></li>
+        <li><a href="#">Energy Profiles</a></li>
+        <li><a href="#">Statistical publications <i class="fas fa-chevron-down"></i></a></li>
+        <li><a href="#">Capacity building <i class="fas fa-chevron-down"></i></a></li>
+    </ul>
+</div>
+
+
+<div class="main-content">
+    <div class="search-box">
+        <form class="d-flex w-100">
+            <div class="input-group w-100">
+                <span class="input-group-text" style="background-color: transparent; border: none;">
+                <i class="fas fa-search"></i>
+                </span>
+                <input type="text" class="form-control" placeholder="Search for Data..." aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="mt-4">
+      <p>Detailed, accurate and timely data and statistics are essential for the monitoring and evaluation of renewable energy policies and deployment. IRENA helps analysts, policy makers and the public make informed decisions by providing access to comprehensive and up-to-date renewable energy data.</p>
+      
+      <p>IRENA publishes detailed statistics on renewable energy capacity, power generation and renewable energy balances. This data is collected directly from members using the IRENA Renewable Energy Statistics questionnaire and is also supplemented by desk research where official statistics are not available. Renewable power-generation capacity statistics are released annually in March. Additionally, renewable power generation and renewable energy balances data sets are released in July.</p>
+      
+      <p>IRENA's statistics unit helps members to strengthen their data collection and reporting activities through training and methodological guidance. Member countries are encouraged to participate in this process. Explore IRENA data and statistics by browsing a wide range of topics such as Capacity and Generation, Costs, Finance and more on the menu.</p>
+    </div>
+
+    <div class="topic-bar mt-5">
+        <div class="d-flex align-items-center">
+            <div class="topic-item active">
+                <i class="fas fa-clipboard-list"></i>
+                <span>Topics</span>
+            </div>
+            <div class="topic-item">
+                <i class="fas fa-users"></i>
+                <span>Benefits</span>
+            </div>
+            <div class="topic-item">
+                <i class="fas fa-power-off"></i>
+                <span>Capacity & Generation</span>
+            </div>
+            <div class="topic-item">
+                <i class="fas fa-lightbulb"></i>
+                <span>Innovation & Technology</span>
+            </div>
+            <div class="topic-item">
+                <i class="fas fa-globe"></i>
+                <span>Climate change</span>
+            </div>
+                <div class="topic-item">
+                <i class="fas fa-coins"></i>
+                <span>Costs</span>
+            </div>
+                <div class="topic-item">
+                <i class="fas fa-sync-alt"></i>
+                <span>Energy Transition</span>
+            </div>
+                <div class="topic-item">
+                <i class="fas fa-stack-exchange"></i>
+                <span>Finance & Investment</span>
+            </div>
+                <div class="topic-item">
+                <i class="fas fa-file-alt"></i>
+                <span>Policy</span>
+            </div>
+                <div class="topic-item">
+                <i class="fas fa-balance-scale"></i>
+                <span>Renewable Energy Balances</span>
+            </div>
+        </div>
+      <button class="btn btn-sm btn-outline-primary" style="margin-left: auto;"><i class="fas fa-times"></i></button>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="mb-4">Featured</h3>
+        <hr class="mb-4" />
+        <div class="row g-4 align-items-center">
+          <div class="col-md-4">
+            <img src="https://via.placeholder.com/300x400?text=IRENA+2025" alt="Cover" class="img-fluid rounded shadow-sm" style="max-width: 100%;">
+          </div>
+          <div class="col-md-8 bg-dark text-white p-4 rounded shadow">
+            <small class="text-uppercase text-muted mb-1">Focus on</small>
+            <h4 class="mb-3">Renewable energy statistics 2025</h4>
+            <p class="text-light mb-4">
+              This publication presents renewable energy statistics for the last decade (2015–2024).
+            </p>
+            <a href="#" class="text-decoration-none text-warning fw-bold">View</a>
+            <div class="mt-4">
+              <small class="text-muted">Available as:</small>
+              <p><a href="#" class="text-white">PDF</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3>Related publications</h3>
+                <div class="d-flex gap-2">
+                    <a href="#" class="btn btn-link text-primary">View more</a>
+                    <button class="btn btn-outline-secondary"><i class="fas fa-chevron-left"></i></button>
+                    <button class="btn btn-outline-secondary"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <hr class="mb-4" />
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-0">
+                            <img src="https://via.placeholder.com/300x400?text=IRENA+2025" alt="Renewable Energy Statistics 2025" class="img-fluid rounded-top" style="height: 300px; object-fit: cover;">
+                            <div class="p-3 bg-light">
+                                <h5 class="mb-0">Renewable energy statistics 2025</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-0">
+                            <img src="https://via.placeholder.com/300x400?text=IRENA+2025" alt="Renewable Capacity Statistics 2025" class="img-fluid rounded-top" style="height: 300px; object-fit: cover;">
+                            <div class="p-3 bg-light">
+                                <h5 class="mb-0">Renewable capacity statistics 2025</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-0">
+                            <img src="https://via.placeholder.com/300x400?text=IRENA+2024" alt="Off-grid Renewable Energy Statistics 2024" class="img-fluid rounded-top" style="height: 300px; object-fit: cover;">
+                            <div class="p-3 bg-light">
+                                <h5 class="mb-0">Off-grid Renewable Energy Statistics 2024</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-column">
+            <h3 class="footer-title">ITM essentials</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <ul class="footer-links">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Employment</a></li>
+                        <li><a href="#">Procurement</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="footer-links">
+                        <li><a href="#">Membership</a></li>
+                        <li><a href="#">Collaborative Frameworks</a></li>
+                        <li><a href="#">Partnerships</a></li>
+                        <li><a href="#">Country engagement</a></li>
+                    </ul>
+                </div>
+                    <div class="col-md-4">
+                        <ul class="footer-links">
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Publications</a></li>
+                            <li><a href="#">Education</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter e-mail address" />
+                    <button type="submit" class="newsletter-btn">GO</button>
+                </form>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-xing"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fas fa-rss"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <hr style="margin: 2rem 0;" />
+        <div class="row">
+            <div class="col-md-6">
+                <p class="copyright">
+                    © 2011–2025 IRENA – International Renewable Energy Agency. All Rights Reserved.<br>
+                    <a href="#" class="terms-link">Terms and conditions</a>
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p class="disclaimer">
+                    * The designations employed and the presentation of materials herein do not imply the expression of any opinion whatsoever on the part of the International Renewable Energy Agency concerning the legal status of any country, territory, city or area of its authorities, or concerning the delimitation of its frontiers or boundaries.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{% static 'assets/js/script.js' %}"></script>

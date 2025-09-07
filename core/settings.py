@@ -132,13 +132,13 @@ MODELTRANSLATION_FALLBACK_LANGUAGES = {'default':('en', 'uz'), 'uz':('en',), 'en
 MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'uz'
 
 MODELTRANSLATION_TRANSLATION_FILES = (
-    'apps.about.translations',
-    'apps.data.translations',
-    'apps.education.translations',
-    'apps.energy.translations',
-    'apps.events.translations',
-    'apps.news.translations',
-    'apps.publications.translations',
+    # 'apps.about.translations',
+    # 'apps.data.translations',
+    # 'apps.education.translations',
+    # 'apps.energy.translations',
+    # 'apps.events.translations',
+    # 'apps.news.translations',
+    # 'apps.publications.translations',
     'apps.home.translations',
 )
 
@@ -179,7 +179,7 @@ JAZZMIN_SETTINGS = {
     "site_brand": "ITM admin",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
-    "site_logo": "assets/image/itm.jpg",
+    "site_logo": "assets/img/itm.jpg",
 
     # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
     "login_logo": None,

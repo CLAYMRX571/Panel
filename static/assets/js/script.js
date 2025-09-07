@@ -177,3 +177,40 @@ document.addEventListener('DOMContentLoaded', function() {
     initPaperCarousel();
     initInfographicCarousel();
 });
+
+const slider = document.querySelector('.event-slider .row');
+const items = document.querySelectorAll('.event-item');
+const navBtns = document.querySelectorAll('.nav-btn');
+
+let currentIndex = 0;
+const visibleItems = 3;
+
+function showSlide(index) {
+const offset = index * (100 / visibleItems);
+slider.style.transform = `translateX(-${offset}%)`;
+}
+
+navBtns[0].addEventListener('click', () => {
+if (currentIndex > 0) {
+    currentIndex--;
+    showSlide(currentIndex);
+}
+});
+
+navBtns[1].addEventListener('click', () => {
+if (currentIndex < items.length - visibleItems) {
+    currentIndex++;
+    showSlide(currentIndex);
+}
+});
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+btn.addEventListener('click', () => {
+    btn.classList.toggle('active');
+    });
+});
+
+document.querySelector('.load-more button').addEventListener('click', function() {
+alert("Loading more events...");
+// Here you can add AJAX or dynamic loading logic
+});
