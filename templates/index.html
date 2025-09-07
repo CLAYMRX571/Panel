@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IRENA</title>
     <link rel="icon" href="{% static 'assets/img/itms.ico' %}" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2">
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom py-2">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="{% static 'assets/img/irena.png' %}" alt="IRENA Logo" height="40" class="me-2">
+        <a class="navbar-brand logo-container" href="#">
+            <img src="{% static 'assets/img/itm.jpg' %}" alt="" class="logo-img">
         </a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,7 +25,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         ENERGY TRANSITION
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
@@ -36,7 +37,7 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Languages</a>
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Languages</a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="{% url 'lan_switch_index' 'uz' %}">Uzbek</a></li>
                         <li><a class="dropdown-item" href="{% url 'lan_switch_index' 'en' %}">English</a></li>
@@ -45,13 +46,13 @@
                         <li><a class="dropdown-item" href="{% url 'lan_switch_index' 'tr' %}">Turkcha</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a class="nav-link text-dark" href="#">NEWS</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="#">PUBLICATIONS</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="#">EDUCATION</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="#">DATA</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="#">EVENTS</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">NEWS</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">PUBLICATIONS</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">EDUCATION</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">DATA</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">EVENTS</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> ABOUT </a>
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> ABOUT </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="#">About IRENA</a></li>
                         <li><a class="dropdown-item" href="#">Membership</a></li>
@@ -64,45 +65,41 @@
     </div>
 </nav>
 
-<section class="position-relative text-white" style="background-image: url('{% static 'assets/img/cost.png' %}'); background-size: cover; background-position: center; padding: 120px 0;">
-    <div class="container position-relative z-1">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <h1 class="display-5 fw-bold mb-4">91% of New Renewable Projects Now Cheaper Than Fossil Fuels Alternatives</h1>
-                <a href="#" class="btn btn-primary btn-lg px-5">Read more</a>
-            </div>
+<div class="tracking-banner">
+    <div class="container">
+        <div class="marquee-container">
+            <p class="marquee-text">Tracking Progress: Explore Energy Transition Indicators and Progress</p>
         </div>
     </div>
-    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
-</section>
+</div>
 
-<div class="container my-5">
-    <div class="row g-4">
-        {% for itm in home %}
-        <div class="col-lg-3 col-md-6" data-bs-toggle="modal" data-bs-target="#modal1">
-            <div class="border p-3 h-100 bg-light bg-opacity-10 rounded cursor-pointer">
-                <p class="text-uppercase text-muted small mb-2">{{ itm.name }}</p>
-                <h5 class="mb-0">{{ itm.desc }}</h5>
-            </div>
+<div class="container">
+    <div class="main-card">
+        <img src="{% static 'assets/img/cost.png' %}" alt="Renewable Energy Project" />
+        <div class="text-section">
+            <p style="font-size: 0.8rem; color: white">PRESS RELEASE</p>
+            <h2>91% of New Renewable Projects Now Cheaper Than Fossil Fuels Alternatives</h2>
+            <p>As global energy markets evolve, renewable technologies continue to outpace fossil fuels in cost-efficiency.</p>
+            <a href="" class="read-more">Read more</a>
         </div>
-        {% endfor %}
-        <div class="col-lg-3 col-md-6" data-bs-toggle="modal" data-bs-target="#modal2">
-            <div class="border p-3 h-100 bg-light bg-opacity-10 rounded cursor-pointer">
-                <p class="text-uppercase text-muted small mb-2">Press release</p>
-                <h5 class="mb-0">Renewables Boom Highlights Growing Regional Divide</h5>
-            </div>
+    </div>
+
+    <div class="press-releases-container">
+        <a class="press-item" onclick="showCard(0)">
+            <h3>Press release</h3>
+            <p>91% of New Renewable Projects Now Cheaper Than Fossil Fuels Alternatives</p>
+        </a>
+        <div class="press-item">
+            <h3>Press release</h3>
+            <p>Renewables Boom Highlights Growing Regional Divide</p>
         </div>
-        <div class="col-lg-3 col-md-6" data-bs-toggle="modal" data-bs-target="#modal3">
-            <div class="border p-3 h-100 bg-light bg-opacity-10 rounded cursor-pointer">
-                <p class="text-uppercase text-muted small mb-2">Press release</p>
-                <h5 class="mb-0">Energy Access Has Improved, Yet International Financial Support Still Needed</h5>
-            </div>
+        <div class="press-item">
+            <h3>Press release</h3>
+            <p>Energy Access Has Improved, Yet International Financial Support Still Needed to Boost Progress and Address Disparities</p>
         </div>
-        <div class="col-lg-3 col-md-6" data-bs-toggle="modal" data-bs-target="#modal4">
-            <div class="border p-3 h-100 bg-light bg-opacity-10 rounded cursor-pointer">
-                <p class="text-uppercase text-muted small mb-2">Mission</p>
-                <h5 class="mb-0">Supporting Countries in Their Transition to a Sustainable Future</h5>
-            </div>
+        <div class="press-item">
+            <h3>Mission</h3>
+            <p>Supporting Countries in Their Transition to a Sustainable Future</p>
         </div>
     </div>
 </div>
@@ -156,7 +153,7 @@
         <div class="row g-4">
             <div class="col-lg-6">
                 <div class="card h-100">
-                    <img src="{% static 'assets/img/irena.png' %}" class="card-img-top" alt="...">
+                    <img src="{% static '' %}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Six Principles to Ensure the Energy Transition Is in Harmony with Nature</h5>
                         <div class="d-flex align-items-center text-muted small mb-2">
@@ -367,7 +364,7 @@
     </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{% static 'assets/js/script.js' %}"></script>
 </body>
 </html>

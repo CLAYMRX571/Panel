@@ -1,3 +1,40 @@
+const progressBar = document.getElementById('progressBar');
+let progress = 0;
+
+function startCycle() {
+    progress = 0;
+    progressBar.style.width = '0%';
+
+    // Simulate progress from 0% to 100%
+    const interval = setInterval(() => {
+    progress += 1;
+    progressBar.style.width = `${progress}%`;
+
+    if (progress >= 100) {
+        clearInterval(interval);
+        setTimeout(() => {
+        alert("Progress completed! Restarting cycle...");
+        startCycle(); // Automatically restart the cycle
+        }, 1000);
+    }
+    }, 20); // Update every 20ms for smooth animation
+}
+
+// Auto-start on page load
+window.onload = () => {
+    setTimeout(() => {
+    startCycle();
+    }, 1000);
+};
+
+function openArticle(articleId) {
+    // Masalan, sahifani ochish yoki modal ochish
+    alert(`You clicked on: ${articleId}`);
+    
+    // Agar sahifaga o'tish kerak bo'lsa:
+    // window.location.href = `/${articleId}.html`;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log("Document loaded and ready.");
 

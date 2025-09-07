@@ -1,53 +1,70 @@
 :root {
-    --primary-blue: #1e4d72;
-    --secondary-blue: #2c5aa0;
-    --light-blue: #4a90e2;
-    --text-muted: #6c757d;
+  --primary-black: #000;
+  --accent-blue: #007bb5;
+  --text-light: #fff;
+  --text-gray: #ccc;
 }
-
-/* ========================================
-   GLOBAL STYLES — Bootstrap 5 ga mos
-======================================== */
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f8f9fa; /* Bootstrap 5 default */
-    color: #212529; /* Bootstrap text color */
-    min-height: 100vh;
-    padding-top: 72px; /* navbar balandligi uchun */
+    background-color: #f8f9fa;
+    color: #212529;
+    min-height: 200vh;
+    padding-top: none;
 }
 
 /* ========================================
-   NAVBAR — Bootstrap 5 ga moslashtirilgan
+    NAVBAR — IRENA dizayniga mos
 ======================================== */
 
 .navbar-custom {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background-color: white;
+    box-shadow: 0 0.15rem 1.75rem rgba(58, 59, 69, 0.15);
     padding: 0.5rem 0;
 }
 
-.navbar-brand img {
-    height: 50px;
-    transition: transform 0.3s ease;
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.navbar-brand:hover img {
-    transform: scale(1.05);
+.logo-img {
+    width: 60px;
+    height: auto;
+}
+
+.logo-text {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #495057;
+    margin: 0;
+}
+
+.subtext {
+    font-size: 0.8rem;
+    color: #007BFF;
+    margin-top: 2px;
+}
+
+.navbar-brand {
+    padding: 0;
+    margin-right: 3rem;
 }
 
 .navbar-nav .nav-link {
-    color: white !important;
+    color: #212529 !important;
     font-weight: 500;
-    padding: 0.5rem 1rem !important;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem !important;
     position: relative;
     margin: 0 0.25rem;
     transition: all 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #e8f4fd !important;
-    transform: translateY(-2px);
+    color: #0056b3 !important;
 }
 
 .navbar-nav .nav-link::after {
@@ -57,7 +74,7 @@ body {
     left: 50%;
     width: 0;
     height: 2px;
-    background: #e8f4fd;
+    background: #007BFF;
     transition: all 0.3s ease;
     transform: translateX(-50%);
 }
@@ -69,36 +86,279 @@ body {
 .dropdown-menu {
     background: white;
     border: none;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     padding: 0.5rem 0;
 }
 
 .dropdown-item {
     padding: 0.75rem 1.5rem;
-    color: var(--primary-blue);
+    color: #212529;
     transition: all 0.3s ease;
     font-weight: 500;
 }
 
 .dropdown-item:hover {
-    background: var(--light-blue);
-    color: white;
-    transform: translateX(5px);
-}
-
-.dropdown-item i {
-    margin-right: 0.5rem;
-    width: 20px;
+    background: #e3f2fd;
+    color: #0077b5;
 }
 
 .navbar-toggler {
-    border: 2px solid white;
+    border: 2px solid #212529;
     padding: 0.5rem 0.75rem;
 }
 
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(33, 37, 41, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-nav .nav-link {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+
+.press-releases-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.press-item {
+    flex: 1;
+    min-width: 200px;
+    border-top: 2px solid #007bb5;
+    padding-top: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.press-item:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.press-item h3 {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 0.3rem;
+}
+
+.press-item p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+/* Hover effekti */
+.press-item:hover h3,
+.press-item:hover p {
+    color: #fff;
+}
+
+/* ========================================
+    TRACKING PROGRESS BANNER
+======================================== */
+
+.tracking-banner {
+    background-color: black;
+    color: white;
+    padding: 0.3rem 0;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: right;
+}
+
+.tracking-banner p {
+    margin: 0;
+    padding-right: 1rem;
+}
+
+.bg-dark {
+    background-color: #002b5c !important;
+}
+
+.text-primary {
+    color: #0077b5 !important;
+}
+
+.text-muted {
+    color: #adb5bd !important;
+}
+
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    border-radius: 8px;
+}
+
+.marquee-text {
+    display: inline-block;
+    animation: marquee 15s linear infinite;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: right;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* ========================================
+                Bar
+======================================== */
+
+body {
+    background-image: url('../img/panels.png');
+}
+
+.main-card {
+    display: flex;
+    background-color: var(--primary-black);
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 1200px;
+    max-width: 90%;
+    margin: 2rem auto;
+    transition: transform 0.3s ease;
+}
+
+.main-card img {
+    width: 50%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.text-section {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+}
+
+.text-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.text-section p {
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.read-more {
+    text-decoration: underline;
+    color: var(--text-light);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.press-releases {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.progress-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 200px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--accent-blue);
+    transition: width 2s ease-in-out;
+}
+
+.cycle-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+@media (max-width: 1000px) {
+    .main-card {
+        flex-direction: column;
+    }
+    .main-card img {
+        width: 100%;
+        height: 300px;
+    }
+    .text-section {
+        width: 100%;
+        padding: 1.5rem;
+    }
+}
+
+/* ========================================
+    RESPONSIVE ADJUSTMENTS
+======================================== */
+@media (max-width: 991.98px) {
+    .navbar-brand {
+        margin-right: 1rem;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
+    .subtext {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .logo-img {
+        width: 50px;
+    }
+
+    .logo-text {
+        font-size: 1.25rem;
+    }
+
+    .subtext {
+        display: none;
+    }
+
+    .tracking-banner p {
+        font-size: 0.9rem;
+        padding-right: 0.5rem;
+    }
 }
 
 /* ========================================
@@ -308,7 +568,7 @@ body {
 
 .data-card:hover {
     transform: translateY(-5px);
-    background-color: #d0e8fc;
+    background-color: #cce5ff;
 }
 
 .data-title {
@@ -787,36 +1047,36 @@ footer {
 
 @media (max-width: 992px) {
     .event-slider .row {
-    flex-direction: column;
-    gap: 1rem;
+        flex-direction: column;
+        gap: 1rem;
     }
 
     .event-item {
-    border-right: none;
-    border-bottom: 1px solid #d1e7ff;
-    padding: 1rem 0;
+        border-right: none;
+        border-bottom: 1px solid #d1e7ff;
+        padding: 1rem 0;
     }
 
     .event-item:last-child {
-    border-bottom: none;
+        border-bottom: none;
     }
 
     .nav-controls {
-    right: 1rem;
+        right: 1rem;
     }
 }
 
 @media (max-width: 576px) {
     .event-slider {
-    padding: 1rem;
+        padding: 1rem;
     }
 
     .event-date {
-    font-size: 1.2rem;
+        font-size: 1.2rem;
     }
 
     .event-title {
-    font-size: 1rem;
+        font-size: 1rem;
     }
 }
 
@@ -972,25 +1232,25 @@ footer {
 
 @media (max-width: 992px) {
     .sidebar {
-    display: none;
+        display: none;
     }
 
     .main-content {
-    margin-left: 0;
+        margin-left: 0;
     }
 }
 
 @media (max-width: 576px) {
     .event-item {
-    padding: 1rem 0;
+        padding: 1rem 0;
     }
 
     .event-date {
-    font-size: 1.2rem;
+        font-size: 1.2rem;
     }
 
     .event-title {
-    font-size: 1rem;
+        font-size: 1rem;
     }
 }
 
@@ -1113,17 +1373,17 @@ footer {
 /* Responsive */
 @media (max-width: 992px) {
     .sidebar {
-    display: none;
+        display: none;
     }
 
     .main-content {
-    margin-left: 0;
+        margin-left: 0;
     }
 }
 
 @media (max-width: 768px) {
     .header h1 {
-    font-size: 2rem;
+        font-size: 2rem;
     }
 }
 
@@ -1186,13 +1446,13 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
     .report-card {
-    flex-direction: column;
-    gap: 1.5rem;
+        flex-direction: column;
+        gap: 1.5rem;
     }
 
     .report-image {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
+        width: 100%;
+        max-width: 250px;
+        height: auto;
     }
 }
