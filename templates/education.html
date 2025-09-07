@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IRENA">
+    <title>IRENA</title>
+    <link rel="icon" href="{% static 'assets/img/itms.ico' %}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+<body>
+
+<header class="bg-dark text-white p-3">
+    <div class="container d-flex align-items-center">
+        <img src="{% static 'assets/img/irena.png' %}" alt="IRENA Logo" class="me-3" height="50">
+        <nav class="ms-auto" role="navigation">
+        <ul class="nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown">Energy Transition</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-solar-panel"></i>Outlook</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-wind"></i>Partnerships</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-water"></i>Policy</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-fire"></i>Technology</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Socio economic impact</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Country engagement</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Project Facilitation</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Planning</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Innovation</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Finance & investment</a></li>
+                </ul>
+            </li>
+            <div class="nav-item dropdown">
+                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Languages </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a href="{% url 'lan_switch_products' 'uz' %}" class="dropdown-item">Uzbek</a></li>
+                    <li><a href="{% url 'lan_switch_products' 'en' %}" class="dropdown-item">English</a></li>
+                    <li><a href="{% url 'lan_switch_products' 'kz' %}" class="dropdown-item">Qozoqcha</a></li>
+                    <li><a href="{% url 'lan_switch_products' 'tj' %}" class="dropdown-item">Tojikcha</a></li>
+                    <li><a href="{% url 'lan_switch_products' 'tr' %}" class="dropdown-item">Turkcha</a></li>
+                </ul>
+            </div>
+            <li class="nav-item"><a class="nav-link text-white" href="#">News</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Publications</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Education</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Data</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Events</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">About</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">About IRENA</a></li>
+                    <li><a class="dropdown-item" href="#">Membership</a></li>
+                    <li><a class="dropdown-item" href="#">Director General</a></li>
+                    <li><a class="dropdown-item" href="#">Procurement</a></li>
+                    <li><a class="dropdown-item" href="#">Vision and Mission</a></li>
+                    <li><a class="dropdown-item" href="#">Official Documents</a></li>
+                    <li><a class="dropdown-item" href="#">Senior Management</a></li>
+                    <li><a class="dropdown-item" href="#">Working at IRENA</a></li>
+                </ul>
+            </li>
+        </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="page-header">
+    <div class="container">
+        <h1>Education</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Education</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<main class="container my-5">
+    <div class="mb-4">
+        <p class="text-muted">
+            Technical paper series are produced as a contribution to technical discussions and to disseminate new findings on relevant topics in the area of the author's expertise. This publication does not represent IRENA's official position or views on any topic. The findings, interpretations and conclusions expressed herein are those of the author(s). IRENA does not assume responsibility for the content of this work or the accuracy of the data included herein. Neither IRENA nor any of its officials, agents, data or other third-party content providers provides a warranty of any kind, either expressed or implied, and they accept no responsibility or liability for any consequence of use of the publication or material herein. The mention of specific companies, projects or products does not imply that they are endorsed or recommended, either by IRENA or the author(s). The designations employed and the presentation of material herein do not imply the expression of any opinion on the part of IRENA or the author(s) concerning the legal status of any region, country, territory, city or area of its authorities, or concerning the delimitation of frontiers or boundaries.
+        </p>
+    </div>
+
+    <div class="tabs">
+        <a href="#" class="nav-link active">Latest</a>
+        <a href="#" class="nav-link">Policy</a>
+        <a href="#" class="nav-link">Technology</a>
+        <a href="#" class="nav-link">Socio-economic impact</a>
+        <a href="#" class="nav-link">Finance & investment</a>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="paper-card">
+                <img src="https://via.placeholder.com/300x250?text=Renewable+Energy+Targets" class="paper-img" alt="Renewable energy targets in small island developing states" />
+                <div class="p-3">
+                    <h5 class="paper-title">Renewable energy targets in small island developing states</h5>
+                    <p class="paper-description">This technical paper presents a quantification of SIDS' renewable energy targets, both in their national energy pla...</p>
+                    <a href="#" class="view-btn">View</a>
+                    <div class="paper-meta">
+                        <span>November 2022</span>
+                        <span>Targets & NDCs</span>
+                        <span>English</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="paper-card">
+                <img src="https://via.placeholder.com/300x250?text=Marginal+Pricing" class="paper-img" alt="Potential Limitations of Marginal Pricing for a Power System Based on Renewables" />
+                <div class="p-3">
+                    <h5 class="paper-title">Potential Limitations of Marginal Pricing for a Power System Based on...</h5>
+                    <p class="paper-description">Marginal pricing wholesale power markets could produce significant barriers for the energy transition, and on their own do n...</p>
+                    <a href="#" class="view-btn">View</a>
+                    <div class="paper-meta">
+                        <span>September 2022</span>
+                        <span>Energy transition, Policy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="paper-card">
+                <img src="https://via.placeholder.com/300x250?text=Critical+Materials" class="paper-img" alt="Critical Materials For The Energy Transition: Rare Earth elements" />
+                <div class="p-3">
+                    <h5 class="paper-title">Critical Materials For The Energy Transition: Rare Earth elements</h5>
+                    <p class="paper-description">The technical paper on Critical Materials for the Energy Transition emphasises that an accelerated energy transition requires...</p>
+                    <a href="#" class="view-btn">View</a>
+                    <div class="paper-meta">
+                        <span>May 2022</span>
+                        <span>Energy transition, Critical materials, Technology</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="paper-card">
+                <img src="https://via.placeholder.com/300x250?text=Lithium" class="paper-img" alt="Critical Materials For The Energy Transition: Lithium" />
+                <div class="p-3">
+                    <h5 class="paper-title">Critical Materials For The Energy Transition: Lithium</h5>
+                    <p class="paper-description">This paper discusses the global lithium industry structure and major players while reflecting on current costs changes and...</p>
+                    <a href="#" class="view-btn">View</a>
+                    <div class="paper-meta">
+                        <span>January 2022</span>
+                        <span>Energy transition, Critical materials, Technology</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="paper-card">
+                    <img src="https://via.placeholder.com/300x250?text=Marginal+Pricing" class="paper-img" alt="Potential Limitations of Marginal Pricing for a Power System Based on Renewables" />
+                    <div class="p-3">
+                        <h5 class="paper-title">Potential Limitations of Marginal Pricing for a Power System Based on...</h5>
+                        <p class="paper-description">Marginal pricing wholesale power markets could produce significant barriers for the energy transition, and on their own do n...</p>
+                        <a href="#" class="view-btn">View</a>
+                        <div class="paper-meta">
+                            <span>September 2022</span>
+                            <span>Energy transition, Policy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="paper-card">
+                    <img src="https://via.placeholder.com/300x250?text=Energy+Subsidies" class="paper-img" alt="Energy subsidies: Evolution in the global energy transformation to 2050" />
+                    <div class="p-3">
+                        <h5 class="paper-title">Energy subsidies: Evolution in the global energy transformation to 2050</h5>
+                        <p class="paper-description">The energy sector lacks a standard definition of subsidies. This paper contributes to research on how subsidie...</p>
+                        <a href="#" class="view-btn">View</a>
+                        <div class="paper-meta">
+                            <span>April 2020</span>
+                            <span>Costs, Policy, Technology</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="paper-card">
+                    <img src="https://via.placeholder.com/300x250?text=Critical+Materials+Rare+Earth" class="paper-img" alt="Critical Materials For The Energy Transition: Rare Earth elements" />
+                    <div class="p-3">
+                        <h5 class="paper-title">Critical Materials For The Energy Transition: Rare Earth elements</h5>
+                        <p class="paper-description">The technical paper on Critical Materials for the Energy Transition emphasises that an accelerated energy transition requires...</p>
+                        <a href="#" class="view-btn">View</a>
+                        <div class="paper-meta">
+                            <span>May 2022</span>
+                            <span>Energy transition, Critical materials, Technology</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="paper-card">
+                    <img src="https://via.placeholder.com/300x250?text=Critical+Materials+Lithium" class="paper-img" alt="Critical Materials For The Energy Transition: Lithium" />
+                    <div class="p-3">
+                        <h5 class="paper-title">Critical Materials For The Energy Transition: Lithium</h5>
+                        <p class="paper-description">This paper discusses the global lithium industry structure and major players while reflecting on current costs changes and...</p>
+                        <a href="#" class="view-btn">View</a>
+                        <div class="paper-meta">
+                            <span>January 2022</span>
+                            <span>Energy transition, Critical materials, Technology</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-4">
+            <div class="col-md-6">
+                <div class="paper-card">
+                    <img src="https://via.placeholder.com/300x250?text=Measuring+Socio-economics" class="paper-img" alt="Measuring the socio-economics of transition: Focus on jobs" />
+                    <div class="p-3">
+                        <h5 class="paper-title">Measuring the socio-economics of transition: Focus on jobs</h5>
+                        <p class="paper-description">Well-crafted deployment, integrating and enabling policies could create millions of new jobs. This report outlines the evolvin...</p>
+                        <a href="#" class="view-btn">View</a>
+                        <div class="paper-meta">
+                            <span>August 2020</span>
+                            <span>Energy transition, Socio-economic impact</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-4">
+            <div class="col-md-6">
+                <div class="paper-card">
+                    <img src="https://via.placeholder.com/300x250?text=Renewable+Spring" class="paper-img" alt="The Renewable Spring: The interplay between finance and policy in the energy transition" />
+                    <div class="p-3">
+                        <h5 class="paper-title">The Renewable Spring: The interplay between finance and policy in the energy...</h5>
+                        <p class="paper-description">This paper presents a brief overview of technology revolutions and how they interact with financial markets.</p>
+                        <a href="#" class="view-btn">View</a>
+                        <div class="paper-meta">
+                            <span>October 2021</span>
+                            <span>Energy transition, Finance & investment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<main class="container my-5">
+    <div class="section-header">
+        <h2 class="section-title">Infographics</h2>
+        <div class="d-flex align-items-center gap-2">
+            <a href="#" class="view-more-btn">View more</a>
+            <button class="carousel-control prev" onclick="prevSlide()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-control next" onclick="nextSlide()">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <!-- Slide 1 -->
+        <div class="col-md-4 d-flex justify-content-center">
+            <div class="infographic-card">
+                <img src="https://via.placeholder.com/300x250?text=Enabling+Policy+Framework" class="infographic-img" alt="Enabling policy framework for a just and inclusive energy transition" />
+                <div class="p-3">
+                    <h5 class="infographic-title">Enabling policy framework for a just and inclusive energy transition</h5>
+                    <div class="infographic-actions">
+                        <a href="#" class="btn btn-download"><i class="fas fa-download"></i> Download</a>
+                        <a href="#" class="btn btn-zoom"><i class="fas fa-search-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 d-flex justify-content-center">
+            <div class="infographic-card">
+                <img src="https://via.placeholder.com/300x250?text=Reducing+Emissions" class="infographic-img" alt="Reducing emissions by 2050 through six technological avenues" />
+                <div class="p-3">
+                    <h5 class="infographic-title">Reducing emissions by 2050 through six technological avenues</h5>
+                    <div class="infographic-actions">
+                        <a href="#" class="btn btn-download"><i class="fas fa-download"></i> Download</a>
+                        <a href="#" class="btn btn-zoom"><i class="fas fa-search-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 d-flex justify-content-center">
+            <div class="infographic-card">
+                <img src="https://via.placeholder.com/300x250?text=Renewable+Energy+Jobs" class="infographic-img" alt="Renewable energy jobs will grow substantially by 2030" />
+                <div class="p-3">
+                    <h5 class="infographic-title">Renewable energy jobs will grow substantially by 2030</h5>
+                    <div class="infographic-actions">
+                        <a href="#" class="btn btn-download"><i class="fas fa-download"></i> Download</a>
+                        <a href="#" class="btn btn-zoom"><i class="fas fa-search-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<main class="container my-5">
+    <h2 class="section-title">Data and tools</h2>
+
+    <div class="row g-4 mt-4">
+        <div class="col-md-4">
+            <div class="data-card">
+                <h5 class="data-title">Query Tools</h5>
+                <p class="data-description">Tools for Statistical Data</p>
+                <a href="#" class="data-link">more</a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="data-card">
+                <h5 class="data-title">Flex Tool</h5>
+                <p class="data-description">Power system flexibility assessment</p>
+                <a href="#" class="data-link">more</a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="data-card">
+                <h5 class="data-title">SPLAT</h5>
+                <p class="data-description">System Planning Test capacity expansion models</p>
+                <a href="#" class="data-link">more</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-column">
+            <h3 class="footer-title">ITM essentials</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <ul class="footer-links">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Employment</a></li>
+                        <li><a href="#">Procurement</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="footer-links">
+                        <li><a href="#">Membership</a></li>
+                        <li><a href="#">Collaborative Frameworks</a></li>
+                        <li><a href="#">Partnerships</a></li>
+                        <li><a href="#">Country engagement</a></li>
+                    </ul>
+                </div>
+                    <div class="col-md-4">
+                        <ul class="footer-links">
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Publications</a></li>
+                            <li><a href="#">Education</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter e-mail address" />
+                    <button type="submit" class="newsletter-btn">GO</button>
+                </form>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-xing"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fas fa-rss"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <hr style="margin: 2rem 0;" />
+        <div class="row">
+            <div class="col-md-6">
+                <p class="copyright">
+                    © 2011–2025 IRENA – International Renewable Energy Agency. All Rights Reserved.<br>
+                    <a href="#" class="terms-link">Terms and conditions</a>
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p class="disclaimer">
+                    * The designations employed and the presentation of materials herein do not imply the expression of any opinion whatsoever on the part of the International Renewable Energy Agency concerning the legal status of any country, territory, city or area of its authorities, or concerning the delimitation of its frontiers or boundaries.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'assets/js/script.js' %}"></script>
+</body>
+</html>

@@ -107,3 +107,35 @@ document.addEventListener('DOMContentLoaded', function() {
     // darkModeMediaQuery.addEventListener('change', handleDarkModeChange);
     // handleDarkModeChange(darkModeMediaQuery); // Dastlabki holat
 });
+
+let currentSlide = 0;
+const slides = document.querySelectorAll('.col-md-4');
+const totalSlides = slides.length;
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateCarousel();
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+}
+
+function updateCarousel() {
+    // Hide all slides
+    slides.forEach(slide => slide.style.display = 'none');
+    // Show current slide
+    slides[currentSlide].style.display = 'flex';
+}
+
+// Initialize carousel
+updateCarousel();
+
+function prevSlide() {
+    alert('Prev clicked');
+}
+
+function nextSlide() {
+    alert('Next clicked');
+}
