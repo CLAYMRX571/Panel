@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // UX uchun toast message (alert emas)
+            // UX uchun toast message
             const toast = document.createElement('div');
             toast.textContent = `Obuna uchun rahmat: ${email}`;
             toast.style.cssText = `
@@ -36,15 +36,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 z-index: 10000;
                 box-shadow: 0 4px 12px rgba(0,0,0,0.15);
                 font-family: sans-serif;
+                opacity: 1;
+                transition: opacity 0.5s ease;
             `;
             document.body.appendChild(toast);
             setTimeout(() => {
                 toast.style.opacity = '0';
-                toast.style.transition = 'opacity 0.5s ease';
                 setTimeout(() => toast.remove(), 500);
             }, 3000);
 
-            form.reset(); // Formani tozalash
+            form.reset();
         });
     }
 
@@ -53,27 +54,26 @@ document.addEventListener('DOMContentLoaded', function() {
     let debounceTimer;
 
     if (searchInput) {
-        // Enter bilan qidirish
         searchInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 performSearch();
             }
         });
 
-        // Real-time qidirish (debounce bilan)
         searchInput.addEventListener('input', function(e) {
             const searchTerm = e.target.value.trim();
             clearTimeout(debounceTimer);
             if (searchTerm.length > 2) {
                 debounceTimer = setTimeout(() => {
                     console.log('Debounced search:', searchTerm);
-                    // Bu yerga API chaqiruv yoki filter qilish kodi keladi
+                    // API chaqiruv yoki filtr kodi shu yerga
                 }, 300);
             }
         });
     }
 
     function performSearch() {
+        const searchInput = document.getElementById('countrySearch');
         if (!searchInput) return;
 
         const searchTerm = searchInput.value.trim();
@@ -95,47 +95,85 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ========== DARK MODE — Agar CSS da .dark yo'q bo'lsa, bu qismni OLIB TASHLANG ==========
-    // const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    // function handleDarkModeChange(e) {
-    //     if (e.matches) {
-    //         document.documentElement.classList.add('dark');
-    //     } else {
-    //         document.documentElement.classList.remove('dark');
-    //     }
-    // }
-    // darkModeMediaQuery.addEventListener('change', handleDarkModeChange);
-    // handleDarkModeChange(darkModeMediaQuery); // Dastlabki holat
+    // ========== DARK MODE — IZOHDA QOLDIRILGAN — AGAR KERAK BO‘LSA OCHING ==========
+    /*
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    function handleDarkModeChange(e) {
+        if (e.matches) {
+            document.body.classList.add('dark');
+        } else {
+            document.body.classList.remove('dark');
+        }
+    }
+    darkModeMediaQuery.addEventListener('change', handleDarkModeChange);
+    handleDarkModeChange(darkModeMediaQuery);
+    */
 });
 
-let currentSlide = 0;
-const slides = document.querySelectorAll('.col-md-4');
-const totalSlides = slides.length;
+// ========== CAROUSEL (TECHNICAL PAPERS) ==========
+let currentPaperSlide = 0;
+let paperSlides = [];
 
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    updateCarousel();
+function initPaperCarousel() {
+    paperSlides = document.querySelectorAll('.paper-card');
+    if (paperSlides.length > 0) {
+        showPaperSlide(currentPaperSlide);
+    }
 }
 
-function prevSlide() {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    updateCarousel();
+function showPaperSlide(index) {
+    paperSlides.forEach((slide, i) => {
+        slide.style.opacity = i === index ? '1' : '0';
+        slide.style.visibility = i === index ? 'visible' : 'hidden';
+        slide.style.transform = i === index ? 'scale(1)' : 'scale(0.95)';
+    });
 }
 
-function updateCarousel() {
-    // Hide all slides
-    slides.forEach(slide => slide.style.display = 'none');
-    // Show current slide
-    slides[currentSlide].style.display = 'flex';
+function nextPaperSlide() {
+    if (paperSlides.length === 0) return;
+    currentPaperSlide = (currentPaperSlide + 1) % paperSlides.length;
+    showPaperSlide(currentPaperSlide);
 }
 
-// Initialize carousel
-updateCarousel();
-
-function prevSlide() {
-    alert('Prev clicked');
+function prevPaperSlide() {
+    if (paperSlides.length === 0) return;
+    currentPaperSlide = (currentPaperSlide - 1 + paperSlides.length) % paperSlides.length;
+    showPaperSlide(currentPaperSlide);
 }
 
-function nextSlide() {
-    alert('Next clicked');
+// ========== CAROUSEL (INFOGRAPHICS) ==========
+let currentInfographicSlide = 0;
+let infographicSlides = [];
+
+function initInfographicCarousel() {
+    infographicSlides = document.querySelectorAll('.infographic-card');
+    if (infographicSlides.length > 0) {
+        showInfographicSlide(currentInfographicSlide);
+    }
 }
+
+function showInfographicSlide(index) {
+    infographicSlides.forEach((slide, i) => {
+        slide.style.opacity = i === index ? '1' : '0';
+        slide.style.visibility = i === index ? 'visible' : 'hidden';
+        slide.style.transform = i === index ? 'scale(1)' : 'scale(0.95)';
+    });
+}
+
+function nextInfographicSlide() {
+    if (infographicSlides.length === 0) return;
+    currentInfographicSlide = (currentInfographicSlide + 1) % infographicSlides.length;
+    showInfographicSlide(currentInfographicSlide);
+}
+
+function prevInfographicSlide() {
+    if (infographicSlides.length === 0) return;
+    currentInfographicSlide = (currentInfographicSlide - 1 + infographicSlides.length) % infographicSlides.length;
+    showInfographicSlide(currentInfographicSlide);
+}
+
+// ========== INITIALIZE CAROUSELS ==========
+document.addEventListener('DOMContentLoaded', function() {
+    initPaperCarousel();
+    initInfographicCarousel();
+});
