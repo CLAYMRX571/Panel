@@ -4,67 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IRENA">
     <title>IRENA</title>
     <link rel="icon" href="{% static 'assets/img/itms.ico' %}" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 </head>
 <body>
 
-<header class="bg-dark text-white p-3">
-    <div class="container d-flex align-items-center">
-        <img src="{% static 'assets/img/irena.png' %}" alt="IRENA Logo" class="me-3" height="50">
-        <nav class="ms-auto" role="navigation">
-        <ul class="nav">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown">Energy Transition</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-solar-panel"></i>Outlook</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-wind"></i>Partnerships</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-water"></i>Policy</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-fire"></i>Technology</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Socio economic impact</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Country engagement</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Project Facilitation</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Planning</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Innovation</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fas fa-chart-line"></i>Finance & investment</a></li>
-                </ul>
-            </li>
-            <div class="nav-item dropdown">
-                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Languages </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a href="{% url 'lan_switch_products' 'uz' %}" class="dropdown-item">Uzbek</a></li>
-                    <li><a href="{% url 'lan_switch_products' 'en' %}" class="dropdown-item">English</a></li>
-                    <li><a href="{% url 'lan_switch_products' 'kz' %}" class="dropdown-item">Qozoqcha</a></li>
-                    <li><a href="{% url 'lan_switch_products' 'tj' %}" class="dropdown-item">Tojikcha</a></li>
-                    <li><a href="{% url 'lan_switch_products' 'tr' %}" class="dropdown-item">Turkcha</a></li>
-                </ul>
-            </div>
-            <li class="nav-item"><a class="nav-link text-white" href="#">News</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#">Publications</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#">Education</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#">Data</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#">Events</a></li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">About</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">About IRENA</a></li>
-                    <li><a class="dropdown-item" href="#">Membership</a></li>
-                    <li><a class="dropdown-item" href="#">Director General</a></li>
-                    <li><a class="dropdown-item" href="#">Procurement</a></li>
-                    <li><a class="dropdown-item" href="#">Vision and Mission</a></li>
-                    <li><a class="dropdown-item" href="#">Official Documents</a></li>
-                    <li><a class="dropdown-item" href="#">Senior Management</a></li>
-                    <li><a class="dropdown-item" href="#">Working at IRENA</a></li>
-                </ul>
-            </li>
-        </ul>
-        </nav>
+<!-- Navbar -->
+<header class="navbar">
+    <div class="logo">
+        <a href="{% url 'index' %}">
+            <img src="{% static 'assets/img/itm.jpg' %}" alt="ITM Logo">
+        </a>
     </div>
+
+    <ul>
+        <li>
+            <a>ENERGY TRANSITION</a>
+            <div class="mega-menu1">
+                <div class="container">
+                    <div class="content1">
+                        <a href="#">OUTLOOK</a>
+                        <a href="#">COUNTRY ENGAGEMENT</a>
+                        <a href="#">PARTNERSHIPS</a>
+                        <a href="#">PROJECT FACILITATION</a>
+                        <a href="#">PLANNING</a>
+                        <a href="#">POLICY</a>
+                        <a href="#">TECHNOLOGY</a>
+                        <a href="#">INNOVATION</a>
+                        <a href="#">SOCIO-ECONOMIC IMPACT</a>
+                        <a href="#">FINANCE & INVESTMENT</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <a>ABOUT</a>
+            <div class="mega-menu3">
+                <div class="content3">
+                    <a href="#">OUTLOOK</a>
+                    <a href="#">COUNTRY ENGAGEMENT</a>
+                    <a href="#">PARTNERSHIPS</a>
+                    <a href="#">PROJECT FACILITATION</a>
+                    <a href="#">PLANNING</a>
+                    <a href="#">POLICY</a>
+                    <a href="#">TECHNOLOGY</a>
+                    <a href="#">INNOVATION</a>
+                    <a href="#">SOCIO-ECONOMIC IMPACT</a>
+                    <a href="#">FINANCE & INVESTMENT</a>
+                </div>
+            </div>
+        </li>
+        <li>    
+            <a>LANGUAGES</a>
+            <div class="mega-menu2">
+                <div class="content2">
+                    <a href="#">UZBEK</a>
+                    <a href="#">ENGLISH</a>
+                    <a href="#">TURKCHA</a>
+                    <a href="#">QOZOQCHA</a>
+                    <a href="#">TOJIKCHA</a>
+                </div>
+            </div>
+        </li>
+        <li><a href="#">NEWS</a></li>
+        <li><a href="#">EDUCATION</a></li>
+        <li><a href="#">DATA</a></li>
+        <li><a href="#">EVENTS</a></li>
+    </ul>
 </header>
 
 <section class="page-header">
