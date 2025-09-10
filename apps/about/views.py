@@ -10,5 +10,5 @@ def AboutViews(request):
 
     return render(request, 'about.html', context)
 
-def lan_switch(request, lan):
+def lan_switch_about(request, lan):
     return redirect(f'/{lan}/about/')

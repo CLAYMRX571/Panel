@@ -20,12 +20,12 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from apps.home.views import Homeviews, lan_switch
-from apps.about.views import AboutViews, lan_switch
+from apps.about.views import AboutViews, lan_switch_about
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
-    path('lan/index/<str:lan>/', lan_switch, name='lan_switch_index'),
-    path('lan/about/<str:lan>/', lan_switch, name='lan_switch_about'),
+    path('lan/<str:lan>/', lan_switch, name='lan_switch'),
+    path('lan/about/<str:lan>/', lan_switch_about, name='lan_switch_about'),
 ]
 
 urlpatterns += i18n_patterns(
