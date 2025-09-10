@@ -128,3 +128,29 @@ document.addEventListener("DOMContentLoaded", function () {
     backgroundMap.classList.toggle("active");
   });
 });
+
+// Login tugmasini bosganda ichidagi newsni ko‘rsatish
+ document.getElementById("login-btn").addEventListener("click", function (e) {
+  e.preventDefault();
+  let latestNews = document.getElementById("latest-news");
+  latestNews.classList.toggle("show");
+});
+
+const allBtn = document.getElementById("all-users-btn");
+const membersBtn = document.getElementById("members-btn");
+const allSection = document.getElementById("all-users-section");
+const membersSection = document.getElementById("members-section");
+
+allBtn.addEventListener("click", () => {
+  allSection.classList.remove("hidden");
+  membersSection.classList.add("hidden");
+  allBtn.classList.add("active");
+  membersBtn.classList.remove("active");
+});
+
+membersBtn.addEventListener("click", () => {
+  membersSection.classList.remove("hidden");
+  allSection.classList.add("hidden");
+  membersBtn.classList.add("active");
+  allBtn.classList.remove("active");
+});
