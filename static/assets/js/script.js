@@ -129,28 +129,62 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Login tugmasini bosganda ichidagi newsni ko‘rsatish
- document.getElementById("login-btn").addEventListener("click", function (e) {
-  e.preventDefault();
-  let latestNews = document.getElementById("latest-news");
-  latestNews.classList.toggle("show");
+document.getElementById("members-btn").addEventListener("click", function() {
+  document.getElementById("all-users-section").classList.add("hidden");
+  document.getElementById("members-section").classList.remove("hidden");
+  this.classList.add("active");
+  document.getElementById("all-users-btn").classList.remove("active");
 });
 
-const allBtn = document.getElementById("all-users-btn");
-const membersBtn = document.getElementById("members-btn");
-const allSection = document.getElementById("all-users-section");
-const membersSection = document.getElementById("members-section");
-
-allBtn.addEventListener("click", () => {
-  allSection.classList.remove("hidden");
-  membersSection.classList.add("hidden");
-  allBtn.classList.add("active");
-  membersBtn.classList.remove("active");
+document.getElementById("all-users-btn").addEventListener("click", function() {
+  document.getElementById("all-users-section").classList.remove("hidden");
+  document.getElementById("members-section").classList.add("hidden");
+  this.classList.add("active");
+  document.getElementById("members-btn").classList.remove("active");
 });
 
-membersBtn.addEventListener("click", () => {
-  membersSection.classList.remove("hidden");
-  allSection.classList.add("hidden");
-  membersBtn.classList.add("active");
-  allBtn.classList.remove("active");
+document.getElementById("read-more-btn").addEventListener("click", function() {
+  const extraSection = document.getElementById("extra-section");
+  const newBox = document.createElement("div");
+  newBox.classList.add("extra-box");
+  newBox.innerHTML = `
+    <h3>More Information</h3>
+    <p>
+      The crisis has exposed deeply embedded vulnerabilities in current energy systems. 
+      Governments now have the opportunity to accelerate the transition towards a cleaner, more sustainable future.
+    </p>
+    <p>
+      By investing in renewables and sustainable infrastructure, countries can create new jobs, 
+      enhance energy security, and reduce environmental impact.
+    </p>
+  `;
+  extraSection.appendChild(newBox);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector(".email-form");
+
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // sahifa yangilanmasin
+      const email = this.querySelector("input").value.trim();
+      if (email) {
+        alert("Thanks for subscribing: " + email);
+        this.reset(); // inputni tozalash
+      } else {
+        alert("Please enter a valid email address!");
+      }
+    });
+  }
+
+  // Social icons uchun click hodisa
+  const socials = document.querySelectorAll(".social-icons a");
+  socials.forEach((icon, index) => {
+    icon.addEventListener("click", (e) => {
+      e.preventDefault();
+      alert("Opening social link #" + (index + 1));
+      // yoki shu yerda yangi oynada ochirish mumkin:
+      // window.open(icon.href, "_blank");
+    });
+  });
 });

@@ -1,3 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import About
 
-# Create your views here.
+def AboutViews(request):
+    about = About.objects.all()  
+
+    context = {
+        'about': about,
+    }
+
+    return render(request, 'about.html', context)
+
+def lan_switch(request, lan):
+    return redirect(f'/{lan}/about/')

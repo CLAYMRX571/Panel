@@ -42,7 +42,7 @@
             <a>ABOUT</a>
             <div class="mega-menu3">
                 <div class="content3">
-                    <a href="#">ABOUT</a>
+                    <a href="{% url 'about' %}">ABOUT</a>
                     <a href="#">MEMBERSHIP</a>
                     <a href="#">DIRECTOR-GENERAL</a>
                     <a href="#">PROCUREMENT</a>
@@ -140,164 +140,96 @@
 <div class="container">
     <header>
         <h1>Latest news</h1>
-        <nav class="nav-links">
-            <a href="" class="active" id="all-users-btn">All users</a>
-            <a href="" id="members-btn">Members</a>
-        </nav>
         <a href="#" class="browse-link">Browse all news</a>
     </header>
 
-    <section class="news-grid" id="all-users-section">
-        <article class="news-card article1">
-            <img src="{% static 'assets/img/cost.jpg' %}" alt="Six Principles to Ensure the Energy Transition Is in Harmony with Nature" />
-            <div class="news-content">
-                <h2 class="news-title">Six Principles to Ensure the Energy Transition Is in Harmony with Nature</h2>
-                <div class="news-meta" style="display: flex; justify-content: center;">
-                    <span>3 September 2025 </span>
-                    <a href="">Expert Insights</a>
-                </div>
-                <p class="news-excert">
-                Six principles, built on existing good practices and guidelines, can be used to guide nature-positive siting and permitting of solar, wind, and grid infrastructure.
-                </p>
-            </div>
-        </article>
+    <section class="news-grid">
+        <div class="news-item">
+            <img src="{% static 'assets/img/cost.jpg' %}" alt="Energy Transition" />
+            <h2>Six Principles to Ensure the Energy Transition Is in Harmony with Nature</h2>
+            <div class="meta">3 September 2025 • <a href="#">Expert Insights</a></div>
+            <p>Six principles, built on existing good practices and guidelines, can be used to guide 
+            nature-positive siting and permitting of solar, wind, and grid infrastructure.</p>
+        </div>
 
-        <article class="news-card article2">
-            <img src="{% static 'assets/img/panels.png' %}" alt="The Rise of Solar PV and Battery Storage's Prominence in Emerging Markets" />
-            <div class="news-content">
-                <h2 class="news-title">The Rise of Solar PV and Battery Storage's Prominence in Emerging Markets</h2>
-                <div class="news-meta" style="display: flex; justify-content: center;">
-                    <span>28 August 2025</span>
-                    <a href="#">Expert Insights</a>
-                </div>
-               <p class="news-excert">Six principles, built on existing good practices and guidelines, can be used to guide nature-positive siting and permitting of solar, wind, and grid infrastructure.</p>
-            </div>
-        </article>
-
-        <article class="news-card article3" id="members-news">
-            <img src="{% static 'assets/img/cost.jpg' %}" alt="Battery Energy Storage Systems: Key to Renewable Power Supply-Demand Gaps" />
-            <div class="news-content">
-                <h2 class="news-title">Battery Energy Storage Systems: Key to Renewable Power Supply-Demand Gaps</h2>
-                <div class="news-meta" style="display: flex; justify-content: center;">
-                    <span>27 August 2025</span>
-                    <a href="#">Articles</a>
-                </div>
-                <p class="news-excert">Six principles, built on existing good practices and guidelines, can be used to guide nature-positive siting and permitting of solar, wind, and grid infrastructure.</p>
-            </div>
-        </article>
-
-        <aside class="sidebar">
-            <img src="{% static 'assets/img/cost.jpg' %}" alt="Delivering on the UAE Consensus" style="width: 100%; height: auto; margin-bottom: 15px;" />
+        <div class="news-item focus">
+            <img src="{% static 'assets/img/cost.jpg' %}" alt="Delivering" />
             <h3>FOCUS ON</h3>
             <p><strong>Delivering on the UAE Consensus: Tracking progress toward tripling renewable energy capacity and doubling energy efficiency by 2030</strong></p>
             <a href="#">Read more</a>
-        </aside>
+        </div>
 
-        <section class="see-also">
-            <h3>See also</h3>
-            <a href="#">#press releases</a> <br>
-            <a href="#">#articles</a><br>
-            <a href="#">#expert insights</a>
-        </section>
+        <div class="news-item">
+            <img src="{% static 'assets/img/panels.png' %}" alt="Solar PV" />
+            <h2>The Rise of Solar PV and Battery Storage's Prominence in Emerging Markets</h2>
+            <div class="meta">28 August 2025 • <a href="#">Expert Insights</a></div>
+            <p>Six principles, built on existing good practices and guidelines, can be used to guide nature-positive siting and permitting of solar, wind, and grid infrastructure.</p>
+        </div>
     </section>
-
-    <section id="members-section" class="hidden">
-        <div class="news-card-large">
-            <img src="https://via.placeholder.com/600x400?text=Solar+Panel+in+Nature" alt="Six Principles to Ensure the Energy Transition Is in Harmony with Nature" />
-            <div class="news-content-large">
-                <h2 class="news-title-large">Six Principles to Ensure the Energy Transition Is in Harmony with Nature</h2>
-            <div class="news-meta-large">
-                <span>3 September 2025</span>
-                <a href="#">Expert Insights</a>
-            </div>
-            <p class="news-excert">
-                Six principles, built on existing good practices and guidelines, can be used to guide nature-positive siting and permitting of solar, wind, and grid infrastructure.
-            </p>
-        </div>
-    </div>
-
-    <div class="news-card-small">
-        <img src="https://via.placeholder.com/400x250?text=Engineer+on+Solar+Panel" alt="Renewable Pathway More Cost-effective than Fossil Fuels in Indonesia" />
-        <div class="news-content-small">
-            <h3 class="news-title-small">Renewable Pathway More Cost-effective than Fossil Fuels in Indonesia</h3>
-            <p class="news-date">22 October</p>
-            <p class="news-date">Articles</p>
-        </div>
-    </div>
-
-    <div class="member-login">
-        <h3>Member Login</h3>
-        <div class="icon">👤</div>
-            <p>For more news, log into your Member's Account</p>
-            <a href="#">Log in to your account</a>
-        </div>
-    </div>
-
-    <div class="latest-news-list" id="latest-news">
-        <h2>Latest news <a href="#">Browse all</a></h2>
-        <div class="news-item">
-            <div class="date">3 September</div>
-            <div class="title">Six Principles to Ensure the Energy Transition Is in Harmony with Nature</div>
-        </div>
-        <div class="news-item">
-            <div class="date">28 August</div>
-            <div class="title">The Rise of Solar PV and Battery Storage's Prominence in Emerging Markets</div>
-        </div>
-        <div class="news-item">
-            <div class="date">27 August</div>
-            <div class="title">Battery Energy Storage Systems: Key to Renewable Power Supply-Demand Gaps</div>
-        </div>
-    </div>
 </div>
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-left">
-            <h2>ITM MCHJ</h2>
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Employment</a></li>
-                <li><a href="#">Procurement</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Membership</a></li>
-                <li><a href="#">Collaborative Frameworks</a></li>
-                <li><a href="#">Partnerships</a></li>
-                <li><a href="#">Country engagement</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">Publications</a></li>
-                <li><a href="#">Education</a></li>
-            </ul>
+<section class="newsletter-container">
+    <div class="newsletter-content">
+        <div class="newsletter-left">
+            <h2 class="newsletter-title">Stay up to date</h2>
+            <p class="newsletter-subtitle">Subscribe to the newsletter</p>
+            <button class="newsletter-button">Subscribe Now</button>
         </div>
 
-        <div class="footer-right">
-            <h2>Newsletter</h2>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Enter e-mail address" required />
-                <button type="submit">Subscribe</button>
-            </form>
-            <div class="social-icons">
-                <a href="#" title="Facebook">f</a>
-                <a href="#" title="X (Twitter)">X</a>
-                <a href="#" title="YouTube">▶</a>
-                <a href="#" title="Instagram">📷</a>
-                <a href="#" title="Telegram">💬</a>
-                <a href="#" title="LinkedIn">in</a>
+        <div class="newsletter-right">
+            Stories you might have missed, key data and upcoming events information 
+            straight into your mailbox.
+        </div>
+    </div>
+</section>
+
+<section class="footer-section">
+    <div class="footer">
+        <div class="essentials">
+            <div>
+                <h3>IRENA essentials</h3>
+                <ul>
+                    <li><a href="#">About IRENA</a></li>
+                    <li><a href="#">Employment</a></li>
+                    <li><a href="#">Procurement</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#">Membership</a></li>
+                    <li><a href="#">Collaborative Frameworks</a></li>
+                    <li><a href="#">Partnerships</a></li>
+                    <li><a href="#">Country engagement</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Publications</a></li>
+                    <li><a href="#">Education</a></li>
+                </ul>
             </div>
         </div>
-    </div>
 
-    <div class="footer-bottom">
-        <div>
-            © 2025 ITM MCHJ<br>
-            <a href="{% url 'index' %}">Terms and conditions</a>
+        <div class="social-links">
+            <a href="https://www.itm-llc.uz/uz/home/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/281/281764.png" alt="Google">
+            </a>
+            <a href="https://www.youtube.com/watch?v=JlDJVOnEM8o" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+            </a>
+            <a href="https://t.me/ITMRasmiy" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+            </a>
         </div>
-        <div>
-            The designations employed and the presentation of materials herein do not imply the expression of any opinion whatsoever on the part of the International Renewable Energy Agency concerning the legal status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries.
+
+        <div class="copyright">
+            <p>2025 ITM MCHJ</p>
         </div>
     </div>
-</footer>
+</section>
 
 <script src="{% static 'assets/js/script.js' %}"></script>
 </body>

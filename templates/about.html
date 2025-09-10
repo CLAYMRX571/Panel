@@ -42,16 +42,14 @@
             <a>ABOUT</a>
             <div class="mega-menu3">
                 <div class="content3">
-                    <a href="#">OUTLOOK</a>
-                    <a href="#">COUNTRY ENGAGEMENT</a>
-                    <a href="#">PARTNERSHIPS</a>
-                    <a href="#">PROJECT FACILITATION</a>
-                    <a href="#">PLANNING</a>
-                    <a href="#">POLICY</a>
-                    <a href="#">TECHNOLOGY</a>
-                    <a href="#">INNOVATION</a>
-                    <a href="#">SOCIO-ECONOMIC IMPACT</a>
-                    <a href="#">FINANCE & INVESTMENT</a>
+                    <a href="{% url 'about' %}">ABOUT</a>
+                    <a href="#">MEMBERSHIP</a>
+                    <a href="#">DIRECTOR-GENERAL</a>
+                    <a href="#">PROCUREMENT</a>
+                    <a href="#">VISION & MISSION </a>
+                    <a href="#">DOCUMENT</a>
+                    <a href="#">MANAGEMENT</a>
+                    <a href="#">WORKING AT ITM</a>
                 </div>
             </div>
         </li>
@@ -74,102 +72,77 @@
     </ul>
 </header>
 
-<div class="main-content">
-    <div class="header">
-        <div class="container">
-            <div class="btn-group">
-                <button class="btn"><i class="fas fa-share-alt"></i></button>
-                <button class="btn"><i class="fas fa-folder-plus"></i></button>
-            </div>
-            <h1>About</h1>
+<div class="container">
+    <h1 style="text-align: center;">About ITM</h1>
+    <p>
+        The International Renewable Energy Agency (IRENA) is a lead global intergovernmental agency for energy transformation that serves as the principal platform for international cooperation, supports countries in their energy transitions, and provides state of the art data and analyses on technology, innovation, policy, finance and investment. IRENA drives the widespread adoption and sustainable use of all forms of renewable energy, including bioenergy, geothermal, hydropower, ocean, solar and wind energy in the pursuit of sustainable development, energy access, and energy security, for economic and social resilience and prosperity and a climate-proof future.
+    </p>
+    <p>
+        IRENA's membership comprises 169 countries and the EU. Together, they decide on the Agency’s strategic direction and programmatic activities, in line with the global energy discourse and priorities to accelerate the deployment of renewables-based energy transitions worldwide.
+    </p>
+    <div class="report-section">
+        <div class="report-image">
+            <img src="{% static 'assets/img/cost.jpg' %}" alt="IRENA Annual Report 2024-2025" />
         </div>
-    </div>
-
-    <div class="container">
-        <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">About</li>
-        </ol>
-        </nav>
-    </div>
-
-
-    <div class="container">
-        <div class="section-title">About IRENA</div>
-        <div class="section-content">
-            <p>The International Renewable Energy Agency (IRENA) is a lead global intergovernmental agency for energy transformation that serves as the principal platform for international cooperation, supports countries in their energy transitions, and provides state of the art data and analyses on technology, innovation, policy, finance and investment. IRENA drives the widespread adoption and sustainable use of all forms of renewable energy, including bioenergy, geothermal, hydropower, ocean, solar and wind energy in the pursuit of sustainable development, energy access, and energy security, for economic and social resilience and prosperity and a climate-proof future.</p>
-            
-            <p>IRENA's membership comprises 169 countries and the EU. Together, they decide on the Agency's strategic direction and programmatic activities, in line with the global energy discourse and priorities to accelerate the deployment of renewables-based energy transitions worldwide.</p>
-        </div>
-    </div>
-</div>
-
-<div class="container report-container">
-    <div class="row report-card">
-        <div class="col-md-3">
-            <img src="https://via.placeholder.com/250x350?text=IRENA+Annual+Report" alt="Annual Report Cover" class="report-image">
-        </div>
-
-        <div class="col-md-9 report-content">
-            <h2 class="report-title">
+        <div class="report-content">
+            <h2>
                 Annual report of the Director-General on the implementation of the Work Programme and Budget for 2024-2025
             </h2>
-            <p class="report-desc">
+            <p>
                 This Annual Report presents an overview of the programmatic activities IRENA has undertaken since January 2023, reaffirming the Agency's position as a centre of excellence, a repository of policy, technology and financial knowledge, and the principal platform for international co-operation on renewable energy.
             </p>
-            <button class="btn read-more-btn">Read more</button>
+            <a href="">Read more</a>
         </div>
     </div>
 </div>
 
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-left">
-            <h2>ITM MCHJ</h2>
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Employment</a></li>
-                <li><a href="#">Procurement</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Membership</a></li>
-                <li><a href="#">Collaborative Frameworks</a></li>
-                <li><a href="#">Partnerships</a></li>
-                <li><a href="#">Country engagement</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">Publications</a></li>
-                <li><a href="#">Education</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-right">
-            <h2>Newsletter</h2>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Enter e-mail address" />
-                <button type="submit"></button>
-            </form>
-            <div class="social-icons">
-                <a href="#" title="Facebook">f</a>
-                <a href="#" title="X (Twitter)">X</a>
-                <a href="#" title="YouTube">▶</a>
-                <a href="#" title="Instagram">📷</a>
-                <a href="#" title="Telegram">💬</a>
-                <a href="#" title="LinkedIn">in</a>
+<section class="footer-section">
+    <div class="footer">
+        <div class="essentials">
+            <div>
+                <h3>IRENA essentials</h3>
+                <ul>
+                    <li><a href="#">About IRENA</a></li>
+                    <li><a href="#">Employment</a></li>
+                    <li><a href="#">Procurement</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#">Membership</a></li>
+                    <li><a href="#">Collaborative Frameworks</a></li>
+                    <li><a href="#">Partnerships</a></li>
+                    <li><a href="#">Country engagement</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Publications</a></li>
+                    <li><a href="#">Education</a></li>
+                </ul>
             </div>
         </div>
-    </div>
 
-    <div class="footer-bottom">
-        <div>
-            © 2025 ITM MCHJ<br>
-            <a href="{% url 'index' %}">Terms and conditions</a>
+        <div class="social-links">
+            <a href="https://www.itm-llc.uz/uz/home/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/281/281764.png" alt="Google">
+            </a>
+            <a href="https://www.youtube.com/watch?v=JlDJVOnEM8o" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+            </a>
+            <a href="https://t.me/ITMRasmiy" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+            </a>
         </div>
-        <div>
-            The designations employed and the presentation of materials herein do not imply the expression of any opinion whatsoever on the part of the International Renewable Energy Agency concerning the legal status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries.
+
+        <div class="copyright">
+            <p>2025 ITM MCHJ</p>
         </div>
     </div>
-</footer>
+</section>
 
 <script src="{% static 'assets/js/script.js' %}"></script>
 </body>
