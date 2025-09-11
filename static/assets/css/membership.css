@@ -1,0 +1,332 @@
+/* === Umumiy sozlamalar === */
+:root {
+    --accent: #0b6cff;
+    --muted: #6b7280;
+    --text-color: #002347;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f9f9f9;
+}
+
+/* === Navbar === */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo img {
+    height: 50px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li {
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 10px 10px;
+}
+
+.navbar ul li a:hover {
+    color: #ffd700;
+}
+
+/* === Mega menu === */
+.mega-menu1,
+.mega-menu2,
+.mega-menu3 {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    padding: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.content1,
+.content2,
+.content3 {
+    display: grid;
+    gap: 10px;
+}
+
+.content1 { grid-template-columns: repeat(5, 1fr); }
+.content2 { grid-template-columns: repeat(3, 1fr); }
+.content3 { grid-template-columns: repeat(4, 1fr); }
+
+.mega-menu1 a,
+.mega-menu2 a,
+.mega-menu3 a {
+    display: block;
+    color: #002347;
+    text-decoration: none;
+}
+
+.mega-menu1 a:hover,
+.mega-menu2 a:hover,
+.mega-menu3 a:hover {
+    color: #0066cc;
+}
+
+.navbar ul li:hover .mega-menu1,
+.navbar ul li:hover .mega-menu2,
+.navbar ul li:hover .mega-menu3 {
+    display: block;
+}
+
+/* === Blocks & Text === */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.breadcrumb {
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.content {
+    margin-bottom: 30px;
+}
+
+.description {
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    color: #0066cc;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.bar-chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.bar {
+    background: linear-gradient(to top, #005a9c, #0096d7);
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    width: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.bar::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.2) 100%);
+    z-index: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.value-label {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+.year-label {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #333;
+}
+
+.section-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.members-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px; /* Mamlakatlar orasida joy */
+    background: linear-gradient(to bottom, #0066cc, #0099cc);
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    margin-top: 20px;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.country {
+    padding: 10px 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    font-size: 15px;
+    line-height: 1.5;
+    white-space: normal;
+    word-wrap: break-word;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.country:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.disclaimer-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0;
+    background-color: transparent;
+    color: black;
+    border-radius: 0; /* burchaklar yo'q */
+    box-shadow: none;
+}
+
+.disclaimer-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.disclaimer-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: black;
+    margin: 0;
+}
+
+/* === Footer === */
+.footer-section {
+    background: white;
+    color: black;
+    padding: 40px 20px 20px;
+}
+
+.footer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.essentials {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.essentials div {
+    flex: 1;
+    min-width: 180px;
+    margin: 0 10px;
+}
+
+.essentials h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.essentials ul {
+    list-style: none;
+    padding: 0;
+}
+
+.essentials ul li {
+    margin: 6px 0;
+}
+
+.essentials ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.social-links {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-links img {
+    width: 28px;
+    height: 28px;
+    filter: brightness(1) invert(1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.2);
+    filter: brightness(0.8) invert(1);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 15px;
+    font-size: 13px;
+}

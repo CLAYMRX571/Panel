@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IRENA</title>
     <link rel="icon" href="{% static 'assets/img/itms.ico' %}" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/membership.css' %}">
 </head>
 <body>
 
@@ -57,11 +57,11 @@
             <a>LANGUAGES</a>
             <div class="mega-menu2">
                 <div class="content2">
-                    <a href="{% url 'lan_switch_about' 'uz' %}">UZBEK</a>
-                    <a href="{% url 'lan_switch_about' 'en' %}">ENGLISH</a>
-                    <a href="{% url 'lan_switch_about' 'tr' %}">TURKCHA</a>
-                    <a href="{% url 'lan_switch_about' 'kk' %}">QOZOQCHA</a>
-                    <a href="{% url 'lan_switch_about' 'tg' %}">TOJIKCHA</a>
+                    <a href="{% url 'lan_switch_membership' 'uz' %}">UZBEK</a>
+                    <a href="{% url 'lan_switch_membership' 'en' %}">ENGLISH</a>
+                    <a href="{% url 'lan_switch_membership' 'tr' %}">TURKCHA</a>
+                    <a href="{% url 'lan_switch_membership' 'kk' %}">QOZOQCHA</a>
+                    <a href="{% url 'lan_switch_membership' 'tg' %}">TOJIKCHA</a>
                 </div>
             </div>
         </li>
@@ -73,27 +73,27 @@
 </header>
 
 <div class="container">
-    <h1 style="text-align: center;">About ITM</h1>
-    <p>
-        The International Renewable Energy Agency (IRENA) is a lead global intergovernmental agency for energy transformation that serves as the principal platform for international cooperation, supports countries in their energy transitions, and provides state of the art data and analyses on technology, innovation, policy, finance and investment. IRENA drives the widespread adoption and sustainable use of all forms of renewable energy, including bioenergy, geothermal, hydropower, ocean, solar and wind energy in the pursuit of sustainable development, energy access, and energy security, for economic and social resilience and prosperity and a climate-proof future.
-    </p>
-    <p>
-        IRENA's membership comprises 169 countries and the EU. Together, they decide on the Agency’s strategic direction and programmatic activities, in line with the global energy discourse and priorities to accelerate the deployment of renewables-based energy transitions worldwide.
-    </p>
-    <div class="report-section">
-        <div class="report-image">
-            <img src="{% static 'assets/img/cost.jpg' %}" alt="IRENA Annual Report 2024-2025" />
-        </div>
-        <div class="report-content">
-            <h2>
-                Annual report of the Director-General on the implementation of the Work Programme and Budget for 2024-2025
-            </h2>
-            <p>
-                This Annual Report presents an overview of the programmatic activities IRENA has undertaken since January 2023, reaffirming the Agency's position as a centre of excellence, a repository of policy, technology and financial knowledge, and the principal platform for international co-operation on renewable energy.
-            </p>
-            <a href="">Read more</a>
-        </div>
+    <div class="content">
+        <p class="description">
+        The IRENA Statute stipulates that membership in the agency is open to those states that are members of the United Nations, and to regional intergovernmental economic-integration organisations. Members must be willing and able to act in accordance with the objectives and activities laid down in the statute.
+        </p>
     </div>
+
+    <a href=""><h3 class="subtitle" style="text-align: center">How to become a Member</h3></a>
+
+    <div class="chart-container">
+        <div class="bar-chart" id="barChart"></div>
+    </div>
+
+    <h2 class="section-title" style="text-align: center">Members of the Agency</h2>
+    <div class="members-list" id="membersList"></div>
+</div>
+
+<div class="disclaimer-container">
+    <p class="disclaimer-title" style="text-align: center">Disclaimer</p>
+    <p class="disclaimer-text">
+    The designations employed and the presentation of materials herein do not imply the expression of any opinion whatsoever on the part of the International Renewable Energy Agency concerning the legal status of any region, country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries.
+    </p>
 </div>
 
 <section class="footer-section">
@@ -144,6 +144,6 @@
     </div>
 </section>
 
-<script src="{% static 'assets/js/script.js' %}"></script>
+<script src="{% static 'assets/js/membership.js' %}"></script>
 </body>
 </html>

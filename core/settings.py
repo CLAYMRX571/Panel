@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'apps.news',
     'apps.publications',
     'apps.home',
+    'apps.membership',
 ]
 
 MIDDLEWARE = [
@@ -132,13 +133,14 @@ MODELTRANSLATION_FALLBACK_LANGUAGES = {'default':('en', 'uz'), 'uz':('en',), 'en
 MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'uz'
 
 MODELTRANSLATION_TRANSLATION_FILES = (
+    'apps.news.translations',
     'apps.home.translations',
     'apps.about.translations',
+    'apps.membership.translations',
     # 'apps.data.translations',
     # 'apps.education.translations',
     # 'apps.energy.translations',
     # 'apps.events.translations',
-    # 'apps.news.translations',
     # 'apps.publications.translations',
 )
 

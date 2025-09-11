@@ -21,22 +21,27 @@ from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from apps.home.views import Homeviews, lan_switch
 from apps.about.views import AboutViews, lan_switch_about
+from apps.membership.views import Membershipviews, lan_switch_membership
+from apps.news.views import Newsviews, lan_switch_news
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('lan/<str:lan>/', lan_switch, name='lan_switch'),
     path('lan/about/<str:lan>/', lan_switch_about, name='lan_switch_about'),
+    path('lan/membership/<str:lan>/', lan_switch_membership, name='lan_switch_membership'),
+    path('lan/news/<str:lan>/', lan_switch_news, name='lan_switch_news'),
 ]
 
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     path('', Homeviews, name='index'),
     path('about/', AboutViews, name='about'),
+    path('membership/', Membershipviews, name='membership'),
+    path('news/', Newsviews, name='news'),
     # path('data/', include('apps.data.urls')),
     # path('education/', include('apps.education.urls')),
     # path('energy/', include('apps.energy.urls')),
     # path('events/', include('apps.events.urls')),
-    # path('news/', include('apps.news.urls')),
     # path('publications/', include('apps.publications.urls')),
 )
 
