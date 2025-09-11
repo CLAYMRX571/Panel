@@ -1,7 +1,7 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
-from .models import eve, News, Publication, Event, Video
+from .models import Events
 
-@admin.register(Home)
-class HomeAdmin(TranslationAdmin):
+@admin.register(Events)
+class EventsAdmin(TranslationAdmin):
     list_display = ['name', 'title', 'events_name', 'events_desc',]
