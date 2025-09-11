@@ -45,10 +45,8 @@ INSTALLED_APPS = [
     'apps.about',
     'apps.data',
     'apps.education',
-    'apps.energy',
     'apps.events',
     'apps.news',
-    'apps.publications',
     'apps.home',
     'apps.membership',
 ]
@@ -139,9 +137,7 @@ MODELTRANSLATION_TRANSLATION_FILES = (
     'apps.membership.translations',
     # 'apps.data.translations',
     # 'apps.education.translations',
-    # 'apps.energy.translations',
     # 'apps.events.translations',
-    # 'apps.publications.translations',
 )
 
 # Internationalization

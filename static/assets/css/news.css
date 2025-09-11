@@ -161,7 +161,7 @@ body {
     margin-left: 10px;
 }
 
-.news-excerpt {
+.news-excert {
     font-size: 14px;
     color: #666;
     margin-bottom: 10px;
@@ -284,105 +284,6 @@ p {
     justify-content: center;
     cursor: pointer;
     background-color: white;
-}
-
-.infographic-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 20px;
-}
-
-.infographic-card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: white;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 15px;
-    transition: transform 0.2s ease;
-}
-
-.infographic-card:hover {
-    transform: translateY(-2px);
-}
-
-.infographic-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 15px;
-}
-
-.infographic-title {
-    font-size: 1.1em;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #000;
-}
-
-.button-group {
-    display: flex;
-    gap: 10px;
-}
-
-.btn-download {
-    background-color: #0066cc;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 4px;
-    font-size: 14px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.btn-zoom {
-    background-color: #0066cc;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 4px;
-    font-size: 14px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.8);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 800px;
-    max-height: 80vh;
-    overflow: auto;
-}
-
-.close-modal {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    color: #333;
-    cursor: pointer;
 }
 
 /* === Footer === */

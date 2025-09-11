@@ -40,9 +40,7 @@ urlpatterns += i18n_patterns(
     path('news/', Newsviews, name='news'),
     # path('data/', include('apps.data.urls')),
     # path('education/', include('apps.education.urls')),
-    # path('energy/', include('apps.energy.urls')),
     # path('events/', include('apps.events.urls')),
-    # path('publications/', include('apps.publications.urls')),
 )
 
 if settings.DEBUG:
