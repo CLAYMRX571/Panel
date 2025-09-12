@@ -109,7 +109,7 @@ body {
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1500px;
     margin: 0 auto;
 }
 
@@ -294,7 +294,148 @@ p {
     background-color: white;
 }
 
-/* === Footer === */
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.timeline-container {
+    background-color: #e6f4f9;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.timeline {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    position: relative;
+    padding: 20px 0;
+    overflow-x: hidden;
+}
+
+.event {
+    flex: 1;
+    text-align: center;
+    min-width: 250px;
+    padding: 10px;
+}
+
+.date {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0077cc;
+    margin-bottom: 10px;
+}
+
+.location {
+    font-size: 0.9rem;
+    color: #0077cc;
+    margin-bottom: 5px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    color: #000;
+}
+
+.dots {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-index: 1;
+}
+
+.dot {
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.dot:nth-child(1) { left: 10%; }
+.dot:nth-child(2) { left: 50%; }
+.dot:nth-child(3) { left: 90%; }
+
+.controls {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 3;
+}
+
+.btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    color: #0077cc;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background-color: #e6f4f9;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.event-card {
+    height: 100%;          
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.event-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;  
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.event-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 10px 0 12px 0;
+    color: #000;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.event-description {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;
+    flex-grow: 1;  
+}
+
 .footer-section {
     background: white;
     color: black;

@@ -1,3 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Data
 
-# Create your views here.
+def Dataviews(request):
+    data = Data.objects.all()  
+
+    context = {
+        'data': data,
+    }
+
+    return render(request, 'data.html', context)
+
+def lan_switch_data(request, lan):
+    return redirect(f'/{lan}/data/')

@@ -7,7 +7,7 @@ class Events(models.Model):
     date_year = models.DateTimeField()
     events_name = models.CharField(max_length=200)
     events_desc = models.TextField()
-    image = models.Imagefield(upload_to='events', blank=True, null=True)
+    image = models.ImageField(upload_to='events', blank=True, null=True)
 
     def __str__(self):
         return self.name

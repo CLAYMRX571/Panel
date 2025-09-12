@@ -67,8 +67,8 @@
         </li>
         <li><a href="{% url 'news' %}">NEWS</a></li>
         <li><a href="#">EDUCATION</a></li>
-        <li><a href="#">DATA</a></li>
-        <li><a href="#">EVENTS</a></li>
+        <li><a href="{% url 'data' %}">DATA</a></li>
+        <li><a href="{% url 'event' %}">EVENTS</a></li>
     </ul>
 </header>
 
@@ -120,7 +120,7 @@
                 <ul>
                     <li><a href="#">News</a></li>
                     <li><a href="#">Events</a></li>
-                    <li><a href="#">Publications</a></li>
+                    <li><a href="{% url 'data' %}">Data</a></li>
                     <li><a href="#">Education</a></li>
                 </ul>
             </div>

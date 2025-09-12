@@ -77,9 +77,17 @@ body {
     gap: 10px;
 }
 
-.content1 { grid-template-columns: repeat(5, 1fr); }
-.content2 { grid-template-columns: repeat(3, 1fr); }
-.content3 { grid-template-columns: repeat(4, 1fr); }
+.content1 { 
+    grid-template-columns: repeat(6, 1fr); 
+}
+
+.content2 { 
+    grid-template-columns: repeat(3, 1fr); 
+}
+
+.content3 { 
+    grid-template-columns: repeat(4, 1fr); 
+}
 
 .mega-menu1 a,
 .mega-menu2 a,

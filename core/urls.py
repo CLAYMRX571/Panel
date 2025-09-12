@@ -23,6 +23,9 @@ from apps.home.views import Homeviews, lan_switch
 from apps.about.views import AboutViews, lan_switch_about
 from apps.membership.views import Membershipviews, lan_switch_membership
 from apps.news.views import Newsviews, lan_switch_news
+from apps.events.views import Eventviews, lan_switch_event
+from apps.data.views import Dataviews, lan_switch_data
+from apps.education.views import Educationviews, lan_switch_education
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
@@ -30,6 +33,9 @@ urlpatterns = [
     path('lan/about/<str:lan>/', lan_switch_about, name='lan_switch_about'),
     path('lan/membership/<str:lan>/', lan_switch_membership, name='lan_switch_membership'),
     path('lan/news/<str:lan>/', lan_switch_news, name='lan_switch_news'),
+    path('lan/event/<str:lan>/', lan_switch_event, name='lan_switch_event'),
+    path('lan/data/<str:lan>/', lan_switch_data, name='lan_switch_data'),
+    path('lan/education/<str:lan>/', lan_switch_education, name='lan_switch_education'),
 ]
 
 urlpatterns += i18n_patterns(
@@ -38,9 +44,9 @@ urlpatterns += i18n_patterns(
     path('about/', AboutViews, name='about'),
     path('membership/', Membershipviews, name='membership'),
     path('news/', Newsviews, name='news'),
-    # path('data/', include('apps.data.urls')),
-    # path('education/', include('apps.education.urls')),
-    # path('events/', include('apps.events.urls')),
+    path('event/', Eventviews, name='event'),
+    path('data/', Dataviews, name='data'),
+    path('education/', Educationviews, name='education'),
 )
 
 if settings.DEBUG:

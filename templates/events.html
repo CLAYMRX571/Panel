@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IRENA</title>
     <link rel="icon" href="{% static 'assets/img/itms.ico' %}" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'assets/css/news.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/events.css' %}">
 </head>
 <body>
 
@@ -57,272 +57,100 @@
             <a>LANGUAGES</a>
             <div class="mega-menu2">
                 <div class="content2">
-                    <a href="{% url 'lan_switch_news' 'uz' %}">UZBEK</a>
-                    <a href="{% url 'lan_switch_news' 'en' %}">ENGLISH</a>
-                    <a href="{% url 'lan_switch_news' 'tr' %}">TURKCHA</a>
-                    <a href="{% url 'lan_switch_news' 'kk' %}">QOZOQCHA</a>
-                    <a href="{% url 'lan_switch_news' 'tg' %}">TOJIKCHA</a>
+                    <a href="{% url 'lan_switch_event' 'uz' %}">UZBEK</a>
+                    <a href="{% url 'lan_switch_event' 'en' %}">ENGLISH</a>
+                    <a href="{% url 'lan_switch_event' 'tr' %}">TURKCHA</a>
+                    <a href="{% url 'lan_switch_event' 'kk' %}">QOZOQCHA</a>
+                    <a href="{% url 'lan_switch_event' 'tg' %}">TOJIKCHA</a>
                 </div>
             </div>
         </li>
         <li><a href="{% url 'news' %}">NEWS</a></li>
-        <li><a href="#">EDUCATION</a></li>
-        <li><a href="#">DATA</a></li>
-        <li><a href="#">EVENTS</a></li>
+        <li><a href="{% url 'education' %}">EDUCATION</a></li>
+        <li><a href="{% url 'data' %}">DATA</a></li>
+        <li><a href="{% url 'event' %}">EVENTS</a></li>
     </ul>
 </header>
 
-<div class="container events-container">
-  <h1 class="mb-4">Events</h1>
-  <h3 class="events-title">Upcoming Events</h3>
+<div class="container">
+    <h2 style="text-align: center">Upcoming Events</h2>
 
-    <div class="event-slider">
-        <div class="row">
-            <div class="event-item">
-                <div class="event-dot"></div>
-                <div class="event-line"></div>
-                <div class="event-date">10 September</div>
-                <div class="event-location">Abu Dhabi, UAE</div>
-                <div class="event-title">Twenty-Ninth Meeting of the IRENA Council</div>
+    <div class="timeline-container">
+        <div class="timeline" id="timeline">
+            <div class="event">
+                <div class="date">10 September</div>
+                <div class="location">Abu Dhabi, UAE</div>
+                <div class="title">Twenty-Ninth Meeting of the IRENA Council</div>
             </div>
 
-            <div class="event-item">
-                <div class="event-dot"></div>
-                <div class="event-line"></div>
-                <div class="event-date">15 September</div>
-                <div class="event-location">Mozambique</div>
-                <div class="event-title">National consultation workshop on accelerating Mozambique’s energy transition</div>
+            <div class="event">
+                <div class="date">15 September</div>
+                <div class="location">Mozambique</div>
+                <div class="title">National consultation workshop on accelerating Mozambique's energy transition</div>
             </div>
 
-            <div class="event-item">
-                <div class="event-dot"></div>
-                <div class="event-line"></div>
-                <div class="event-date">16 September</div>
-                <div class="event-location">Webinar</div>
-                <div class="event-title">IRENA Insights - Participatory Processes for Energy Planning: A Practical Toolkit</div>
+            <div class="event">
+                <div class="date">23 September</div>
+                <div class="location">Webinar</div>
+                <div class="title">IRENA Insights - Participatory Processes for Energy Planning: A Practical Toolkit</div>
             </div>
 
-            <div class="event-item">
-                <div class="event-dot"></div>
-                <div class="event-line"></div>
-                <div class="event-date">20 October</div>
-                <div class="event-location">Freetown, Sierra Leone</div>
-                <div class="event-title">APRA Investment Forum 2025</div>
+            <div class="event">
+                <div class="date">20 October</div>
+                <div class="location">Freetown, Sierra Leone</div>
+                <div class="title">APRA Investment Forum 2025</div>
             </div>
 
-            <div class="event-item">
-                <div class="event-dot"></div>
-                <div class="event-line"></div>
-                <div class="event-date">29 October</div>
-                <div class="event-location">Bonn, Germany</div>
-                <div class="event-title">6th International Forum on Long-term Energy Scenarios for the Clean Energy Transition</div>
+            <div class="event">
+                <div class="date">29 October</div>
+                <div class="location">Bonn, Germany</div>
+                <div class="title">6th International Forum on Long-term Energy Scenarios for the Clean Energy Transition</div>
+            </div>
+
+            <div class="event">
+                <div class="date">8 January</div>
+                <div class="location">Abu Dhabi, United Arab Emirates</div>
+                <div class="title">IRENA Youth Forum 2026</div>
             </div>
         </div>
 
+        <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
 
-        <div class="nav-controls">
-            <button class="nav-btn"><i class="fas fa-chevron-left"></i></button>
-            <button class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+        <div class="controls">
+            <button class="btn" id="prev"> < </button>
+            <button class="btn" id="next"> > </button>
         </div>
     </div>
 </div>
 
-<div class="search-bar">
-  <div class="container">
-    <form class="d-flex w-100">
-      <span class="input-group-text" style="background-color: transparent; border: none;">
-        <i class="fas fa-search"></i>
-      </span>
-      <input type="text" class="form-control" placeholder="Enter your search phrase..." aria-label="Search">
-      <button type="submit" class="btn btn-link text-white">Search</button>
-    </form>
-  </div>
-</div>
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-3 sidebar">
-            <div class="mb-4">
-                <h6>Events</h6>
-                <button class="filter-btn">Conference</button>
-                <button class="filter-btn">Governing body meeting</button>
-                <button class="filter-btn">Publication launch</button>
-                <button class="filter-btn">Steering and Advisory Group meeting</button>
-                <button class="filter-btn">Training</button>
-                <button class="filter-btn">Webinar</button>
-                <button class="filter-btn">Workshop</button>
-            </div>
-
-            <div class="mb-4">
-                <h6>Energy Transition Hub</h6>
-                <button class="filter-btn">Costs</button>
-                <button class="filter-btn">Energy transition</button>
-                <button class="filter-btn">Finance & investment</button>
-                <button class="filter-btn">Geopolitics</button>
-                <button class="filter-btn">Innovation</button>
-                <button class="filter-btn">Off-grid for energy access</button>
-                <button class="filter-btn">Planning</button>
-                <button class="filter-btn">Policy</button>
-                <button class="filter-btn">Socio-economic impact</button>
-                <button class="filter-btn">Technology</button>
-            </div>
-
-            <div class="mb-4">
-                <h6>Country Engagements</h6>
-                <button class="filter-btn">Climate Action</button>
-                <button class="filter-btn">Collaborative Frameworks</button>
-                <button class="filter-btn">Long-term Energy Scenarios Network (LTES Network)</button>
-                <button class="filter-btn">Renewable Energy Roadmap (ReMap)</button>
-                <button class="filter-btn">Renewable potential assessment</button>
-                <button class="filter-btn">Renewables Readiness Assessment (RRA)</button>
-            </div>
-
-            <div class="mb-4">
-                <h6>Partnerships</h6>
-                <button class="filter-btn">APRA</button>
-                <button class="filter-btn">CIP</button>
-                <button class="filter-btn">Coalition for Action</button>
-                <button class="filter-btn">ETAF</button>
-                <button class="filter-btn">Global Geothermal Alliance</button>
-                <button class="filter-btn">INSPIRE</button>
-                <button class="filter-btn">Parliamentary Network</button>
-                <button class="filter-btn">SIDS Lighthouses</button>
-            </div>
-
-            <div class="mb-4">
-                <h6>Regions</h6>
-                <button class="filter-btn">Africa</button>
-                <button class="filter-btn">Asia & the Pacific</button>
-                <button class="filter-btn">Europe</button>
-                <button class="filter-btn">Latin America & the Caribbean</button>
-                <button class="filter-btn">Middle East & North Africa</button>
-                <button class="filter-btn">North America</button>
-            </div>
-
-            <div class="mb-4">
-                <h6>Data and Statistics</h6>
-                <button class="filter-btn">Dashboard</button>
-                <button class="filter-btn">Data</button>
-                <button class="filter-btn">Statistics</button>
-            </div>
-
-            <div class="mb-4">
-                <h6>Countries</h6>
-                <div class="input-group">
-                    <input type="text" class="form-control form-control-sm" placeholder="Select country">
-                    <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-search"></i></button>
-                </div>
-            </div>
+<div class="container">
+    <div class="events-grid">
+        <div class="event-card">
+            <img src="{% static 'assets/img/cost.jpg' %}" alt="Event Image" class="event-image" width="200" height="200"/>
+            <h3 class="event-title">Meeting of the Collaborative Framework on Enhancing Dialogue on High Shares of Renewables in Energy Systems</h3>
+            <p class="event-description">
+            The meeting aimed to bring together IRENA members and other key stakeholders to discuss the opportunities and challenges in developing cross-border interconnections and regional markets based on renewables, in support of their transition to clean energy aligned with the climate and sustainable development objectives.
+            </p>
         </div>
 
-        <div class="col-md-9 main-content">
-            <div class="filters-header">
-                <a href="#" class="clear-all">Clear all</a>
-                <div class="active-filters">
-                <span>Active filters:</span>
-                <span class="badge bg-primary">0</span>
-                </div>
-                <div class="sort-options">
-                Sort: 
-                <a href="#">Relevance</a> | 
-                <a href="#" class="active">Date</a>
-            </div>
+        <div class="event-card">
+            <img src="{% static 'assets/img/cost.jpg' %}" alt="Event Image" class="event-image" width="200" height="200"/>
+            <h3 class="event-title">Chad Energy Transition Assessment: Expert Validation Workshop</h3>
+            <p class="event-description">
+            ITM, in collaboration with Chad's Ministry of Water and Energy, is convening a virtual validation workshop to present key findings from Chad's Energy Transition Assessment (ETA), review strategic actions, and build stakeholder consensus to accelerate the country's renewable energy transition.
+            </p>
         </div>
-
-        <div class="event-item">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="event-date">29 Oct</div>
-                    <div class="event-type">Events</div>
-                    <h4 class="event-title">6th International Forum on Long-term Energy Scenarios for the Clean Energy Transition</h4>
-                    <p class="event-desc">
-                    As part of its key activities, the LTES Network organises "The International Forum on Long-Term Energy Scenarios for the Clean Energy Transition" to gather experts representing governments, technical institutions, academia, industry, and the private sector seeking to exchange novel experiences in the development and use of LTES.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="event-item">
-            <div class="row">
-                <div class="col-md-2">
-                    <img src="https://via.placeholder.com/150x100?text=APRA" alt="APRA" class="event-img">
-                </div>
-                <div class="col-md-10">
-                    <div class="event-date">20 Oct</div>
-                    <div class="event-type">Events</div>
-                    <h4 class="event-title">APRA Investment Forum 2025</h4>
-                    <p class="event-desc">
-                    The second APRA Investment Forum (IF) is being co-hosted by the Government of Sierra Leone and the International Renewable Energy Agency (IRENA) in Freetown, Sierra Leone, on 22-23 October 2025, to accelerate the development and implementation of energy transition projects across APRA member countries.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="event-item">
-            <div class="row">
-                <div class="col-md-2">
-                    <img src="https://via.placeholder.com/150x100?text=Wind+Turbines" alt="Wind Turbines" class="event-img">
-                </div>
-                <div class="col-md-10">
-                    <div class="event-date">16 Sep</div>
-                    <div class="event-type">Events</div>
-                    <h4 class="event-title">IRENA Insights - Participatory Processes for Energy Planning: A Practical Toolkit</h4>
-                    <p class="event-desc">
-                    Every other week, presenters from one of IRENA's teams – either alone or together with invited guests – will provide focused insights into opportunities, trends, best practices and innovative solutions to address challenges, signpost further sources of more in-depth information and provide an opportunity to engage with IRENA's experts through Q&A sessions.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="event-item">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="event-date">15 Sep</div>
-                    <div class="event-type">Events</div>
-                    <h4 class="event-title">National consultation workshop on accelerating Mozambique’s energy transition</h4>
-                    <p class="event-desc">
-                    APRA and the Government of Mozambique, through the Ministry of Mineral Resources and Energy, are organising a national consultation for the country from 15 to 18 September 2025.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="event-item">
-            <div class="row">
-                <div class="col-md-2">
-                    <img src="https://via.placeholder.com/150x100?text=Meeting" alt="Meeting" class="event-img">
-                </div>
-                <div class="col-md-10">
-                    <div class="event-date">10 Sep</div>
-                    <div class="event-type">Events</div>
-                    <h4 class="event-title">Twenty-Ninth Meeting of the IRENA Council</h4>
-                    <p class="event-desc">
-                    The twenty-ninth Council meeting of the International Renewable Energy Agency (IRENA) is scheduled to be held on 11 to 12 September 2025, with related meetings taking place on 10 September 2025.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="event-item">
-            <div class="row">
-                <div class="col-md-2">
-                    <img src="https://via.placeholder.com/150x100?text=Ethiopia" alt="Ethiopia" class="event-img">
-                </div>
-                <div class="col-md-10">
-                    <div class="event-date">25 Aug</div>
-                    <div class="event-type">Events</div>
-                    <h4 class="event-title">Unlocking Investment for Renewable Energy in Ethiopia</h4>
-                    <p class="event-desc">
-                    The International Renewable Energy Agency (IRENA), in collaboration with Ethiopia’s Ministry of Water and Energy, hosted a capacity development workshop to strengthen local stakeholders’ ability to structure bankable renewable energy projects and improve access to finance.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="load-more">
-            <p>You've viewed <strong>15</strong> of <strong>1075</strong> results</p>
-            <button class="btn btn-primary">Load more</button>
-        </div>
+        
+        <div class="event-card">
+            <img src="{% static 'assets/img/cost.jpg' %}" alt="IRENA Policy Talks" class="event-image" width="150" height="200"/>
+            <h3 class="event-title">ITM Policy Talks - Policies for advancing the renewables-based electrification of road transport</h3>
+            <p class="event-description">
+            ITM's Policy Talks are a series of webinars, providing a forum for energy transition discussions where experiences and best practices in policy design and implementation can be shared to support the efficient deployment of renewable energy, energy efficiency and other energy transition-related technologies and the maximization of the benefits realized.
+            </p>
         </div>
     </div>
 </div>
@@ -331,23 +159,31 @@
     <div class="footer">
         <div class="essentials">
             <div>
-                <h3>IRENA essentials</h3>
+                <h3>ITM essentials</h3>
                 <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Education</a></li>
-                    <li><a href="#">Membership</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="#">Employment</a></li>
+                    <li><a href="#">Procurement</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </div>
             <div>
                 <ul>
-                    <li><a href="#">Data</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Energy</a></li>
-                    <li><a href="#">Director</a></li>
+                    <li><a href="{% url 'membership' %}">Membership</a></li>
+                    <li><a href="#">Collaborative Frameworks</a></li>
+                    <li><a href="#">Partnerships</a></li>
+                    <li><a href="#">Country engagement</a></li>
                 </ul>
             </div>
-        </div>
+            <div>
+                <ul>
+                    <li><a href="{% url 'news' %}">News</a></li>
+                    <li><a href="{% url 'event' %}">Events</a></li>
+                    <li><a href="{% url 'data' %}">Data</a></li>
+                    <li><a href="#">Education</a></li>
+                </ul>
+            </div>
+        </div>  
 
         <div class="social-links">
             <a href="https://www.itm-llc.uz/uz/home/" target="_blank">
@@ -367,6 +203,6 @@
     </div>
 </section>
 
-<script src="{% static 'assets/js/script.js' %}"></script>
+<script src="{% static 'assets/js/events.js' %}"></script>
 </body>
 </html>

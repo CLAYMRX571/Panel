@@ -1,3 +1,7 @@
 from django.contrib import admin
+from modeltranslation.admin import TranslationAdmin
+from .models import Education
 
-# Register your models here.
+@admin.register(Education)
+class EducationAdmin(TranslationAdmin):
+    list_display = ['name', 'category_name', 'desc', 'technical_name', 'technical_desc',]

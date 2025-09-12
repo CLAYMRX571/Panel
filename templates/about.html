@@ -25,13 +25,9 @@
                 <div class="container">
                     <div class="content1">
                         <a href="#">OUTLOOK</a>
-                        <a href="#">COUNTRY ENGAGEMENT</a>
-                        <a href="#">PARTNERSHIPS</a>
-                        <a href="#">PROJECT FACILITATION</a>
                         <a href="#">PLANNING</a>
                         <a href="#">POLICY</a>
                         <a href="#">TECHNOLOGY</a>
-                        <a href="#">INNOVATION</a>
                         <a href="#">ECONOMIC IMPACT</a>
                         <a href="#">FINANCE INVESTMENT</a>
                     </div>
@@ -42,14 +38,10 @@
             <a>ABOUT</a>
             <div class="mega-menu3">
                 <div class="content3">
-                    <a href="{% url 'about' %}">ABOUT</a>
-                    <a href="{% url 'membership' %}">MEMBERSHIP</a>
-                    <a href="#">DIRECTOR</a>
-                    <a href="#">PROCUREMENT</a>
-                    <a href="#">VISION</a>
-                    <a href="#">DOCUMENT</a>
-                    <a href="#">MANAGEMENT</a>
-                    <a href="#">WORKING ITM</a>
+                    <a href="#">PARTNERSHIPS</a>
+                    <a href="#">PROJECT</a>
+                    <a href="#">TECHNOLOGY</a>
+                    <a href="#">INNOVATION</a>
                 </div>
             </div>
         </li>
@@ -66,9 +58,9 @@
             </div>
         </li>
         <li><a href="{% url 'news' %}">NEWS</a></li>
-        <li><a href="#">EDUCATION</a></li>
-        <li><a href="#">DATA</a></li>
-        <li><a href="#">EVENTS</a></li>
+        <li><a href="{% url 'education' %}">EDUCATION</a></li>
+        <li><a href="{% url 'data' %}">DATA</a></li>
+        <li><a href="{% url 'event' %}">EVENTS</a></li>
     </ul>
 </header>
 
@@ -100,9 +92,9 @@
     <div class="footer">
         <div class="essentials">
             <div>
-                <h3>IRENA essentials</h3>
+                <h3>ITM essentials</h3>
                 <ul>
-                    <li><a href="#">About IRENA</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
                     <li><a href="#">Employment</a></li>
                     <li><a href="#">Procurement</a></li>
                     <li><a href="#">Contact</a></li>
@@ -110,7 +102,7 @@
             </div>
             <div>
                 <ul>
-                    <li><a href="#">Membership</a></li>
+                    <li><a href="{% url 'membership' %}">Membership</a></li>
                     <li><a href="#">Collaborative Frameworks</a></li>
                     <li><a href="#">Partnerships</a></li>
                     <li><a href="#">Country engagement</a></li>
@@ -118,10 +110,10 @@
             </div>
             <div>
                 <ul>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Publications</a></li>
-                    <li><a href="#">Education</a></li>
+                    <li><a href="{% url 'news' %}">News</a></li>
+                    <li><a href="{% url 'event' %}">Events</a></li>
+                    <li><a href="{% url 'data' %}">Data</a></li>
+                    <li><a href="{% url 'education' %}">Education</a></li>
                 </ul>
             </div>
         </div>

@@ -135,9 +135,9 @@ MODELTRANSLATION_TRANSLATION_FILES = (
     'apps.home.translations',
     'apps.about.translations',
     'apps.membership.translations',
-    # 'apps.data.translations',
-    # 'apps.education.translations',
-    # 'apps.events.translations',
+    'apps.events.translations',
+    'apps.data.translations',
+    'apps.education.translations',
 )
 
 # Internationalization
