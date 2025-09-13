@@ -38,10 +38,11 @@
             <a>ABOUT</a>
             <div class="mega-menu3">
                 <div class="content3">
-                    <a href="#">PARTNERSHIPS</a>
-                    <a href="#">PROJECT</a>
-                    <a href="#">TECHNOLOGY</a>
-                    <a href="#">INNOVATION</a>
+                    <a href="{% url 'about' %}">ABOUT</a>
+                    <a href="{% url 'part' %}">PARTNERSHIPS</a>
+                    <a href="{% url 'membership' %}">MEMBERSHIP</a>
+                    <a href="{% url 'project' %}">PROJECT</a>
+                    <a href="{% url 'inno' %}">INNOVATION</a>
                 </div>
             </div>
         </li>
@@ -182,16 +183,16 @@
                 <h3>ITM essentials</h3>
                 <ul>
                     <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="#">Employment</a></li>
+                    <li><a href="{% url 'employ' %}">Employment</a></li>
                     <li><a href="#">Procurement</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{% url 'event' %}">Event</a></li>
                 </ul>
             </div>
             <div>
                 <ul>
                     <li><a href="{% url 'membership' %}">Membership</a></li>
                     <li><a href="#">Collaborative Frameworks</a></li>
-                    <li><a href="#">Partnerships</a></li>
+                    <li><a href="{% url 'part' %}">Partnerships</a></li>
                     <li><a href="#">Country engagement</a></li>
                 </ul>
             </div>

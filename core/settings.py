@@ -49,6 +49,19 @@ INSTALLED_APPS = [
     'apps.news',
     'apps.home',
     'apps.membership',
+    'apps.economic',
+    'apps.innovation',
+    'apps.part',
+    'apps.procure',
+    'apps.techno',
+    'apps.framework',
+    'apps.finance',
+    'apps.employ',
+    'apps.country',
+    'apps.outlook',
+    'apps.project',
+    'apps.planning',
+    'apps.policy',
 ]
 
 MIDDLEWARE = [
@@ -138,6 +151,19 @@ MODELTRANSLATION_TRANSLATION_FILES = (
     'apps.events.translations',
     'apps.data.translations',
     'apps.education.translations',
+    'apps.part.translations',
+    'apps.project.translations',
+    'apps.innovation.translations',
+    'apps.employ.translations',
+    # 'apps.economic.translations',
+    # 'apps.policy.translations',
+    # 'apps.procure.translations',
+    # 'apps.techno.translations',
+    # 'apps.outlook.translations',
+    # 'apps.planning.translations',
+    # 'apps.framework.translations',
+    # 'apps.finance.translations',
+    # 'apps.country.translations',
 )
 
 # Internationalization
