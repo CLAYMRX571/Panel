@@ -24,12 +24,12 @@
             <div class="mega-menu1">
                 <div class="container">
                     <div class="content1">
-                        <a href="#">OUTLOOK</a>
-                        <a href="#">PLANNING</a>
-                        <a href="#">POLICY</a>
-                        <a href="#">TECHNOLOGY</a>
-                        <a href="#">ECONOMIC IMPACT</a>
-                        <a href="#">FINANCE INVESTMENT</a>
+                        <a href="{% url 'outlook' %}">OUTLOOK</a>
+                        <a href="{% url 'plan' %}">PLANNING</a>
+                        <a href="{% url 'policy' %}">POLICY</a>
+                        <a href="{% url 'techno' %}">TECHNOLOGY</a>
+                        <a href="{% url 'eco' %}">ECONOMIC IMPACT</a>
+                        <a href="{% url 'finance' %}">FINANCE INVESTMENT</a>
                     </div>
                 </div>
             </div>
@@ -39,10 +39,10 @@
             <div class="mega-menu3">
                 <div class="content3">
                     <a href="{% url 'about' %}">ABOUT</a>
-                    <a href="#">PARTNERSHIPS</a>
+                    <a href="{% url 'part' %}">PARTNERSHIPS</a>
                     <a href="{% url 'membership' %}">MEMBERSHIP</a>
-                    <a href="#">PROJECT</a>
-                    <a href="#">INNOVATION</a>
+                    <a href="{% url 'project' %}">PROJECT</a>
+                    <a href="{% url 'inno' %}">INNOVATION</a>
                 </div>
             </div>
         </li>
@@ -66,27 +66,65 @@
 </header>
 
 <div class="container">
+    {% for chart in membership %}
     <div class="content">
-        <p class="description">
-        The IRENA Statute stipulates that membership in the agency is open to those states that are members of the United Nations, and to regional intergovernmental economic-integration organisations. Members must be willing and able to act in accordance with the objectives and activities laid down in the statute.
-        </p>
+        <p class="description">{{ chart.desc }}</p>
     </div>
 
-    <a href=""><h3 class="subtitle" style="text-align: center">How to become a Member</h3></a>
+    <a href=""><h3 class="subtitle" style="text-align: center">{{ chart.name }}</h3></a>
 
     <div class="chart-container">
         <div class="bar-chart" id="barChart"></div>
     </div>
-
-    <h2 class="section-title" style="text-align: center">Members of the Agency</h2>
+    <h2 class="section-title" style="text-align: center">{{ chart.members_title }}</h2>
     <div class="members-list" id="membersList"></div>
+    <script>
+        const data = {{ date | safe }};
+        console.log(data);
+
+        const maxValue = Math.max(...data.map(d => d.value));
+        const chartHeight = 300;
+
+        const barChart = document.getElementById('barChart');
+        data.forEach(item => {
+            const bar = document.createElement('div');
+            bar.className = 'bar';
+            const height = (item.value / maxValue) * chartHeight;
+            bar.style.height = `${height}px`;
+
+            const valueLabel = document.createElement('div');
+            valueLabel.className = 'value-label';
+            valueLabel.textContent = item.value;
+
+            const yearLabel = document.createElement('div');
+            yearLabel.className = 'year-label';
+            yearLabel.textContent = item.year;
+
+            bar.appendChild(valueLabel);
+            bar.appendChild(yearLabel);
+            barChart.appendChild(bar);
+        });
+
+        // IRENA members list (countries)
+        const countries = {{ country_name|safe }};
+        console.log(countries);
+
+        const membersList = document.getElementById('membersList');
+        countries.forEach(country => {
+        const el = document.createElement('div');
+        el.className = 'country';
+        el.textContent = country;
+        membersList.appendChild(el);
+        });
+    </script>
+    {% endfor %}
 </div>
 
 <div class="disclaimer-container">
-    <p class="disclaimer-title" style="text-align: center">Disclaimer</p>
-    <p class="disclaimer-text">
-    The designations employed and the presentation of materials herein do not imply the expression of any opinion whatsoever on the part of the International Renewable Energy Agency concerning the legal status of any region, country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries.
-    </p>
+    {% for chart in membership %}
+    <p class="disclaimer-title" style="text-align: center">{{ chart.disclaimer_name }}</p>
+    <p class="disclaimer-text">{{ chart.disclaimer_desc }}</p>
+    {% endfor %}
 </div>
 
 <section class="footer-section">
@@ -96,23 +134,23 @@
                 <h3>ITM essentials</h3>
                 <ul>
                     <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="#">Employment</a></li>
-                    <li><a href="#">Procurement</a></li>
-                    <li><a href="{% url 'event' %}">Events</a></li>
+                    <li><a href="{% url 'eco' %}">Economic</a></li>
+                    <li><a href="{% url 'project' %}">Project</a></li>
+                    <li><a href="{% url 'event' %}">Event</a></li>
                 </ul>
             </div>
             <div>
                 <ul>
                     <li><a href="{% url 'membership' %}">Membership</a></li>
-                    <li><a href="#">Collaborative Frameworks</a></li>
-                    <li><a href="#">Partnerships</a></li>
-                    <li><a href="#">Country engagement</a></li>
+                    <li><a href="{% url 'inno' %}">Innovation</a></li>
+                    <li><a href="{% url 'part' %}">Partnerships</a></li>
+                    <li><a href="{% url 'outlook' %}">Outlook</a></li>
                 </ul>
             </div>
             <div>
                 <ul>
                     <li><a href="{% url 'news' %}">News</a></li>
-                    <li><a href="{% url 'event' %}">Events</a></li>
+                    <li><a href="{% url 'event' %}">Technology</a></li>
                     <li><a href="{% url 'data' %}">Data</a></li>
                     <li><a href="{% url 'education' %}">Education</a></li>
                 </ul>
@@ -136,7 +174,5 @@
         </div>
     </div>
 </section>
-
-<script src="{% static 'assets/js/membership.js' %}"></script>
 </body>
 </html>

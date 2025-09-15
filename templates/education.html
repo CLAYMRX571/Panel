@@ -24,12 +24,12 @@
             <div class="mega-menu1">
                 <div class="container">
                     <div class="content1">
-                        <a href="#">OUTLOOK</a>
-                        <a href="#">PLANNING</a>
-                        <a href="#">POLICY</a>
-                        <a href="#">TECHNOLOGY</a>
-                        <a href="#">ECONOMIC IMPACT</a>
-                        <a href="#">FINANCE INVESTMENT</a>
+                        <a href="{% url 'outlook' %}">OUTLOOK</a>
+                        <a href="{% url 'plan' %}">PLANNING</a>
+                        <a href="{% url 'policy' %}">POLICY</a>
+                        <a href="{% url 'techno' %}">TECHNOLOGY</a>
+                        <a href="{% url 'eco' %}">ECONOMIC IMPACT</a>
+                        <a href="{% url 'finance' %}">FINANCE INVESTMENT</a>
                     </div>
                 </div>
             </div>
@@ -39,10 +39,10 @@
             <div class="mega-menu3">
                 <div class="content3">
                     <a href="{% url 'about' %}">ABOUT</a>
-                    <a href="#">PARTNERSHIPS</a>
+                    <a href="{% url 'part' %}">PARTNERSHIPS</a>
                     <a href="{% url 'membership' %}">MEMBERSHIP</a>
-                    <a href="#">PROJECT</a>
-                    <a href="#">INNOVATION</a>
+                    <a href="{% url 'project' %}">PROJECT</a>
+                    <a href="{% url 'inno' %}">INNOVATION</a>
                 </div>
             </div>
         </li>
@@ -66,152 +66,55 @@
 </header>
 
 <div class="container">
+    {% for see in education %}
     <section class="technical-section">
-        <h2 class="section-title">Technical papers</h2>
+        <h2 class="section-title">{{ see.name }}</h2>
         <div class="see-more-container">
-            <a href="" class="see-more-link">See more</a>
+            <a href="" class="see-more-link">{{ see.see_more }}</a>
         </div>
         <hr class="divider" />
         <div class="tabs-container">
-            <button class="tab-button active" data-tab="latest">Latest</button>
-            <button class="tab-button" data-tab="policy">Policy</button>
-            <button class="tab-button" data-tab="technology">Technology</button>
-            <button class="tab-button" data-tab="socio">Socio-economic impact</button>
-            <button class="tab-button" data-tab="finance">Finance & investment</button>
+            <button class="tab-button active" data-tab="latest">{{ see.category_name }}</button>
         </div>
 
         <div id="latest" class="tab-content active">
             <div class="paper-item">
                 <div class="paper-image">
-                    <img src="{% static 'assets/img/panels.png' %}" alt="Renewable Energy Targets in SIDS" />
+                    <img src="{{ see.image.url }}" alt="Renewable Energy Targets in SIDS" />
                 </div>
                 <div class="paper-info">
-                    <h3 class="paper-title">Renewable energy targets in small island developing states</h3>
-                    <p class="paper-desc">
-                    This technical paper presents a quantification of SIDS' renewable energy targets, both in their national energy pla...
-                    </p>
-                </div>
-            </div>
-
-            <div class="paper-item">
-                <div class="paper-image">
-                    <img src="{% static 'assets/img/cost.jpg' %}" alt="Potential Limitations of Marginal Pricing" />
-                </div>
-                <div class="paper-info">
-                    <h3 class="paper-title">Potential Limitations of Marginal Pricing for a Power System Based on...</h3>
-                    <p class="paper-desc">
-                    Marginal pricing wholesale power markets could produce significant barriers for the energy transition, and on their own do n...
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div id="policy" class="tab-content">
-            <div class="paper-item">
-                <div class="paper-image">
-                    <img src="https://www.irena.org/-/media/Files/IRENA/Agency/Publications/2022/Potential-Limitations-of-Marginal-Pricing-Cover.jpg" alt="Marginal Pricing" />
-                </div>
-                <div class="paper-info">
-                    <h3 class="paper-title">Potential Limitations of Marginal Pricing for a Power System Based on...</h3>
-                    <p class="paper-desc">
-                    Marginal pricing wholesale power markets could produce significant barriers for the energy transition, and on their own do n...
-                    </p>
-                </div>
-            </div>
-
-            <div class="paper-item">
-                <div class="paper-image">
-                    <img src="https://www.irena.org/-/media/Files/IRENA/Agency/Publications/2020/Energy-Subsidies-Cover.jpg" alt="Energy Subsidies" />
-                </div>
-                <div class="paper-info">
-                    <h3 class="paper-title">Energy subsidies: Evolution in the global energy transformation to 2050</h3>
-                    <p class="paper-desc">
-                    The energy sector lacks a standard definition of subsidies. This paper contributes to research on how subsidie...
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div id="technology" class="tab-content">
-            <div class="paper-item">
-                <div class="paper-image">
-                    <img src="https://www.irena.org/-/media/Files/IRENA/Agency/Publications/2022/Critical-Materials-Rare-Earth-Cover.jpg" alt="Critical Materials Rare Earth" />
-                </div>
-                <div class="paper-info">
-                    <h3 class="paper-title">Critical Materials For The Energy Transition: Rare Earth elements</h3>
-                    <p class="paper-desc">
-                    The technical paper on Critical Materials for the Energy Transition emphasises that an accelerated energy transition requires...
-                    </p>
-                </div>
-            </div>
-
-            <div class="paper-item">
-                <div class="paper-image">
-                    <img src="https://www.irena.org/-/media/Files/IRENA/Agency/Publications/2022/Critical-Materials-Lithium-Cover.jpg" alt="Critical Materials Lithium" />
-                </div>
-                <div class="paper-info">
-                    <h3 class="paper-title">Critical Materials For The Energy Transition: Lithium</h3>
-                    <p class="paper-desc">
-                    This paper discusses the global lithium industry structure and major players while reflecting on current costs changes and...
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div id="socio" class="tab-content">
-            <div class="paper-item">
-                <div class="paper-image">
-                    <img src="https://www.irena.org/-/media/Files/IRENA/Agency/Publications/2020/Measuring-the-socio-economics-of-transition-Cover.jpg" alt="Measuring socio-economics" />
-                </div>
-                <div class="paper-info">
-                    <h3 class="paper-title">Measuring the socio-economics of transition: Focus on jobs</h3>
-                    <p class="paper-desc">
-                    Well-crafted deployment, integrating and enabling policies could create millions of new jobs. This report outlines the evolvin...
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div id="finance" class="tab-content">
-            <div class="paper-item">
-                <div class="paper-image">
-                    <img src="https://www.irena.org/-/media/Files/IRENA/Agency/Publications/2021/The-Renewable-Spring-Cover.jpg" alt="The Renewable Spring" />
-                </div>
-                <div class="paper-info">
-                    <h3 class="paper-title">The Renewable Spring: The interplay between finance and policy in the energy...</h3>
-                    <p class="paper-desc">
-                    This paper presents a brief overview of technology revolutions and how they interact with financial markets.
-                    </p>
+                    <h3 class="paper-title">{{ see.edu_name }}</h3>
+                    <p class="paper-desc"> {{ see.edu_desc }} </p>
                 </div>
             </div>
         </div>
     </section>
+    {% endfor %}
 </div>
 
 <section class="footer-section">
     <div class="footer">
         <div class="essentials">
             <div>
-                <h3>ITM essentials</h3>
                 <ul>
                     <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="#">Employment</a></li>
-                    <li><a href="#">Procurement</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{% url 'eco' %}">Economic</a></li>
+                    <li><a href="{% url 'project' %}">Project</a></li>
+                    <li><a href="{% url 'event' %}">Event</a></li>
                 </ul>
             </div>
             <div>
                 <ul>
                     <li><a href="{% url 'membership' %}">Membership</a></li>
-                    <li><a href="#">Collaborative Frameworks</a></li>
-                    <li><a href="#">Partnerships</a></li>
-                    <li><a href="#">Country engagement</a></li>
+                    <li><a href="{% url 'inno' %}">Innovation</a></li>
+                    <li><a href="{% url 'part' %}">Partnerships</a></li>
+                    <li><a href="{% url 'outlook' %}">Outlook</a></li>
                 </ul>
             </div>
             <div>
                 <ul>
                     <li><a href="{% url 'news' %}">News</a></li>
-                    <li><a href="{% url 'event' %}">Events</a></li>
+                    <li><a href="{% url 'event' %}">Technology</a></li>
                     <li><a href="{% url 'data' %}">Data</a></li>
                     <li><a href="{% url 'education' %}">Education</a></li>
                 </ul>

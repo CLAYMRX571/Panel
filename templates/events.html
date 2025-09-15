@@ -24,12 +24,12 @@
             <div class="mega-menu1">
                 <div class="container">
                     <div class="content1">
-                        <a href="#">OUTLOOK</a>
-                        <a href="#">PLANNING</a>
-                        <a href="#">POLICY</a>
-                        <a href="#">TECHNOLOGY</a>
-                        <a href="#">ECONOMIC IMPACT</a>
-                        <a href="#">FINANCE INVESTMENT</a>
+                        <a href="{% url 'outlook' %}">OUTLOOK</a>
+                        <a href="{% url 'plan' %}">PLANNING</a>
+                        <a href="{% url 'policy' %}">POLICY</a>
+                        <a href="{% url 'techno' %}">TECHNOLOGY</a>
+                        <a href="{% url 'eco' %}">ECONOMIC IMPACT</a>
+                        <a href="{% url 'finance' %}">FINANCE INVESTMENT</a>
                     </div>
                 </div>
             </div>
@@ -39,10 +39,10 @@
             <div class="mega-menu3">
                 <div class="content3">
                     <a href="{% url 'about' %}">ABOUT</a>
-                    <a href="#">PARTNERSHIPS</a>
+                    <a href="{% url 'part' %}">PARTNERSHIPS</a>
                     <a href="{% url 'membership' %}">MEMBERSHIP</a>
-                    <a href="#">PROJECT</a>
-                    <a href="#">INNOVATION</a>
+                    <a href="{% url 'project' %}">PROJECT</a>
+                    <a href="{% url 'inno' %}">INNOVATION</a>
                 </div>
             </div>
         </li>
@@ -66,44 +66,15 @@
 </header>
 
 <div class="container">
-    <h2 style="text-align: center">Upcoming Events</h2>
+    {% for evo in event %}
+    <h2 style="text-align: center">{{ evo.name }}</h2>
 
     <div class="timeline-container">
         <div class="timeline" id="timeline">
             <div class="event">
-                <div class="date">10 September</div>
-                <div class="location">Abu Dhabi, UAE</div>
-                <div class="title">Twenty-Ninth Meeting of the IRENA Council</div>
-            </div>
-
-            <div class="event">
-                <div class="date">15 September</div>
-                <div class="location">Mozambique</div>
-                <div class="title">National consultation workshop on accelerating Mozambique's energy transition</div>
-            </div>
-
-            <div class="event">
-                <div class="date">23 September</div>
-                <div class="location">Webinar</div>
-                <div class="title">IRENA Insights - Participatory Processes for Energy Planning: A Practical Toolkit</div>
-            </div>
-
-            <div class="event">
-                <div class="date">20 October</div>
-                <div class="location">Freetown, Sierra Leone</div>
-                <div class="title">APRA Investment Forum 2025</div>
-            </div>
-
-            <div class="event">
-                <div class="date">29 October</div>
-                <div class="location">Bonn, Germany</div>
-                <div class="title">6th International Forum on Long-term Energy Scenarios for the Clean Energy Transition</div>
-            </div>
-
-            <div class="event">
-                <div class="date">8 January</div>
-                <div class="location">Abu Dhabi, United Arab Emirates</div>
-                <div class="title">IRENA Youth Forum 2026</div>
+                <div class="date">{{ evo.date }}</div>
+                <div class="location">{{ evo.location }}</div>
+                <div class="title">{{ evo.title }}</div>
             </div>
         </div>
 
@@ -118,62 +89,46 @@
             <button class="btn" id="next"> > </button>
         </div>
     </div>
+    {% endfor %}
 </div>
 
 <div class="container">
+    {% for eve in elent %}
     <div class="events-grid">
         <div class="event-card">
-            <img src="{% static 'assets/img/cost.jpg' %}" alt="Event Image" class="event-image" width="200" height="200"/>
-            <h3 class="event-title">Meeting of the Collaborative Framework on Enhancing Dialogue on High Shares of Renewables in Energy Systems</h3>
-            <p class="event-description">
-            The meeting aimed to bring together IRENA members and other key stakeholders to discuss the opportunities and challenges in developing cross-border interconnections and regional markets based on renewables, in support of their transition to clean energy aligned with the climate and sustainable development objectives.
-            </p>
-        </div>
-
-        <div class="event-card">
-            <img src="{% static 'assets/img/cost.jpg' %}" alt="Event Image" class="event-image" width="200" height="200"/>
-            <h3 class="event-title">Chad Energy Transition Assessment: Expert Validation Workshop</h3>
-            <p class="event-description">
-            ITM, in collaboration with Chad's Ministry of Water and Energy, is convening a virtual validation workshop to present key findings from Chad's Energy Transition Assessment (ETA), review strategic actions, and build stakeholder consensus to accelerate the country's renewable energy transition.
-            </p>
-        </div>
-        
-        <div class="event-card">
-            <img src="{% static 'assets/img/cost.jpg' %}" alt="IRENA Policy Talks" class="event-image" width="150" height="200"/>
-            <h3 class="event-title">ITM Policy Talks - Policies for advancing the renewables-based electrification of road transport</h3>
-            <p class="event-description">
-            ITM's Policy Talks are a series of webinars, providing a forum for energy transition discussions where experiences and best practices in policy design and implementation can be shared to support the efficient deployment of renewable energy, energy efficiency and other energy transition-related technologies and the maximization of the benefits realized.
-            </p>
+            <img src="{{ eve.image.url }}" alt="Event Image" class="event-image" width="200" height="200"/>
+            <h3 class="event-title">{{ eve.name }}</h3>
+            <p class="event-description">{{ eve.desc }}</p>
         </div>
     </div>
+    {% endfor %}
 </div>
 
 <section class="footer-section">
     <div class="footer">
         <div class="essentials">
             <div>
-                <h3>ITM essentials</h3>
                 <ul>
                     <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="#">Employment</a></li>
-                    <li><a href="#">Procurement</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{% url 'eco' %}">Economic</a></li>
+                    <li><a href="{% url 'project' %}">Project</a></li>
+                    <li><a href="{% url 'event' %}">Event</a></li>
                 </ul>
             </div>
             <div>
                 <ul>
                     <li><a href="{% url 'membership' %}">Membership</a></li>
-                    <li><a href="#">Collaborative Frameworks</a></li>
-                    <li><a href="#">Partnerships</a></li>
-                    <li><a href="#">Country engagement</a></li>
+                    <li><a href="{% url 'inno' %}">Innovation</a></li>
+                    <li><a href="{% url 'part' %}">Partnerships</a></li>
+                    <li><a href="{% url 'outlook' %}">Outlook</a></li>
                 </ul>
             </div>
             <div>
                 <ul>
                     <li><a href="{% url 'news' %}">News</a></li>
-                    <li><a href="{% url 'event' %}">Events</a></li>
+                    <li><a href="{% url 'event' %}">Technology</a></li>
                     <li><a href="{% url 'data' %}">Data</a></li>
-                    <li><a href="#">Education</a></li>
+                    <li><a href="{% url 'education' %}">Education</a></li>
                 </ul>
             </div>
         </div>  

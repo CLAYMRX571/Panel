@@ -1,6 +1,10 @@
 from modeltranslation.translator import register, TranslationOptions
-from .models import Events
+from .models import Events, Elent
 
 @register(Events)
 class CategoryTranslationOptions(TranslationOptions):
-    fields = ('name', 'title', 'events_name', 'events_desc',)
+    fields = ('name', 'location', 'title',)
+
+@register(Elent)
+class CategoryTranslationOptions(TranslationOptions):
+    fields = ('name', 'desc',)

@@ -1,19 +1,19 @@
 from django.shortcuts import render, redirect
-from .models import Home, News, Publication, Event, Video
+from .models import Banner, Home, Mission, Latest, Adver
 
 def Homeviews(request):
-    home = Home.objects.all()  
-    news_list = News.objects.all()
-    publications = Publication.objects.all()
-    events = Event.objects.all()
-    videos = Video.objects.all()
+    banner = Banner.objects.all()
+    home = Home.objects.all()
+    mission = Mission.objects.all()
+    latest = Latest.objects.all()
+    adver = Adver.objects.all()
 
     context = {
+        'banner': banner,
         'home': home,
-        'news_list': news_list,
-        'publications': publications,
-        'events': events,
-        'videos': videos,
+        'mission': mission,
+        'latest': latest,
+        'adver': adver,
     }
 
     return render(request, 'index.html', context)

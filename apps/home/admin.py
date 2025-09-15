@@ -1,23 +1,23 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
-from .models import Home, News, Publication, Event, Video
+from .models import Banner, Home, Mission, Latest, Adver
+
+@admin.register(Banner)
+class BannerAdmin(TranslationAdmin):
+    list_display = ['name',]
 
 @admin.register(Home)
 class HomeAdmin(TranslationAdmin):
-    list_display = ['name', 'desc', 'button_name', 'abouts_button', 'more_button', 'support_desc', 'search_name',]
+    list_display = ['name', 'desc', 'button_name', 'buttons_name', 'buttons_desc',]
 
-@admin.register(News)
-class NewAdmin(TranslationAdmin):
-    list_display = ['title', 'desc', 'tag', ]
-
-@admin.register(Publication)
-class PublicationAdmin(TranslationAdmin):
-    list_display = ['name', 'title', 'meta', 'view', ]
+@admin.register(Mission)
+class MissionAdmin(TranslationAdmin):
+    list_display = ['mission_title', 'mission_desc', 'mission_button_name', 'mission_label', 'mission_detail',]
     
-@admin.register(Event)
-class EventAdmin(TranslationAdmin):
-    list_display = ['title', 'location', ]
+@admin.register(Latest)
+class LatestAdmin(TranslationAdmin):
+    list_display = ['category_name', 'browse_link_name', 'latest_image', 'latest_title', 'latest_desc',]
     
-@admin.register(Video)
-class VideoAdmin(TranslationAdmin):
-    list_display = ['title', 'desc', 'author', 'role', 'more', ]
+@admin.register(Adver)
+class AdverAdmin(TranslationAdmin):
+    list_display = ['name', 'title', 'button_name', 'desc',]

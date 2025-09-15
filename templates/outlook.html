@@ -24,11 +24,11 @@
                 <div class="container">
                     <div class="content1">
                         <a href="{% url 'outlook' %}">OUTLOOK</a>
-                        <a href="#">PLANNING</a>
-                        <a href="#">POLICY</a>
-                        <a href="#">TECHNOLOGY</a>
-                        <a href="#">ECONOMIC IMPACT</a>
-                        <a href="#">FINANCE INVESTMENT</a>
+                        <a href="{% url 'plan' %}">PLANNING</a>
+                        <a href="{% url 'policy' %}">POLICY</a>
+                        <a href="{% url 'techno' %}">TECHNOLOGY</a>
+                        <a href="{% url 'eco' %}">ECONOMIC IMPACT</a>
+                        <a href="{% url 'finance' %}">FINANCE INVESTMENT</a>
                     </div>
                 </div>
             </div>
@@ -49,11 +49,11 @@
             <a>LANGUAGES</a>
             <div class="mega-menu2">
                 <div class="content2">
-                    <a href="{% url 'lan_switch' 'uz' %}">UZBEK</a>
-                    <a href="{% url 'lan_switch' 'en' %}">ENGLISH</a>
-                    <a href="{% url 'lan_switch' 'tr' %}">TURKCHA</a>
-                    <a href="{% url 'lan_switch' 'kk' %}">QOZOQCHA</a>
-                    <a href="{% url 'lan_switch' 'tg' %}">TOJIKCHA</a>
+                    <a href="{% url 'lan_switch_outlook' 'uz' %}">UZBEK</a>
+                    <a href="{% url 'lan_switch_outlook' 'en' %}">ENGLISH</a>
+                    <a href="{% url 'lan_switch_outlook' 'tr' %}">TURKCHA</a>
+                    <a href="{% url 'lan_switch_outlook' 'kk' %}">QOZOQCHA</a>
+                    <a href="{% url 'lan_switch_outlook' 'tg' %}">TOJIKCHA</a>
                 </div>
             </div>
         </li>
@@ -65,21 +65,23 @@
 </header>
 
 <div class="container">
-    <h1 style="text-align:center">Global outlook</h1>
-    <p>The success of the energy transition depends on a transformation of the global energy sector from fossil-based to zero-carbon sources by the second half of this century, reducing energy-related CO2 emissions to mitigate climate change and limit global temperature to within 1.5° of pre-industrial levels.</p>
-    <p>However, the decarbonisation of the energy sector requires urgent action on a global scale to accelerate the global energy transition and realise both national and regional commitments.</p>
-    <p>IRENA's World energy transitions outlook charts an evolving pathway to achieving a climate-safe future in line with the goals of the Paris Agreement. Its 1.5°C pathway offers a roadmap for accelerating the global energy transition by positioning electrification and efficiency as key drivers of change, backed by renewables, hydrogen and sustainable biomass.</p>
+    {% for out in outlook %}
+    <h1 style="text-align:center">{{ out.name }}</h1>
+    <p>{{ out.desc }}</p>
+    {% endfor %}
 </div>
 
 <div class="container">
+    {% for cards in outlook %}
     <div class="card">
-      <img src="{% static 'assets/img/panels.png' %}" alt="IRENA World Energy Transitions Outlook 2023" />
+      <img src="{{ cards.image.url }}" alt="IRENA World Energy Transitions Outlook 2023" />
         <div class="card-content">
-            <h2>World Energy Transitions Outlook 2023: 1.5°C Pathway</h2>
-            <p> IRENA's 1.5°C Scenario, set out in the World Energy Transitions Outlook, presents a pathway to achieve the 1.5°C target by 2050, positioning electrification and efficiency as key transition drivers, enabled by renewable energy, clean hydrogen and sustainable biomass. </p>
-            <a href="" download="#" class="pdf-btn">PDF</a>
+            <h2>{{ cards.focus_name }}</h2>
+            <p>{{ cards.desc }}</p>
+            <a href="{% url 'outlook' %}" download="{{ cards.file.url }}" class="pdf-btn">{{ cards.file_name }}</a>
         </div>
     </div><br>
+    {% endfor %}
 </div>
 
 <section class="footer-section">
@@ -88,7 +90,7 @@
             <div>
                 <ul>
                     <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="">Economic</a></li>
+                    <li><a href="{% url 'eco' %}">Economic</a></li>
                     <li><a href="{% url 'project' %}">Project</a></li>
                     <li><a href="{% url 'event' %}">Event</a></li>
                 </ul>

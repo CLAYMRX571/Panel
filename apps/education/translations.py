@@ -3,4 +3,4 @@ from .models import Education
 
 @register(Education)
 class CategoryTranslationOptions(TranslationOptions):
-    fields = ('name', 'category_name', 'desc', 'technical_name', 'technical_desc',)
+    fields = ('name', 'see_more', 'category_name', 'desc', 'edu_name', 'edu_desc',)

@@ -26,10 +26,10 @@
                     <div class="content1">
                         <a href="{% url 'outlook' %}">OUTLOOK</a>
                         <a href="{% url 'plan' %}">PLANNING</a>
-                        <a href="#">POLICY</a>
-                        <a href="#">TECHNOLOGY</a>
-                        <a href="#">ECONOMIC IMPACT</a>
-                        <a href="#">FINANCE INVESTMENT</a>
+                        <a href="{% url 'policy' %}">POLICY</a>
+                        <a href="{% url 'techno' %}">TECHNOLOGY</a>
+                        <a href="{% url 'eco' %}">ECONOMIC IMPACT</a>
+                        <a href="{% url 'finance' %}">FINANCE INVESTMENT</a>
                     </div>
                 </div>
             </div>
@@ -50,11 +50,11 @@
             <a>LANGUAGES</a>
             <div class="mega-menu2">
                 <div class="content2">
-                    <a href="{% url 'lan_switch' 'uz' %}">UZBEK</a>
-                    <a href="{% url 'lan_switch' 'en' %}">ENGLISH</a>
-                    <a href="{% url 'lan_switch' 'tr' %}">TURKCHA</a>
-                    <a href="{% url 'lan_switch' 'kk' %}">QOZOQCHA</a>
-                    <a href="{% url 'lan_switch' 'tg' %}">TOJIKCHA</a>
+                    <a href="{% url 'lan_switch_plan' 'uz' %}">UZBEK</a>
+                    <a href="{% url 'lan_switch_plan' 'en' %}">ENGLISH</a>
+                    <a href="{% url 'lan_switch_plan' 'tr' %}">TURKCHA</a>
+                    <a href="{% url 'lan_switch_plan' 'kk' %}">QOZOQCHA</a>
+                    <a href="{% url 'lan_switch_plan' 'tg' %}">TOJIKCHA</a>
                 </div>
             </div>
         </li>
@@ -66,36 +66,18 @@
 </header>
 
 <div class="container"><br>
-    <p>While most countries employ well-established approaches towards energy planning, the energy transition is creating a need to re-assess many aspects of planning methodology. Member countries benefit from IRENA's support to improve their long-term energy planning, with a focus on renewable energy </p>
+    {% for contain in plan %}
+    <p>{{ contain.desc }} </p>
     <div class="cards-container">
         <div class="card">
-            <img src="{% static 'assets/img/cost.jpg' %}" alt="Solar Panels">
+            <img src="{{ contain.image.url }}" alt="Solar Panels">
             <div class="card-content">
-                <h3>Long-term energy planning support</h3>
-                <p>
-                    Long-term energy planning is the process whereby national or regional targets, policies and investment strategies are derived from quantitative analysis of energy sector scenarios, often aided by the modelling of energy systems.
-                </p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="{% static 'assets/img/panels.png' %}" alt="Africa Power System">
-            <div class="card-content">
-                <h3>Africa Continental Power System Masterplan</h3>
-                <p>
-                    IRENA is a modelling partner for this initiative, led by the African Union Development Agency, to establish a long-term continent-wide planning process.
-                </p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="{% static 'assets/img/out.png' %}" alt="Wind Turbines">
-            <div class="card-content">
-                <h3>Long-term Energy Scenarios Network (LTES)</h3>
-                <p>
-                    The LTES Network is a global platform to exchange knowledge and good practices in the use and development of model-based LTES.
-                </p>
+                <h3>{{ contain.name }}</h3>
+                <p> {{ contain.long_desc }}</p>
             </div>
         </div>
     </div><br>
+    {% endfor %}
 </div>
 
 <section class="footer-section">
@@ -104,7 +86,7 @@
             <div>
                 <ul>
                     <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="">Economic</a></li>
+                    <li><a href="{% url 'eco' %}">Economic</a></li>
                     <li><a href="{% url 'project' %}">Project</a></li>
                     <li><a href="{% url 'event' %}">Event</a></li>
                 </ul>

@@ -4,4 +4,4 @@ from .models import Education
 
 @admin.register(Education)
 class EducationAdmin(TranslationAdmin):
-    list_display = ['name', 'category_name', 'desc', 'technical_name', 'technical_desc',]
+    list_display = ['name', 'see_more', 'category_name', 'desc', 'edu_name', 'edu_desc',]

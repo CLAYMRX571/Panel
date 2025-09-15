@@ -4,4 +4,4 @@ from .models import Part
 
 @admin.register(Part)
 class PartAdmin(TranslationAdmin):
-    list_display = ['name', 'desc', 'title',]
+    list_display = ['name', 'desc',]

@@ -26,9 +26,9 @@
                         <a href="{% url 'outlook' %}">OUTLOOK</a>
                         <a href="{% url 'plan' %}">PLANNING</a>
                         <a href="{% url 'policy' %}">POLICY</a>
-                        <a href="#">TECHNOLOGY</a>
-                        <a href="#">ECONOMIC IMPACT</a>
-                        <a href="#">FINANCE INVESTMENT</a>
+                        <a href="{% url 'techno' %}">TECHNOLOGY</a>
+                        <a href="{% url 'eco' %}">ECONOMIC IMPACT</a>
+                        <a href="{% url 'finance' %}">FINANCE INVESTMENT</a>
                     </div>
                 </div>
             </div>
@@ -49,11 +49,11 @@
             <a>LANGUAGES</a>
             <div class="mega-menu2">
                 <div class="content2">
-                    <a href="{% url 'lan_switch' 'uz' %}">UZBEK</a>
-                    <a href="{% url 'lan_switch' 'en' %}">ENGLISH</a>
-                    <a href="{% url 'lan_switch' 'tr' %}">TURKCHA</a>
-                    <a href="{% url 'lan_switch' 'kk' %}">QOZOQCHA</a>
-                    <a href="{% url 'lan_switch' 'tg' %}">TOJIKCHA</a>
+                    <a href="{% url 'lan_switch_policy' 'uz' %}">UZBEK</a>
+                    <a href="{% url 'lan_switch_policy' 'en' %}">ENGLISH</a>
+                    <a href="{% url 'lan_switch_policy' 'tr' %}">TURKCHA</a>
+                    <a href="{% url 'lan_switch_policy' 'kk' %}">QOZOQCHA</a>
+                    <a href="{% url 'lan_switch_policy' 'tg' %}">TOJIKCHA</a>
                 </div>
             </div>
         </li>
@@ -65,74 +65,19 @@
 </header>
 
 <div class="container"><br>
-    <p>
-      IRENA provides state-of-the-art analysis of enabling policy frameworks, spanning the entire renewable energy development cycle. This includes identifying best practice and trends in policy design and supporting countries in tailoring policies to their specific conditions and objectives.
-    </p>
+    {% for items in policy %}
+    <p>{{ items.desc }}</p>
 
     <div class="cards-container">
         <div class="card">
-            <img src="{% static 'assets/img/itm.jpg' %}" alt="Wind turbines">
+            <img src="{{ items.image.url }}" alt="Wind turbines">
             <div class="card-content">
-                <h3>Regional market analysis</h3>
-                <p>
-                    These regional studies encompass broad economic and energy sector trends, as well as renewable energy investment, market and policy developments in each region.
-                </p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="{% static 'assets/img/cost.jpg' %}" alt="Solar farm by sea">
-            <div class="card-content">
-                <h3>National and regional analysis</h3>
-                <p>
-                National and regional analysis of the current renewables policy landscape identifies barriers to and policy recommendations for an inclusive energy transition.
-                </p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="{% static 'assets/img/maps.jpg' %}" alt="Wind and solar mix">
-                <div class="card-content">
-                    <h3>Targets & NDCs</h3>
-                    <p>
-                        Analysis of the ambition of national renewable energy targets and the renewable energy components of NDCs leads to recommendations on how to design more effective targets and measures.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="cards-container">
-            <div class="card">
-                <img src="{% static 'assets/img/out.png' %}" alt="Power grid">
-                <div class="card-content">
-                    <h3>Power system structures & markets</h3>
-                    <p>
-                        The world's existing electricity systems were designed mainly for conventional, centralised power generation. These studies guide policy for modernising grids.
-                    </p>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="{% static 'assets/img/panels.png' %}" alt="Electric bus">
-                <div class="card-content">
-                    <h3>Policies in a time of transition</h3>
-                    <p>
-                        The focus of this analysis is on policies to accelerate the energy transition and to support equitable access to clean energy.
-                    </p>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="{% static 'assets/img/started.jpg' %}" alt="Hydrogen molecule">
-                <div class="card-content">
-                    <h3>Green hydrogen</h3>
-                    <p>
-                        Hydrogen from renewables is key to achieving net zero emissions from heavy industry and transport, and these studies guide policy for its deployment.
-                    </p>
-                </div>
+                <h3>{{ items.name }}</h3>
+                <p>{{ items.policy_desc }}</p>
             </div>
         </div>
     </div><br>
+    {% endfor %}
 </div>
 
 <section class="footer-section">
@@ -141,7 +86,7 @@
             <div>
                 <ul>
                     <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="">Economic</a></li>
+                    <li><a href="{% url 'eco' %}">Economic</a></li>
                     <li><a href="{% url 'project' %}">Project</a></li>
                     <li><a href="{% url 'event' %}">Event</a></li>
                 </ul>

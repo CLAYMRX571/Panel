@@ -29,7 +29,7 @@
                         <a href="{% url 'policy' %}">POLICY</a>
                         <a href="{% url 'techno' %}">TECHNOLOGY</a>
                         <a href="{% url 'eco' %}">ECONOMIC IMPACT</a>
-                        <a href="#">FINANCE INVESTMENT</a>
+                        <a href="{% url 'finance' %}">FINANCE INVESTMENT</a>
                     </div>
                 </div>
             </div>
@@ -50,11 +50,11 @@
             <a>LANGUAGES</a>
             <div class="mega-menu2">
                 <div class="content2">
-                    <a href="{% url 'lan_switch' 'uz' %}">UZBEK</a>
-                    <a href="{% url 'lan_switch' 'en' %}">ENGLISH</a>
-                    <a href="{% url 'lan_switch' 'tr' %}">TURKCHA</a>
-                    <a href="{% url 'lan_switch' 'kk' %}">QOZOQCHA</a>
-                    <a href="{% url 'lan_switch' 'tg' %}">TOJIKCHA</a>
+                    <a href="{% url 'lan_switch_eco' 'uz' %}">UZBEK</a>
+                    <a href="{% url 'lan_switch_eco' 'en' %}">ENGLISH</a>
+                    <a href="{% url 'lan_switch_eco' 'tr' %}">TURKCHA</a>
+                    <a href="{% url 'lan_switch_eco' 'kk' %}">QOZOQCHA</a>
+                    <a href="{% url 'lan_switch_eco' 'tg' %}">TOJIKCHA</a>
                 </div>
             </div>
         </li>
@@ -65,7 +65,21 @@
     </ul>
 </header>
 
+<div class="container"><br>
+    {% for ens in eco %}
+    <p>{{ ens.desc }}</p>
 
+    <div class="cards-container">
+        <div class="card">
+            <img src="{{ ens.image.url }}" alt="Wind turbines">
+            <div class="card-content">
+                <h3>{{ ens.name }}</h3>
+                <p>{{ ens.eco_desc }}</p>
+            </div>
+        </div>
+    </div><br>
+    {% endfor %}
+</div>
 
 <section class="footer-section">
     <div class="footer">

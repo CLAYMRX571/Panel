@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRENA</title>
+    <link rel="icon" href="{% static 'assets/img/itms.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'assets/css/finance.css' %}">
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+    <div class="logo">
+        <a href="{% url 'index' %}">
+            <img src="{% static 'assets/img/itm.jpg' %}" alt="ITM Logo">
+        </a>
+    </div>
+
+    <ul>
+        <li>
+            <a>ENERGY TRANSITION</a>
+            <div class="mega-menu1">
+                <div class="container">
+                    <div class="content1">
+                        <a href="{% url 'outlook' %}">OUTLOOK</a>
+                        <a href="{% url 'plan' %}">PLANNING</a>
+                        <a href="{% url 'policy' %}">POLICY</a>
+                        <a href="{% url 'techno' %}">TECHNOLOGY</a>
+                        <a href="{% url 'eco' %}">ECONOMIC IMPACT</a>
+                        <a href="{% url 'finance' %}">FINANCE INVESTMENT</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <a>ABOUT</a>
+            <div class="mega-menu3">
+                <div class="content3">
+                    <a href="{% url 'about' %}">ABOUT</a>
+                    <a href="{% url 'part' %}">PARTNERSHIPS</a>
+                    <a href="{% url 'membership' %}">MEMBERSHIP</a>
+                    <a href="{% url 'project' %}">PROJECT</a>
+                    <a href="{% url 'inno' %}">INNOVATION</a>
+                </div>
+            </div>
+        </li>
+        <li>    
+            <a>LANGUAGES</a>
+            <div class="mega-menu2">
+                <div class="content2">
+                    <a href="{% url 'lan_switch_finance' 'uz' %}">UZBEK</a>
+                    <a href="{% url 'lan_switch_finance' 'en' %}">ENGLISH</a>
+                    <a href="{% url 'lan_switch_finance' 'tr' %}">TURKCHA</a>
+                    <a href="{% url 'lan_switch_finance' 'kk' %}">QOZOQCHA</a>
+                    <a href="{% url 'lan_switch_finance' 'tg' %}">TOJIKCHA</a>
+                </div>
+            </div>
+        </li>
+        <li><a href="{% url 'news' %}">NEWS</a></li>
+        <li><a href="{% url 'education' %}">EDUCATION</a></li>
+        <li><a href="{% url 'data' %}">DATA</a></li>
+        <li><a href="{% url 'event' %}">EVENTS</a></li>
+    </ul>
+</header>
+
+<div class="container"><br>
+    {% for go in finance %}
+    <p>{{ go.desc }}</p>
+
+    <div class="cards-container">
+        <div class="card">
+            <img src="{{ go.image.url }}" alt="Wind and solar">
+            <div class="card-content">
+                <h3>{{ go.name }}</h3>
+                <p>{{ go.finance_desc }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<section class="footer-section">
+    <div class="footer">
+        <div class="essentials">
+            <div>
+                <ul>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'eco' %}">Economic</a></li>
+                    <li><a href="{% url 'project' %}">Project</a></li>
+                    <li><a href="{% url 'event' %}">Event</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="{% url 'membership' %}">Membership</a></li>
+                    <li><a href="{% url 'inno' %}">Innovation</a></li>
+                    <li><a href="{% url 'part' %}">Partnerships</a></li>
+                    <li><a href="{% url 'outlook' %}">Outlook</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="{% url 'news' %}">News</a></li>
+                    <li><a href="{% url 'event' %}">Technology</a></li>
+                    <li><a href="{% url 'data' %}">Data</a></li>
+                    <li><a href="{% url 'education' %}">Education</a></li>
+                </ul>
+            </div>
+        </div>  
+
+        <div class="social-links">
+            <a href="https://www.itm-llc.uz/uz/home/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/281/281764.png" alt="Google">
+            </a>
+            <a href="https://www.youtube.com/watch?v=JlDJVOnEM8o" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+            </a>
+            <a href="https://t.me/ITMRasmiy" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+            </a>
+        </div>
+
+        <div class="copyright">
+            <p>2025 ITM MCHJ</p>
+        </div>
+    </div>
+</section>
+
+<script src="{% static 'assets/js/finance.js' %}"></script>
+</body>
+</html>

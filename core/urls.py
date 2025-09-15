@@ -2,7 +2,7 @@
 URL configuration for core project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.1/topics/http/urls/
+    https://docs.djangoproject.com/en/5.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -33,6 +33,8 @@ from apps.outlook.views import OutlookViews, lan_switch_outlook
 from apps.planning.views import PlanViews, lan_switch_plan
 from apps.policy.views import PolicyViews, lan_switch_policy
 from apps.techno.views import TechnoViews, lan_switch_techno
+from apps.economic.views import Ecoviews, lan_switch_eco
+from apps.finance.views import Financeviews, lan_switch_finance
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
@@ -50,10 +52,8 @@ urlpatterns = [
     path('lan/plan/<str:lan>/', lan_switch_plan, name='lan_switch_plan'),
     path('lan/policy/<str:lan>/', lan_switch_policy, name='lan_switch_policy'),
     path('lan/techno/<str:lan>/', lan_switch_techno, name='lan_switch_techno'),
-    # path('lan/education/<str:lan>/', lan_switch_education, name='lan_switch_education'),
-    # path('lan/education/<str:lan>/', lan_switch_education, name='lan_switch_education'),
-    # path('lan/education/<str:lan>/', lan_switch_education, name='lan_switch_education'),
-    # path('lan/education/<str:lan>/', lan_switch_education, name='lan_switch_education'),
+    path('lan/eco/<str:lan>/', lan_switch_eco, name='lan_switch_eco'),
+    path('lan/finance/<str:lan>/', lan_switch_finance, name='lan_switch_finance'),
 ]
 
 urlpatterns += i18n_patterns(
@@ -72,10 +72,8 @@ urlpatterns += i18n_patterns(
     path('plan/', PlanViews, name='plan'),
     path('policy/', PolicyViews, name='policy'),
     path('techno/', TechnoViews, name='techno'),
-    # path('education/', Educationviews, name='education'),
-    # path('education/', Educationviews, name='education'),
-    # path('education/', Educationviews, name='education'),
-    # path('education/', Educationviews, name='education'),
+    path('eco/', Ecoviews, name='eco'),
+    path('finance/', Financeviews, name='finance'),
 )
 
 if settings.DEBUG:

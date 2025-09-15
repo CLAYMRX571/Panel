@@ -28,8 +28,8 @@
                         <a href="{% url 'plan' %}">PLANNING</a>
                         <a href="{% url 'policy' %}">POLICY</a>
                         <a href="{% url 'techno' %}">TECHNOLOGY</a>
-                        <a href="#">ECONOMIC IMPACT</a>
-                        <a href="#">FINANCE INVESTMENT</a>
+                        <a href="{% url 'eco' %}">ECONOMIC IMPACT</a>
+                        <a href="{% url 'finance' %}">FINANCE INVESTMENT</a>
                     </div>
                 </div>
             </div>
@@ -50,11 +50,11 @@
             <a>LANGUAGES</a>
             <div class="mega-menu2">
                 <div class="content2">
-                    <a href="{% url 'lan_switch' 'uz' %}">UZBEK</a>
-                    <a href="{% url 'lan_switch' 'en' %}">ENGLISH</a>
-                    <a href="{% url 'lan_switch' 'tr' %}">TURKCHA</a>
-                    <a href="{% url 'lan_switch' 'kk' %}">QOZOQCHA</a>
-                    <a href="{% url 'lan_switch' 'tg' %}">TOJIKCHA</a>
+                    <a href="{% url 'lan_switch_techno' 'uz' %}">UZBEK</a>
+                    <a href="{% url 'lan_switch_techno' 'en' %}">ENGLISH</a>
+                    <a href="{% url 'lan_switch_techno' 'tr' %}">TURKCHA</a>
+                    <a href="{% url 'lan_switch_techno' 'kk' %}">QOZOQCHA</a>
+                    <a href="{% url 'lan_switch_techno' 'tg' %}">TOJIKCHA</a>
                 </div>
             </div>
         </li>
@@ -66,73 +66,19 @@
 </header>
 
 <div class="container"><br>
-    <p>
-      The rapid emergence of increasingly cost-effective renewable energy is allowing countries across the globe to switch away from carbon-emitting sources at pace. IRENA's data gathering and analysis of all the major renewables enables it to guide and advise its member countries on their conversion to low-carbon status.
-    </p>
+    {% for task in techno %}
+    <p>{{ task.desc }}</p>
 
     <div class="cards-container">
         <div class="card">
-            <img src="{% static 'assets/img/cost.jpg' %}" alt="Bioenergy & biofuels">
+            <img src="{{ task.image.url }}" alt="Bioenergy & biofuels">
             <div class="card-content">
-                <h3>Bioenergy & biofuels</h3>
-                <p>
-                    The sustainable supply of energy from biomass includes technologies for heat and power, and its transformation into upgraded energy carriers (e.g. advanced biofuels).
-                </p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="{% static 'assets/img/maps.jpg' %}" alt="Geothermal energy">
-            <div class="card-content">
-                <h3>Geothermal energy</h3>
-                <p>
-                    Geothermal energy technologies for power generation and heat offer significant potential in a sustainable energy system.
-                </p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="{% static 'assets/img/panels.png' %}" alt="Hydropower">
-            <div class="card-content">
-                <h3>Hydropower</h3>
-                <p>
-                    By far the largest renewable source today, hydroelectric technologies are longstanding enablers of the generation, management and storage of power.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div class="cards-container">
-        <div class="card">
-            <img src="{% static 'assets/img/out.png' %}" alt="Ocean energy">
-            <div class="card-content">
-                <h3>Ocean</h3>
-                <p>
-                    Ocean energy technologies and their application can support the achievement of a blue economy and SDG14 (conserve and sustainably use the oceans, seas and marine resources).
-                </p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="{% static 'assets/img/maps.jpg' %}" alt="Solar energy">
-            <div class="card-content">
-                <h3>Solar energy</h3>
-                <p>
-                    Solar energy technologies offer vast potential in their application for the provision of power, heating and cooling, both on-grid and off-grid.
-                </p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="{% static 'assets/img/cost.jpg' %}" alt="Wind energy">
-            <div class="card-content">
-                <h3>Wind energy</h3>
-                <p>
-                    Onshore and offshore wind technologies use turbine technology to harness the energy of the wind for the provision of power.
-                </p>
+                <h3>{{ task.name }}</h3>
+                <p> {{ task.techno_desc }}</p>
             </div>
         </div>
     </div><br>
+    {% endfor %}
 </div>
 
 <section class="footer-section">
@@ -141,7 +87,7 @@
             <div>
                 <ul>
                     <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="">Economic</a></li>
+                    <li><a href="{% url 'eco' %}">Economic</a></li>
                     <li><a href="{% url 'project' %}">Project</a></li>
                     <li><a href="{% url 'event' %}">Event</a></li>
                 </ul>

@@ -1,22 +1,22 @@
 from modeltranslation.translator import register, TranslationOptions
-from .models import Home, News, Publication, Event, Video
+from .models import Banner, Home, Mission, Latest, Adver
 
+@register(Banner)
+class CategoryTranslationOptions(TranslationOptions):
+    fields = ('name',)
+    
 @register(Home)
 class CategoryTranslationOptions(TranslationOptions):
-    fields = ('name', 'desc', 'button_name', 'abouts_button', 'more_button', 'support_desc', 'search_name')
+    fields = ('name', 'desc', 'button_name', 'buttons_name', 'buttons_desc',)
     
-@register(News)
+@register(Mission)
 class CategoryTranslationOptions(TranslationOptions):
-    fields = ('title', 'desc', 'tag')
+    fields = ('mission_title', 'mission_desc', 'mission_button_name', 'mission_label', 'mission_detail',)
     
-@register(Publication)
+@register(Latest)
 class CategoryTranslationOptions(TranslationOptions):
-    fields = ('name', 'title', 'meta', 'view')
-    
-@register(Event)
-class CategoryTranslationOptions(TranslationOptions):
-    fields = ('title', 'location') 
+    fields = ('category_name', 'browse_link_name', 'latest_image', 'latest_title', 'latest_desc',) 
 
-@register(Video)
+@register(Adver)
 class CategoryTranslationOptions(TranslationOptions):
-    fields = ('title', 'desc', 'author', 'role', 'more') 
+    fields = ('name', 'title', 'button_name', 'desc',) 

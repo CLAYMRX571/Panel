@@ -24,12 +24,12 @@
             <div class="mega-menu1">
                 <div class="container">
                     <div class="content1">
-                        <a href="#">OUTLOOK</a>
-                        <a href="#">PLANNING</a>
-                        <a href="#">POLICY</a>
-                        <a href="#">TECHNOLOGY</a>
-                        <a href="#">ECONOMIC IMPACT</a>
-                        <a href="#">FINANCE INVESTMENT</a>
+                        <a href="{% url 'outlook' %}">OUTLOOK</a>
+                        <a href="{% url 'plan' %}">PLANNING</a>
+                        <a href="{% url 'policy' %}">POLICY</a>
+                        <a href="{% url 'techno' %}">TECHNOLOGY</a>
+                        <a href="{% url 'eco' %}">ECONOMIC IMPACT</a>
+                        <a href="{% url 'finance' %}">FINANCE INVESTMENT</a>
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                     <a href="{% url 'part' %}">PARTNERSHIPS</a>
                     <a href="{% url 'membership' %}">MEMBERSHIP</a>
                     <a href="{% url 'project' %}">PROJECT</a>
-                    <a href="#">INNOVATION</a>
+                    <a href="{% url 'inno' %}">INNOVATION</a>
                 </div>
             </div>
         </li>
@@ -66,94 +66,80 @@
 </header>
 
 <div class="container">
+    {% for dat in data %}
     <main class="content">
-        <p class="paragraph">
-        Detailed, accurate and timely data and statistics are essential for the monitoring and evaluation of renewable energy policies and deployment. IRENA helps analysts, policy makers and the public make informed decisions by providing access to comprehensive and up-to-date renewable energy data.
-        </p>
-        <p class="paragraph">
-        ITM publishes detailed statistics on renewable energy capacity, power generation and renewable energy balances. This data is collected directly from members using the IRENA Renewable Energy Statistics questionnaire and is also supplemented by desk research where official statistics are not available. Renewable power-generation capacity statistics are released annually in March. Additionally, renewable power generation and renewable energy balances data sets are released in July.
-        </p>
-        <p class="paragraph">
-        ITM's statistics unit helps members to strengthen their data collection and reporting activities through training and methodological guidance. Member countries are encouraged to participate in this process. Explore IRENA data and statistics by browsing a wide range of topics such as Capacity and Generation, Costs, Finance and more on the menu.
-        </p>
+        <p class="paragraph">{{ dat.desc }}</p>
     </main>
+    {% endfor %}
 </div>
 
 <div class="container">
+    {% for dat in data %}
     <section class="featured-section">
-        <h2 class="section-title">Featured</h2>
+        <h2 class="section-title">{{ dat.name }}</h2>
         <hr class="divider"/>
 
         <div class="featured-card">
             <div class="image-container">
-                <img src="{% static 'assets/img/cost.jpg' %}" alt="Renewable Energy Statistics 2025" width="300" height="300" />
+                <img src="{{ dat.image.url }}" alt="Renewable Energy Statistics 2025" width="300" height="300" />
             </div>
 
             <div class="content-wrapper">
-                <div class="focus-tag">FOCUS ON</div>
-                <h3 class="main-title">Renewable energy statistics 2025</h3>
-                <p class="description">
-                    This publication presents renewable energy statistics for the last decade (2015-2024).
-                </p>
+                <h3 class="main-title">{{ dat.title }}</h3>
+                <p class="description"> {{ dat.title_desc }}</p>
 
                 <div class="availability">
                     <p class="available-text">Available as:</p>
-                    <a href="" class="download-link">PDF</a>
+                    <a href="{% url 'data' %}" download="{{ dat.file.url }}.pdf" class="download-link">{{ dat.file_name }}</a>
                 </div>  
             </div>
         </div>
     </section><br>
+    {% endfor %}
 </div>
 
 <div class="container">
+    {% for data in related %}
     <section class="related-section">
-        <h2 class="section-title">Related publications</h2>
+        <h2 class="section-title">{{ data.relate_name }}</h2>
         <div class="nav-controls">
-            <a href="#" class="view-more-link">View more</a>
+            <a href="{% url 'data' %}" class="view-more-link">{{ data.relate_more }}</a>
             <button class="nav-btn prev-btn"><</button>
             <button class="nav-btn next-btn">></button>
         </div>
         <div class="publications-grid">
             <div class="publication-card">
-                <img src="{% static 'assets/img/panels.png' %}" alt="Renewable Energy Statistics 2025" class="cover-image" />
-                <h3 class="pub-title">Renewable energy statistics 2025</h3>
-            </div>
-            <div class="publication-card">
-                <img src="{% static 'assets/img/panels.png' %}" alt="Renewable Capacity Statistics 2025" class="cover-image" />
-                <h3 class="pub-title">Renewable capacity statistics 2025</h3>
-            </div>
-            <div class="publication-card">
-                <img src="{% static 'assets/img/cost.jpg' %}" alt="Off-grid Renewable Energy Statistics 2024" class="cover-image" />
-                <h3 class="pub-title">Off-grid Renewable Energy Statistics 2024</h3>
+                <img src="{{ data.relate_image.url }}" alt="Renewable Energy Statistics 2025" class="cover-image" />
+                <h3 class="pub-title">{{ data.relate_title }}</h3>
             </div>
         </div>
     </section><br>
+    {% endfor %}
 </div>
 
 <section class="footer-section">
     <div class="footer">
         <div class="essentials">
             <div>
-                <h3>ITM essentials</h3>
                 <ul>
                     <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="#">Employment</a></li>
-                    <li><a href="#">Procurement</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{% url 'eco' %}">Economic</a></li>
+                    <li><a href="{% url 'project' %}">Project</a></li>
+                    <li><a href="{% url 'event' %}">Event</a></li>
                 </ul>
             </div>
             <div>
                 <ul>
                     <li><a href="{% url 'membership' %}">Membership</a></li>
-                    <li><a href="#">Collaborative Frameworks</a></li>
-                    <li><a href="#">Partnerships</a></li>
-                    <li><a href="#">Country engagement</a></li>
+                    <li><a href="{% url 'inno' %}">Innovation</a></li>
+                    <li><a href="{% url 'part' %}">Partnerships</a></li>
+                    <li><a href="{% url 'outlook' %}">Outlook</a></li>
                 </ul>
             </div>
             <div>
                 <ul>
                     <li><a href="{% url 'news' %}">News</a></li>
-                    <li><a href="{% url 'event' %}">Events</a></li>
+                    <li><a href="{% url 'techno' %}">Technology</a></li>
                     <li><a href="{% url 'data' %}">Data</a></li>
                     <li><a href="{% url 'education' %}">Education</a></li>
                 </ul>

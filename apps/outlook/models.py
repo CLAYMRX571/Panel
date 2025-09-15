@@ -7,6 +7,7 @@ class Outlook(models.Model):
     focus_name = models.CharField(max_length=100)
     focus_desc = models.TextField()
     file = models.FileField(upload_to='pdf', blank=True, null=True)
+    file_name = models.CharField(max_length=50)
     
     def __str__(self):
         return self.name

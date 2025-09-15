@@ -29,7 +29,7 @@
                         <a href="{% url 'policy' %}">POLICY</a>
                         <a href="{% url 'techno' %}">TECHNOLOGY</a>
                         <a href="{% url 'eco' %}">ECONOMIC IMPACT</a>
-                        <a href="#">FINANCE INVESTMENT</a>
+                        <a href="{% url 'finance' %}">FINANCE INVESTMENT</a>
                     </div>
                 </div>
             </div>
@@ -67,113 +67,91 @@
 
 <div class="header">
     <div class="marquee-container">
+        {% for item in banner %}
         <div class="marquee-text">
-            Tracking Progress: Explore Energy Transition Indicators and Progress to #3xRenewables by 2030 || Support our #3xRenewables for the planet and its people campaign
+            {{ item.name }}
         </div>
+        {% endfor %}
     </div>
 </div>
 
 <div class="hero-section">
+    {% for item in home %}
     <div class="hero">
-        <img src="{% static 'assets/img/panels.png' %}" alt="Solar Panels on Water" id="hero-img"/>
+        <img src="{{ item.image.url }}" alt="Solar Panels on Water" id="hero-img"/>
         <div class="hero-content">
-            <p id="hero-type">PRESS RELEASE</p>
-            <h2 id="hero-title">91% of New Renewable Projects Now Cheaper Than Fossil Fuels Alternatives</h2>
-            <a href="" id="hero-link">Read more</a>
+            <p id="hero-type"> {{ item.name }} </p>
+            <h2 id="hero-title">{{ item.desc }}</h2>
+            <a href="{% url 'news' %}" id="hero-link">{{ item.button_name }}</a>
         </div>
     </div>
-
     <div class="cards" style="margin-top:40px;">
-        <div class="card" data-img="{% static 'assets/img/panels.png' %}" data-title="91% of New Renewable Projects Now Cheaper Than Fossil Fuels Alternatives" data-type="PRESS RELEASE" data-link="Read more">
-            <h3 style="color:white">Press release</h3>
-            <p style="color:white">91% of New Renewable Projects Now Cheaper Than Fossil Fuels Alternatives</p>
-        </div>
-        <div class="card" data-img="{% static 'assets/img/cost.jpg' %}" data-title="Renewables Boom Highlights Growing Regional Divide" data-type="PRESS RELEASE" data-link="Read more">
-            <h3 style="color:white">Press release</h3>
-            <p style="color:white">Renewables Boom Highlights Growing Regional Divide</p>
-        </div>
-        <div class="card" data-img="{% static 'assets/img/panels.png' %}" data-title="Energy Access Has Improved, Yet International Financial Support Still Needed to Boost Progress and Address Disparities" data-type="PRESS RELEASE" data-link="Read more">
-            <h3 style="color:white">Press release</h3>
-            <p style="color:white">Energy Access Has Improved, Yet International Financial Support Still Needed to Boost Progress and Address Disparities</p>
-        </div>
-        <div class="card" data-img="{% static 'assets/img/cost.jpg' %}" data-title="Supporting Countries in Their Transition to a Sustainable Future" data-type="MISSION" data-link="Membership">
-            <h3 style="color:white">Mission</h3>
-            <p style="color:white">Supporting Countries in Their Transition to a Sustainable Future</p>
+        <div class="card" data-img="{{ item.buttons_image.url }}" data-title="91% of New Renewable Projects Now Cheaper Than Fossil Fuels Alternatives" data-type="PRESS RELEASE" data-link="Read more">
+            <h3 style="color:white">{{ item.buttons_name }}</h3>
+            <p style="color:white">{{ item.buttons_desc }}</p>
         </div>
     </div>
+    {% endfor %}
 </div>
 
 <div class="mission-section">
     <div class="background-map collapsed">
+        {% for miss in mission %}
         <div class="map-content">
             <div class="mission-header">
                 <span class="arrow">▼</span>
-                <div class="mission-title">See Our Mission</div>
+                <div class="mission-title">{{ miss.mission_title }}</div>
             </div>
 
             <div class="mission-content">
                 <div class="mission-body">
                     <div class="mission-text">
-                        Supporting countries worldwide in their transition<br />
-                        to a sustainable energy future
+                        {{ miss.mission_desc }}
                     </div>
-                    <div class="read-more" style="margin-top:20px;">Read about us</div>
+                    <a href="{% url 'news' %}" class="read-more" style="margin-top:20px;">{{ miss.mission_button_name }}</a>
                 </div>
             </div>
 
             <div class="members-box" style="margin-top:20px;">
-                <div class="members-count">170</div>
-                <div class="members-label">Members</div>
-                <div class="members-detail">(169 Countries & The EU)</div>
+                <div class="members-count">{{ miss.mission_count }}</div>
+                <div class="members-label">{{ miss.mission_label }}</div>
+                <div class="members-detail">{{ miss.mission_detail }}</div>
             </div>
         </div>
+        {% endfor %}
     </div>
 </div>
 
 <div class="container">
+    {% for new in latest %}
     <header>
-        <h1>Latest news</h1>
-        <a href="#" class="browse-link">Browse all news</a>
+        <h1>{{ new.category_name }}</h1>
+        <a href="{% url 'news' %}" class="browse-link">{{ new.browse_link_name }}</a>
     </header>
 
     <section class="news-grid">
         <div class="news-item">
-            <img src="{% static 'assets/img/cost.jpg' %}" alt="Energy Transition" />
-            <h2>Six Principles to Ensure the Energy Transition Is in Harmony with Nature</h2>
-            <div class="meta">3 September 2025 • <a href="#">Expert Insights</a></div>
-            <p>Six principles, built on existing good practices and guidelines, can be used to guide 
-            nature-positive siting and permitting of solar, wind, and grid infrastructure.</p>
+            <img src="{{ new.latest_image.url }}" alt="Energy Transition" />
+            <h2>{{ new.latest_title }}</h2>
+            <div class="meta">{{ new.latest_date }}</div>
+            <p>{{ new.latest_desc }}</p>
         </div>
-
-        <div class="news-item focus">
-            <img src="{% static 'assets/img/cost.jpg' %}" alt="Delivering" />
-            <h3>FOCUS ON</h3>
-            <p><strong>Delivering on the UAE Consensus: Tracking progress toward tripling renewable energy capacity and doubling energy efficiency by 2030</strong></p>
-            <a href="#">Read more</a>
-        </div>
-
-        <div class="news-item">
-            <img src="{% static 'assets/img/panels.png' %}" alt="Solar PV" />
-            <h2>The Rise of Solar PV and Battery Storage's Prominence in Emerging Markets</h2>
-            <div class="meta">28 August 2025 • <a href="#">Expert Insights</a></div>
-            <p>Six principles, built on existing good practices and guidelines, can be used to guide nature-positive siting and permitting of solar, wind, and grid infrastructure.</p>
-        </div>
-    </section>
+    </section><br>
+    {% endfor %}
 </div>
 
 <section class="newsletter-container">
+    {% for letter in adver %}
     <div class="newsletter-content">
         <div class="newsletter-left">
-            <h2 class="newsletter-title">Stay up to date</h2>
-            <p class="newsletter-subtitle">Subscribe to the newsletter</p>
-            <button class="newsletter-button">Subscribe Now</button>
+            <h2 class="newsletter-title">{{ letter.name }}</h2>
+            <p class="newsletter-subtitle">{{ letter.title }}</p>
+            <button class="newsletter-button">{{ letter.button_name }}</button>
         </div>
 
-        <div class="newsletter-right">
-            Stories you might have missed, key data and upcoming events information 
-            straight into your mailbox.
-        </div>
+        <div class="newsletter-right">{{ letter.desc }}</div>
     </div>
+    {% endfor %}
 </section>
 
 <section class="footer-section">

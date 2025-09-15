@@ -4,4 +4,4 @@ from .models import Project
 
 @admin.register(Project)
 class ProjectAdmin(TranslationAdmin):
-    list_display = ['name', 'desc', 'project_name',]
+    list_display = ['name', 'desc',]
