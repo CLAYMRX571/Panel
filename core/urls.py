@@ -29,7 +29,10 @@ from apps.education.views import Educationviews, lan_switch_education
 from apps.part.views import PartViews, lan_switch_part
 from apps.project.views import ProjectViews, lan_switch_project
 from apps.innovation.views import Innoviews, lan_switch_inno
-from apps.employ.views import Employviews, lan_switch_employ
+from apps.outlook.views import OutlookViews, lan_switch_outlook
+from apps.planning.views import PlanViews, lan_switch_plan
+from apps.policy.views import PolicyViews, lan_switch_policy
+from apps.techno.views import TechnoViews, lan_switch_techno
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
@@ -43,11 +46,10 @@ urlpatterns = [
     path('lan/part/<str:lan>/', lan_switch_part, name='lan_switch_part'),
     path('lan/project/<str:lan>/', lan_switch_project, name='lan_switch_project'),
     path('lan/inno/<str:lan>/', lan_switch_inno, name='lan_switch_inno'),
-    path('lan/employ/<str:lan>/', lan_switch_employ, name='lan_switch_employ'),
-    # path('lan/education/<str:lan>/', lan_switch_education, name='lan_switch_education'),
-    # path('lan/education/<str:lan>/', lan_switch_education, name='lan_switch_education'),
-    # path('lan/education/<str:lan>/', lan_switch_education, name='lan_switch_education'),
-    # path('lan/education/<str:lan>/', lan_switch_education, name='lan_switch_education'),
+    path('lan/outlook/<str:lan>/', lan_switch_outlook, name='lan_switch_outlook'),
+    path('lan/plan/<str:lan>/', lan_switch_plan, name='lan_switch_plan'),
+    path('lan/policy/<str:lan>/', lan_switch_policy, name='lan_switch_policy'),
+    path('lan/techno/<str:lan>/', lan_switch_techno, name='lan_switch_techno'),
     # path('lan/education/<str:lan>/', lan_switch_education, name='lan_switch_education'),
     # path('lan/education/<str:lan>/', lan_switch_education, name='lan_switch_education'),
     # path('lan/education/<str:lan>/', lan_switch_education, name='lan_switch_education'),
@@ -66,11 +68,10 @@ urlpatterns += i18n_patterns(
     path('part/', PartViews, name='part'),
     path('project/', ProjectViews, name='project'),
     path('inno/', Innoviews, name='inno'),
-    path('employ/', Employviews, name='employ'),
-    # path('education/', Educationviews, name='education'),
-    # path('education/', Educationviews, name='education'),
-    # path('education/', Educationviews, name='education'),
-    # path('education/', Educationviews, name='education'),
+    path('outlook/', OutlookViews, name='outlook'),
+    path('plan/', PlanViews, name='plan'),
+    path('policy/', PolicyViews, name='policy'),
+    path('techno/', TechnoViews, name='techno'),
     # path('education/', Educationviews, name='education'),
     # path('education/', Educationviews, name='education'),
     # path('education/', Educationviews, name='education'),

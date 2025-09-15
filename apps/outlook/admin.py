@@ -1,3 +1,7 @@
 from django.contrib import admin
+from modeltranslation.admin import TranslationAdmin
+from .models import Outlook
 
-# Register your models here.
+@admin.register(Outlook)
+class OutlookAdmin(TranslationAdmin):
+    list_display = ['name', 'desc', 'focus_name', 'focus_desc',]

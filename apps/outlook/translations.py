@@ -1,6 +1,6 @@
 from modeltranslation.translator import register, TranslationOptions
-from .models import About
+from .models import Outlook
 
-@register(About)
+@register(Outlook)
 class CategoryTranslationOptions(TranslationOptions):
-    fields = ('name', 'desc', 'adverb_name', 'adverb_desc', 'adverb_more',)
+    fields = ('name', 'desc', 'focus_name', 'focus_desc',)

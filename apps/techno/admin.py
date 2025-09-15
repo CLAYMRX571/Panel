@@ -1,3 +1,7 @@
 from django.contrib import admin
+from modeltranslation.admin import TranslationAdmin
+from .models import Techno
 
-# Register your models here.
+@admin.register(Techno)
+class PolicyAdmin(TranslationAdmin):
+    list_display = ['name', 'desc', 'techno_desc',]
