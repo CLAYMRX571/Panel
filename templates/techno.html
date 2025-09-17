@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load i18n %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,34 +21,34 @@
 
     <ul>
         <li>
-            <a>ENERGY TRANSITION</a>
+            <a>{% trans 'ENERGY TRANSITION' %}</a>
             <div class="mega-menu1">
                 <div class="container">
                     <div class="content1">
-                        <a href="{% url 'outlook' %}">OUTLOOK</a>
-                        <a href="{% url 'plan' %}">PLANNING</a>
-                        <a href="{% url 'policy' %}">POLICY</a>
-                        <a href="{% url 'techno' %}">TECHNOLOGY</a>
-                        <a href="{% url 'eco' %}">ECONOMIC IMPACT</a>
-                        <a href="{% url 'finance' %}">FINANCE INVESTMENT</a>
+                        <a href="{% url 'outlook' %}">{% trans 'OUTLOOK' %}</a>
+                        <a href="{% url 'plan' %}">{% trans 'PLANNING' %}</a>
+                        <a href="{% url 'policy' %}">{% trans 'POLICY' %}</a>
+                        <a href="{% url 'techno' %}">{% trans 'TECHNOLOGY' %}</a>
+                        <a href="{% url 'eco' %}">{% trans 'ECONOMIC IMPACT' %}</a>
+                        <a href="{% url 'finance' %}">{% trans 'FINANCE INVESTMENT' %}</a>
                     </div>
                 </div>
             </div>
         </li>
         <li>
-            <a>ABOUT</a>
+            <a>{% trans 'ABOUT' %}</a>
             <div class="mega-menu3">
                 <div class="content3">
-                    <a href="{% url 'about' %}">ABOUT</a>
-                    <a href="{% url 'part' %}">PARTNERSHIPS</a>
-                    <a href="{% url 'membership' %}">MEMBERSHIP</a>
-                    <a href="{% url 'project' %}">PROJECT</a>
-                    <a href="{% url 'inno' %}">INNOVATION</a>
+                    <a href="{% url 'about' %}">{% trans 'ABOUT' %}</a>
+                    <a href="{% url 'part' %}">{% trans 'PARTNERSHIPS' %}</a>
+                    <a href="{% url 'membership' %}">{% trans 'MEMBERSHIP' %}</a>
+                    <a href="{% url 'project' %}">{% trans 'PROJECT' %}</a>
+                    <a href="{% url 'inno' %}">{% trans 'INNOVATION' %}</a>
                 </div>
             </div>
         </li>
         <li>    
-            <a>LANGUAGES</a>
+            <a>{% trans 'LANGUAGES' %}</a>
             <div class="mega-menu2">
                 <div class="content2">
                     <a href="{% url 'lan_switch_techno' 'uz' %}">UZBEK</a>
@@ -58,10 +59,10 @@
                 </div>
             </div>
         </li>
-        <li><a href="{% url 'news' %}">NEWS</a></li>
-        <li><a href="{% url 'education' %}">EDUCATION</a></li>
-        <li><a href="{% url 'data' %}">DATA</a></li>
-        <li><a href="{% url 'event' %}">EVENTS</a></li>
+        <li><a href="{% url 'news' %}">{% trans 'NEWS' %}</a></li>
+        <li><a href="{% url 'education' %}">{% trans 'EDUCATION' %}</a></li>
+        <li><a href="{% url 'data' %}">{% trans 'DATA' %}</a></li>
+        <li><a href="{% url 'event' %}">{% trans 'EVENTS' %}</a></li>
     </ul>
 </header>
 
@@ -86,26 +87,26 @@
         <div class="essentials">
             <div>
                 <ul>
-                    <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="{% url 'eco' %}">Economic</a></li>
-                    <li><a href="{% url 'project' %}">Project</a></li>
-                    <li><a href="{% url 'event' %}">Event</a></li>
+                    <li><a href="{% url 'about' %}">{% trans 'About' %}</a></li>
+                    <li><a href="{% url 'eco' %}">{% trans 'Economic' %}</a></li>
+                    <li><a href="{% url 'project' %}">{% trans 'Project' %}</a></li>
+                    <li><a href="{% url 'event' %}">{% trans 'Event' %}</a></li>
                 </ul>
             </div>
             <div>
                 <ul>
-                    <li><a href="{% url 'membership' %}">Membership</a></li>
-                    <li><a href="{% url 'inno' %}">Innovation</a></li>
-                    <li><a href="{% url 'part' %}">Partnerships</a></li>
-                    <li><a href="{% url 'outlook' %}">Outlook</a></li>
+                    <li><a href="{% url 'membership' %}">{% trans 'Membership' %}</a></li>
+                    <li><a href="{% url 'inno' %}">{% trans 'Innovation' %}</a></li>
+                    <li><a href="{% url 'part' %}">{% trans 'Partnerships' %}</a></li>
+                    <li><a href="{% url 'outlook' %}">{% trans 'Outlook' %}</a></li>
                 </ul>
             </div>
             <div>
                 <ul>
-                    <li><a href="{% url 'news' %}">News</a></li>
-                    <li><a href="{% url 'event' %}">Technology</a></li>
-                    <li><a href="{% url 'data' %}">Data</a></li>
-                    <li><a href="{% url 'education' %}">Education</a></li>
+                    <li><a href="{% url 'news' %}">{% trans 'News' %}</a></li>
+                    <li><a href="{% url 'event' %}">{% trans 'Technology' %}</a></li>
+                    <li><a href="{% url 'data' %}">{% trans 'Data' %}</a></li>
+                    <li><a href="{% url 'education' %}">{% trans 'Education' %}</a></li>
                 </ul>
             </div>
         </div>  
