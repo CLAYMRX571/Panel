@@ -15,7 +15,7 @@ class CategoryTranslationOptions(TranslationOptions):
     
 @register(Latest)
 class CategoryTranslationOptions(TranslationOptions):
-    fields = ('category_name', 'browse_link_name', 'latest_image', 'latest_title', 'latest_desc',) 
+    fields = ('category_name', 'browse_link_name', 'latest_title', 'latest_desc',) 
 
 @register(Adver)
 class CategoryTranslationOptions(TranslationOptions):

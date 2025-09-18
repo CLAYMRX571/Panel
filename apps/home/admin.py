@@ -16,7 +16,7 @@ class MissionAdmin(TranslationAdmin):
     
 @admin.register(Latest)
 class LatestAdmin(TranslationAdmin):
-    list_display = ['category_name', 'browse_link_name', 'latest_image', 'latest_title', 'latest_desc',]
+    list_display = ['category_name', 'browse_link_name', 'latest_title', 'latest_desc',]
     
 @admin.register(Adver)
 class AdverAdmin(TranslationAdmin):
